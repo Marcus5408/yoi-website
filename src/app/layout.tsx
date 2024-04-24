@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-import { ThemeProvider } from "next-themes";
+import { Libre_Franklin } from "next/font/google";
+import { Judson } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const dmsans = DM_Sans({ subsets: ["latin"] });
@@ -9,6 +11,19 @@ export const metadata: Metadata = {
   title: "YOI Website",
   description: "The Youth Oceanic Initiative website",
 };
+
+const libre_franklin = Libre_Franklin({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-libre_franklin",
+});
+
+const judson = Judson({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-judson",
+  weight: "400",
+});
 
 export default function RootLayout({
   children,
@@ -32,8 +47,17 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <body className={dmsans.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body
+        className={dmsans.className + libre_franklin.variable + judson.variable}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

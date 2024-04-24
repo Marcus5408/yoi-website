@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Navbar from "../navbar.jsx";
+import LightNavbar from "../navbarLight.jsx";
+import DarkNavbar from "../navbarDark.jsx";
 import { useTheme } from "next-themes";
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
-      <Navbar />
+      {theme === "dark" ? <DarkNavbar /> : <LightNavbar />}
       <div className="hero flex flex-col items-center justify-center p-10 m-96 h-1">
         <h1 className="text-6xl text-yoi-blue-1 dark:text-yoi-blue-3">
           About Us
