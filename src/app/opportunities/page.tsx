@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Navbar from "../navbar.jsx";
-import { useTheme } from "next-themes";
+import { useTheme } from../navbar.jsx
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
