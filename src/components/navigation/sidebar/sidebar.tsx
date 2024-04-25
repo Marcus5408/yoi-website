@@ -29,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   return (
     <header
       className={
-        "px-4 py-4 pb-8 lg:px-6 h-58 flex items-center bg-gradient-to-b from-yoi-blue-4 from-50% dark:from-yoi-blue-1 to-transparent w-screen" +
+        "px-4 py-4 pb-8 lg:px-6 h-58 flex items-center bg-gradient-to-b from-yoi-blue-4 dark:from-yoi-blue-1 from-30% to-transparent to-75% w-screen" +
         className
       }
     >
