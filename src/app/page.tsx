@@ -15,14 +15,14 @@ import {
   Drawer,
 } from "@/components/ui/drawer";
 import { Label } from "@/components/ui/label";
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from "react-responsive";
 import Sidebar from "../components/navigation/sidebar/sidebar.tsx";
 import Navbar from "../components/navigation/navbar/navbar.tsx";
 import BannerDesktop from "@/components/banners/banner-desktop.tsx";
 import BannerMobile from "@/components/banners/banner-mobile.tsx";
 
 export default function Component() {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
     <div className="flex flex-col min-h-[100dvh] w-screen">
@@ -47,10 +47,13 @@ export default function Component() {
                     Our Projects
                   </div>
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Action with the words
+                    We walk our talk
                   </h2>
                   <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                    In addition to educating the youth, the Youth Oceanic Initiative also has a number of projects that help to protect the oceans. The rest of this is sample text to be replaced. Please keep it descriptive and concise.
+                    In addition to educating the youth, the Youth Oceanic
+                    Initiative also has a number of projects that help to
+                    protect the oceans. The rest of this is sample text to be
+                    replaced. Please keep it descriptive and concise.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -75,12 +78,11 @@ export default function Component() {
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our Team
+                Our Cabinet
               </h2>
-              <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                We&apos;re grateful for the support of our generous donors and
-                volunteers. Their contributions help us continue our important
-                work.
+              <p className="mx-auto max-w-[75%] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Our cabinet is composed of a diverse group of students all
+                passionate about the ocean.
               </p>
             </div>
             <div className="grid w-full grid-cols-2 lg:grid-cols-5 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
@@ -120,6 +122,9 @@ export default function Component() {
                 width="140"
               />
             </div>
+            <Button className="mx-auto w-[20em]">
+              <Link href="#">Meet Our Full Team</Link>
+            </Button>
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 border-t">
@@ -128,9 +133,9 @@ export default function Component() {
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
                 Stay Connected
               </h2>
-              <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Sign up for The Maritime Logs to stay up-to-date on our latest
-                initiatives and events.
+              <p className="mx-auto max-w-[75%] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Sign up for our monthly newsletter, <em>The Maritime Logs</em>,
+                to stay up-to-date on our latest initiatives and events.
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm space-y-2">
@@ -171,15 +176,21 @@ export default function Component() {
             className="fixed bottom-4 right-4 z-50 sm:hidden"
             variant="outline"
           >
-            <MailIcon className="w-4 h-4" />
-            <span className="sr-only">Open newsletter signup</span>
+            <div className="flex gap-2 align-middle content-center items-center">
+              Sign up for our newsletter!
+              <MailIcon className="w-4 h-4" />
+              <span className="sr-only">Open newsletter signup</span>
+            </div>
           </Button>
         </DrawerTrigger>
         <DrawerContent className="sm:hidden">
           <DrawerHeader>
-            <DrawerTitle>Sign up for our newsletter</DrawerTitle>
-            <DrawerDescription>
-              Stay up-to-date with our latest news and events.
+            <DrawerTitle>
+              Sign up for <em>The Maritime Logs</em>
+            </DrawerTitle>
+            <DrawerDescription className="mx-auto w-[85%]">
+              Stay up-to-date with our latest news and events with our monthly
+              newsletter.
             </DrawerDescription>
           </DrawerHeader>
           <div className="px-4">
@@ -192,7 +203,9 @@ export default function Component() {
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" placeholder="Enter your email" type="email" />
               </div>
-              <Button type="submit">Subscribe</Button>
+              <Button type="submit" className="w-full">
+                Subscribe
+              </Button>
             </form>
           </div>
           <DrawerFooter>
