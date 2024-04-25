@@ -27,8 +27,8 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         className
       }
     >
-      <Link className="flex gap-2 items-center justify-center" href="#">
-        <div className="logo">
+      <Link className="flex gap-2 items-center justify-center flex-none" href="#">
+        <div className="logo h-75 w-75">
           <Image
             src="/yoi_logo.png"
             className="h-75 w-75"
@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           className="text-m font-medium hover:underline underline-offset-4"
           href="about"
         >
-          About
+          About Us
         </Link>
         <Link
           className="text-m font-medium hover:underline underline-offset-4"
