@@ -19,11 +19,14 @@ export default function BannerMobile() {
           </div>
           <div className="space-y-2">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
-              Welcome to the Example Website
+              Learn. <br />
+              Discuss. <br />
+              Advocate. <br />
             </h1>
             <p className="text-gray-500 md:text-xl dark:text-gray-400">
-              This is some placeholder subheading text to demonstrate the
-              example website. You can replace this with your own text.
+              The Youth Oceanic Initiative was founded to educate younger
+              generations about the oceans. Join us and help us educate the next
+              generation of ocean stewards.
             </p>
           </div>
           <Link
