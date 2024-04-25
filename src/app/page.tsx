@@ -15,44 +15,22 @@ import {
   Drawer,
 } from "@/components/ui/drawer";
 import { Label } from "@/components/ui/label";
-import Navbar from "../components/navigation/navbar/navbar.tsx";
 import { useTheme } from "next-themes";
+import { useMediaQuery } from 'react-responsive';
+import Navbar from "../components/navigation/navbar/navbar.tsx";
+import BannerDesktop from "@/components/banners/banner-desktop.tsx";
+import BannerMobile from "@/components/banners/banner-mobile.tsx";
 
 export default function Component() {
-  const { setTheme } = useTheme();
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col min-h-[100dvh] w-screen">
       <div className="absolute z-10 w-full">
         <Navbar />
       </div>
       <main className="flex-1 z-1">
-        <section className="w-full p-0 m-0 h-full relative top-0 left-0">
-          <div className="">
-            <div className="w-screen h-50">
-              <Image
-                alt="Hero"
-                className="overflow-hidden z-1 w-screen h-50"
-                height="1920"
-                src="/wexor-tmg-L-2p8fapOA8-unsplash.jpg"
-                width="1080"
-              />
-              <div className="flex flex-col justify-center space-y-4 absolute inset-0 w-1/2 pl-8 pr-8 bg-gradient-to-r from-yoi-blue-4 dark:from-yoi-blue-1 from-40% to-transparent">
-                <div className="space-y-2 w-2/3 drop-shadow-xl">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-yoi-white">
-                    Join our mission to make a difference
-                  </h1>
-                  <p className="max-w-[600px] text-yoi-blue-4 md:text-xl dark:text-gray-400">
-                    Our nonprofit organization is dedicated to creating positive
-                    change in our community. Join us and be a part of something
-                    greater.
-                  </p>
-                </div>
-                <Button className="w-1/2">Join Now</Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        {isTabletOrMobile ? <BannerMobile /> : <BannerDesktop />}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-yoi-white dark:bg-yoi-black">
           <div className="container px-4 md:px-6">
             <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
@@ -66,16 +44,13 @@ export default function Component() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                    Our Programs
+                    Our Projects
                   </div>
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Empowering our community
+                    Action with the words
                   </h2>
                   <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                    Our nonprofit organization offers a variety of programs and
-                    initiatives to help make a positive impact in our community.
-                    From education and job training to environmental
-                    conservation, we&aposre committed to creating lasting change.
+                    In addition to educating the youth, the Youth Oceanic Initiative also has a number of projects that help to protect the oceans. The rest of this is sample text to be replaced. Please keep it descriptive and concise.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -86,7 +61,7 @@ export default function Component() {
                     Learn More
                   </Link>
                   <Link
-                    className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+                    className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
                     href="#"
                   >
                     Get Involved
@@ -100,10 +75,10 @@ export default function Component() {
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our Supporters
+                Our Team
               </h2>
               <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                We&aposre grateful for the support of our generous donors and
+                We&apos;re grateful for the support of our generous donors and
                 volunteers. Their contributions help us continue our important
                 work.
               </p>
@@ -154,7 +129,7 @@ export default function Component() {
                 Stay Connected
               </h2>
               <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Sign up for our newsletter to stay up-to-date on our latest
+                Sign up for The Maritime Logs to stay up-to-date on our latest
                 initiatives and events.
               </p>
             </div>
@@ -168,7 +143,7 @@ export default function Component() {
                 <Button type="submit">Sign Up</Button>
               </form>
               <p className="text-xs text-gray-500 dark:text-gray-400">
-                Sign up to get notified when we launch.
+                Sign up to get our monthly newsletter in your inbox.&nbsp;
                 <Link className="underline underline-offset-2" href="#">
                   Terms & Conditions
                 </Link>

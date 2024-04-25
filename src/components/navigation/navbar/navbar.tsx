@@ -23,7 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
   return (
     <header
       className={
-        "px-4 pt-4 lg:px-6 h-83 flex items-center bg-gradient-to-b from-yoi-blue-1 dark:from-yoi-blue-4 to-transparent " +
+        "px-4 py-4 pb-8 lg:px-6 h-83 flex items-center bg-gradient-to-b from-yoi-blue-4 from-50% dark:from-yoi-blue-1 to-transparent " +
         className
       }
     >
@@ -68,27 +68,27 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         </DropdownMenu>
         <Link
           className="text-m font-medium hover:underline underline-offset-4"
-          href="#"
+          href="about"
         >
           About
         </Link>
         <Link
           className="text-m font-medium hover:underline underline-offset-4"
-          href="programs"
-        >
-          Programs
-        </Link>
-        <Link
-          className="text-m font-medium hover:underline underline-offset-4"
-          href="#"
+          href="get-involved"
         >
           Get Involved
         </Link>
         <Link
           className="text-m font-medium hover:underline underline-offset-4"
-          href="#"
+          href="projects"
         >
-          Contact
+          Our Projects
+        </Link>
+        <Link
+          className="text-m font-medium hover:underline underline-offset-4"
+          href="opportunities"
+        >
+          Opportunities
         </Link>
       </nav>
     </header>
