@@ -15,8 +15,8 @@ import {
   Drawer,
 } from "@/components/ui/drawer";
 import { Label } from "@/components/ui/label";
-import { useTheme } from "next-themes";
 import { useMediaQuery } from 'react-responsive';
+import Sidebar from "../components/navigation/sidebar/sidebar.tsx";
 import Navbar from "../components/navigation/navbar/navbar.tsx";
 import BannerDesktop from "@/components/banners/banner-desktop.tsx";
 import BannerMobile from "@/components/banners/banner-mobile.tsx";
@@ -27,7 +27,7 @@ export default function Component() {
   return (
     <div className="flex flex-col min-h-[100dvh] w-screen">
       <div className="absolute z-10 w-full">
-        <Navbar />
+        {isTabletOrMobile ? <Sidebar /> : <Navbar />}
       </div>
       <main className="flex-1 z-1">
         {isTabletOrMobile ? <BannerMobile /> : <BannerDesktop />}
@@ -38,7 +38,7 @@ export default function Component() {
                 alt="Program"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
                 height="310"
-                src="/placeholder.svg"
+                src="/wexor-tmg-L-2p8fapOA8-unsplash.jpg"
                 width="550"
               />
               <div className="flex flex-col justify-center space-y-4">
