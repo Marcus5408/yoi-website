@@ -1,27 +1,24 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
-import { Libre_Franklin } from "next/font/google";
-import { Judson } from "next/font/google";
+import { Abril_Fatface, DM_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-
-const dmsans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "YOI Website",
   description: "The Youth Oceanic Initiative website",
 };
 
-const libre_franklin = Libre_Franklin({
+const dmsans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-libre_franklin",
+  variable: "--font-dm-sans",
+  weight: "400",
 });
 
-const judson = Judson({
+const abril_fatface = Abril_Fatface({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-judson",
+  variable: "--font-abril-fatface",
   weight: "400",
 });
 
@@ -48,7 +45,9 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={dmsans.className + libre_franklin.variable + judson.variable}
+        className={
+          dmsans.variable + abril_fatface.variable
+        }
       >
         <ThemeProvider
           attribute="class"
