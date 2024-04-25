@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 
 export default function BannerMobile() {
   return (
-    <section className="p-0 m-0 relative top-0 left-0 align-top h-50">
-      <div className="bg-yoi-black">
-        <div className="container flex flex-1 flex-col items-center justify-top pt-8 min-h-svh text-center space-y-4 w-screen">
+    <section className="p-0 m-0 relative top-0 left-0 align-top max-h-[70svh]">
+      <div className="bg-yoi-blue-4 dark:bg-yoi-blue-1">
+        <div className="container flex flex-1 flex-col items-center justify-top pt-8 h-[70svh] text-center space-y-4 w-screen">
           <div className="relative w-screen">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-yoi-black rounded-t-xl" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% to-yoi-blue-4 dark:to-yoi-blue-1 rounded-t-xl" />
             <Image
               alt="Hero"
               className="mx-auto aspect-[2/1] overflow-hidden object-cover"
@@ -29,7 +29,7 @@ export default function BannerMobile() {
               generation of ocean stewards.
             </p>
           </div>
-          <Button className="md:w-1/2">Join Now</Button>
+          <Button className="w-[75%]">Join Now</Button>
         </div>
       </div>
     </section>

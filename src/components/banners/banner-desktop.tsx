@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button";
 
 export default function BannerDesktop() {
   return (
-    <section className="w-screen p-0 m-0 min-h-96 sm:h-400 relative top-0 left-0">
-      <div className="h-screen">
+    <section className="w-screen p-0 m-0 min-h-96 relative top-0 left-0">
+      <div className="h-[95svh]">
         <div className="w-screen">
           <Image
             alt="Hero"
-            className="overflow-hidden z-1 h-screen w-full object-cover"
+            className="overflow-hidden z-1 h-[95svh] w-full object-cover"
             height="1920"
             src="/wexor-tmg-L-2p8fapOA8-unsplash.jpg"
             width="1080"
