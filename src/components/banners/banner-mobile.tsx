@@ -29,12 +29,7 @@ export default function BannerMobile() {
               generation of ocean stewards.
             </p>
           </div>
-          <Link
-            className="inline-flex items-center rounded-md bg-gray-100 px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-gray-100/90 dark:bg-yoi-blue-1 dark:hover:bg-gray-800/90"
-            href="#"
-          >
-            Get Started
-          </Link>
+          <Button className="md:w-1/2">Join Now</Button>
         </div>
       </div>
     </section>
