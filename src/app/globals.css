@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "CooperHewitt";
+  src: url("../../fonts/cooper-hewitt/CooperHewitt-Heavy.woff");
+  weight: "700";
+  font-weight: "bold";
+  style: "normal";
+}
+
+@font-face {
+  font-family: "CooperHewitt";
+  src: url("../../fonts/cooper-hewitt/CooperHewitt-HeavyItalic.woff");
+  weight: "700";
+  font-weight: "bold";
+  style: "italic";
+}
+
+@font-face {
+  font-family: "CooperHewitt";
+  src: url("../../fonts/cooper-hewitt/CooperHewitt-MediumItalic.woff");
+  weight: "400";
+  font-weight: "medium";
+  style: "italic";
+}
+
+@font-face {
+  font-family: "CooperHewitt";
+  src: url("../../fonts/cooper-hewitt/CooperHewitt-Medium.woff");
+  weight: "400";
+  font-weight: "medium";
+  style: "normal";
+}
 
 @layer base {
   :root {
@@ -58,4 +89,16 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "CooperHewitt", sans-serif;
+  font-weight: "bold";
+}
+
+h4, h5, h6 {
+  font-family: "CooperHewitt", sans-serif;
+  font-weight: "medium";
 }
