@@ -27,7 +27,10 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         className
       }
     >
-      <Link className="flex gap-2 items-center justify-center flex-none" href="#">
+      <Link
+        className="flex gap-2 items-center justify-center flex-none"
+        href="#"
+      >
         <div className="logo h-75 w-75">
           <Image
             src="/yoi_logo.png"
@@ -41,8 +44,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <div className="text-xl leading-5">
           <h1 className="m-0">Youth</h1>
           <h1 className="m-0">Oceanic</h1>
-          <h1 className="m-0">Initiative</h1>
-          <hr className="mt-1 border-2 hover:border-2" />
+          <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4">
+            Initiative
+          </h1>
         </div>
       </Link>
       <nav className="pr-6 ml-auto flex gap-4 sm:gap-6 items-center">

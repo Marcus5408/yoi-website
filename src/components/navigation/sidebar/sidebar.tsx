@@ -82,8 +82,9 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
               <div className="text-m leading-4">
                 <h1 className="m-0">Youth</h1>
                 <h1 className="m-0">Oceanic</h1>
-                <h1 className="m-0">Initiative</h1>
-                <hr className="mt-0.5 border-2 hover:border-2" />
+                <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4">
+                  Initiative
+                </h1>
               </div>
             </Link>
             <SheetClose asChild>
@@ -131,7 +132,11 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="default" className="w-full mt-6">
+                <Button
+                  variant="outline"
+                  size="default"
+                  className="w-full mt-6"
+                >
                   <div className="flex gap-3 px-4">
                     <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                     <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
