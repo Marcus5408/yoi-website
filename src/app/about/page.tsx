@@ -1,29 +1,32 @@
 "use client";
 
 import Image from "next/image";
-import Navbar from "../navbar.jsx";
+import { useMediaQuery } from "react-responsive";
+import Sidebar from "../../components/navigation/sidebar/sidebar.tsx";
+import Navbar from "../../components/navigation/navbar/navbar.tsx";
 import { useTheme } from "next-themes";
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
-      <Navbar />
+    <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
+      <header className="absolute z-10 w-full">
+        {isTabletOrMobile ? <Sidebar /> : <Navbar />}
+      </header>
       <div className="hero flex flex-col items-center justify-center p-10 m-96 h-1">
-        <h1 className="text-6xl text-yoi-blue-1 dark:text-yoi-blue-3">
+        <h1 className="text-6xl text-yoi-blue-1 dark:text-yoi-blue-3 pb-5">
           About Us
         </h1>
         <h2 className="text-3xl text-yoi-black dark:text-yoi-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          Insert sample text here. epic epic muy ben yes yes yes lorem ipsum
+          Insert sample text here. epic epic muy ben yes yes yes lorem ipsum
+          Insert sample text here. epic epic muy ben yes yes yes lorem ipsum
+          Insert sample text here. epic epic muy ben yes yes yes lorem ipsum
+          Insert sample text here. epic epic muy ben yes yes yes lorem ipsum
         </h2>
+        <div className="items-center"><h2>Cabinet</h2></div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -110,5 +110,8 @@ p, link {
 
 .fancy {
   font-family: "Abril Fatface", serif;
-  font-weight: 400;
+}
+
+.bold {
+  font-weight: "bold";
 }
