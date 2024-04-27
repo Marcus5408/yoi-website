@@ -17,10 +17,16 @@ export default function BannerDesktop() {
           />
           <div className="flex flex-col justify-center space-y-4 absolute inset-0 w-1/2 sm:2/3 pl-[5%] pr-8 bg-gradient-to-r from-yoi-blue-4 dark:from-yoi-blue-1 from-40% to-transparent">
             <div className="space-y-2 w-2/3 drop-shadow-xl">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-yoi-white">
-                Learn.<br />
-                Discuss.<br />
-                Advocate.<br />
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-yoi-white fancy">
+                <div className="underline decoration-0 hover:decoration-4">
+                  Learn.
+                </div>
+                <div className="underline decoration-0 hover:decoration-4">
+                  Discuss.
+                </div>
+                <div className="underline decoration-0 hover:decoration-4">
+                  Advocate.
+                </div>
               </h1>
               <p className="max-w-[600px] text-yoi-blue-1 md:text-xl dark:text-yoi-blue-4">
                 The Youth Oceanic Initiative was founded to educate younger
