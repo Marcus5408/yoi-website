@@ -50,8 +50,9 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
         <div className="text-m leading-4">
           <h1 className="m-0">Youth</h1>
           <h1 className="m-0">Oceanic</h1>
-          <h1 className="m-0">Initiative</h1>
-          <hr className="mt-0.5 border-2 hover:border-2" />
+          <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4">
+            Initiative
+          </h1>
         </div>
       </Link>
       {/* collapsed sidebar, triggered by button */}
@@ -64,7 +65,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
           </Button>
         </SheetTrigger>
         <SheetContent className="w-72 bg-yoi-black text-yoi-white" side="right">
-          <div className="flex h-16 items-center justify-between px-0 border-b border-gray-700">
+          <div className="flex h-20 items-center justify-between px-0 border-b border-gray-700">
             <Link
               className="flex gap-2 items-center justify-center flex-none"
               href="#"
@@ -82,7 +83,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
               <div className="text-m leading-4">
                 <h1 className="m-0">Youth</h1>
                 <h1 className="m-0">Oceanic</h1>
-                <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4 dark:decoration-yoi-blue-1">
+                <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4">
                   Initiative
                 </h1>
               </div>

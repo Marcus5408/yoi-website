@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <div className="text-xl leading-5">
           <h1 className="m-0">Youth</h1>
           <h1 className="m-0">Oceanic</h1>
-          <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4 dark:decoration-yoi-blue-1">
+          <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4">
             Initiative
           </h1>
         </div>
