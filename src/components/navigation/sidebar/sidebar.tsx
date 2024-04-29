@@ -35,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
     >
       <Link
         className="flex gap-2 items-center justify-center flex-none"
-        href="#"
+        href="/"
       >
         <div className="logo h-50 w-50">
           <Image
@@ -82,7 +82,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
               <div className="text-m leading-4">
                 <h1 className="m-0">Youth</h1>
                 <h1 className="m-0">Oceanic</h1>
-                <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4">
+                <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4 dark:decoration-yoi-blue-1">
                   Initiative
                 </h1>
               </div>
