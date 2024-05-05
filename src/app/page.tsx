@@ -31,7 +31,41 @@ export default function Component() {
         {isTabletOrMobile ? <Sidebar /> : <Navbar />}
       </div>
       <main className="flex-1 z-1">
-        {isTabletOrMobile ? <BannerMobile /> : <BannerDesktop />}
+        {isTabletOrMobile ? (
+          <BannerMobile bg="/wexor-tmg-L-2p8fapOA8-unsplash.jpg">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
+              Learn. <br />
+              Discuss. <br />
+              Advocate. <br />
+            </h1>
+            <p className="text-gray-500 md:text-xl dark:text-gray-400">
+              The Youth Oceanic Initiative was founded to educate younger
+              generations about the oceans. Join us and help us educate the next
+              generation of ocean stewards.
+            </p>
+            <Button className="w-[75%]">Join Now</Button>
+          </BannerMobile>
+        ) : (
+          <BannerDesktop bg="/wexor-tmg-L-2p8fapOA8-unsplash.jpg">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-yoi-white fancy">
+              <div className="underline decoration-0 hover:decoration-4">
+                Learn.
+              </div>
+              <div className="underline decoration-0 hover:decoration-4">
+                Discuss.
+              </div>
+              <div className="underline decoration-0 hover:decoration-4">
+                Advocate.
+              </div>
+            </h1>
+            <p className="max-w-[600px] text-yoi-blue-1 md:text-xl dark:text-yoi-blue-4">
+              The Youth Oceanic Initiative was founded to educate younger
+              generations about the oceans. Join us and help us educate the next
+              generation of ocean stewards.
+            </p>
+            <Button className="md:w-1/2">Join Now</Button>
+          </BannerDesktop>
+        )}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-yoi-white dark:bg-yoi-black">
           <div className="container px-4 md:px-6">
             <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
