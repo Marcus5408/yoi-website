@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
+import Image from "next/image";
+import Link from "next/link";
 import Sidebar from "../../components/navigation/sidebar/sidebar.tsx";
 import Navbar from "../../components/navigation/navbar/navbar.tsx";
-import Link from "next/link";
-import { useTheme } from "next-themes";
+import YOIFooter from "@/components/footer.tsx";
 import {
   Accordion,
   AccordionContent,
@@ -286,19 +286,7 @@ export default function Home() {
           </Accordion>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">
-          © 2024 Acme Nonprofit. All rights reserved.
-        </p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Privacy
-          </Link>
-        </nav>
-      </footer>
+      <YOIFooter />
     </div>
   );
 }
