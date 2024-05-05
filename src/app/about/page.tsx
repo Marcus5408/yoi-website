@@ -214,8 +214,8 @@ export default function Home() {
                             environmental advocacy. He has worked with Our
                             Climate, and hopes to use his knowledge and skills
                             to further his involvement with the environment. He
-                            is thrilled to further YOI's mission and continue
-                            advocating for oceans.
+                            is thrilled to further YOI&apos;s mission and
+                            continue advocating for oceans.
                           </p>
                         </div>
                       </div>
