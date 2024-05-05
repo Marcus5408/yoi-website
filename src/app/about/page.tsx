@@ -3,9 +3,8 @@
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import Link from "next/link";
-import Sidebar from "../../components/navigation/sidebar/sidebar.tsx";
-import Navbar from "../../components/navigation/navbar/navbar.tsx";
-import YOIFooter from "@/components/footer.tsx";
+import Sidebar from "../../components/navigation/sidebar.tsx";
+import Navbar from "../../components/navigation/navbar.tsx";
 import {
   Accordion,
   AccordionContent,
@@ -19,41 +18,24 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import YOINav from "@/components/navigation/navigation.tsx";
+import Banner from "@/components/banners/banner.tsx";
+import YOIFooter from "@/components/footer.tsx";
 
 export default function Home() {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
-
   return (
     <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-screen">
-      <header className="absolute z-10 w-full">
-        {isTabletOrMobile ? <Sidebar /> : <Navbar />}
-      </header>
-      <main className="w-screen">
-        <section className="bg-yoi-blue-4 py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none fancy">
-                    Empowering Communities, Transforming Lives
-                  </h1>
-                  <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                    Our mission is to create positive and lasting change in the
-                    communities we serve through innovative programs and
-                    partnerships.
-                  </p>
-                </div>
-              </div>
-              <Image
-                alt="Hero"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom sm:w-full lg:order-last lg:aspect-square"
-                height="550"
-                src="/placeholder.svg"
-                width="550"
-              />
-            </div>
-          </div>
-        </section>
+      <YOINav />
+      <main className="flex-1 z-1">
+        <Banner bg="/shaun-low-v8Un2Roo1Ak-unsplash.jpg">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none fancy">
+            Empowering Communities, Transforming Lives
+          </h1>
+          <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+            Our mission is to create positive and lasting change in the
+            communities we serve through innovative programs and partnerships.
+          </p>
+        </Banner>
         <section className="items-center justify-between w-screen px-20 pt-10">
           <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center">
             Meet Our Team
