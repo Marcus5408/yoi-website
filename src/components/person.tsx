@@ -34,8 +34,8 @@ const PersonCard: React.FC<PersonProps> = ({
   return (
     <Card className={"h-full grow " + className}>
       <CardHeader>
-        <div className="flex content-start justify-start gap-6">
-          <Avatar className="size-24">
+        <div className="flex content-start justify-center gap-4">
+          <Avatar className="size-[6rem] content-center">
             <AvatarImage
               alt={name}
               src={picture ?? "/images/placeholder.png"}
