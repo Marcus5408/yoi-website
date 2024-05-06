@@ -43,13 +43,16 @@ export default function Home() {
             {data.map((department, index) => (
               <AccordionItem value={"item" + (index + 1)} key={index}>
                 <AccordionTrigger className="text-2xl">
-                      {department.department}
+                  {department.department}
                 </AccordionTrigger>
                 <AccordionContent className="px-10 lg:px-16">
                   <Carousel>
                     <CarouselContent className="-ml-3 md:-ml-4">
                       {department.people.map((person, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 space-y-2 flex">
+                        <CarouselItem
+                          key={index}
+                          className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 space-y-2 flex"
+                        >
                           <PersonCard
                             picture={person.image}
                             name={person.name}
