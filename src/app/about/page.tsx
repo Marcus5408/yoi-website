@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -45,9 +43,9 @@ export default function Home() {
                 <AccordionTrigger className="text-2xl">
                   {department.department}
                 </AccordionTrigger>
-                <AccordionContent className="px-10 lg:px-16">
+                <AccordionContent className="px-12 lg:px-14">
                   <Carousel>
-                    <CarouselContent className="-ml-3 md:-ml-4">
+                    <CarouselContent className="">
                       {department.people.map((person, index) => (
                         <CarouselItem
                           key={index}
