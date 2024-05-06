@@ -84,10 +84,10 @@ export default function Component() {
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our Cabinet
+                Our Team
               </h2>
               <p className="mx-auto max-w-[75%] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Our cabinet is composed of a diverse group of students all
+                Our team is composed of a diverse group of students all
                 passionate about the ocean.
               </p>
             </div>
