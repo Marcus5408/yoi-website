@@ -25,12 +25,12 @@ export default function Home() {
       <YOINav />
       <main className="flex-1 z-1">
         <Banner bg="/shaun-low-v8Un2Roo1Ak-unsplash.jpg">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none fancy">
-            Empowering Communities, Transforming Lives
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
+            We're creating future oceanic stewards.
           </h1>
           <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-            Our mission is to create positive and lasting change in the
-            communities we serve through innovative programs and partnerships.
+            Our mission is to educate the public about ocean threats and empower
+            today&apos;s youth through advocacy of existing and potential solutions.
           </p>
         </Banner>
         <section className="items-center justify-between w-screen px-5 lg:px-10 py-10 pb-20">
