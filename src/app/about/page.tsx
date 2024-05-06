@@ -35,7 +35,7 @@ export default function Home() {
             communities we serve through innovative programs and partnerships.
           </p>
         </Banner>
-        <section className="items-center justify-between w-screen px-5 lg:px-10 pt-10">
+        <section className="items-center justify-between w-screen px-5 lg:px-10 py-10 pb-20">
           <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center">
             Meet Our Team
           </h1>
