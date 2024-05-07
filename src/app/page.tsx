@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -91,43 +92,7 @@ export default function Component() {
                 passionate about the ocean.
               </p>
             </div>
-            <div className="grid w-full grid-cols-2 lg:grid-cols-5 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
-              <Image
-                alt="Logo"
-                className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                height="70"
-                src="/placeholder.svg"
-                width="140"
-              />
-              <Image
-                alt="Logo"
-                className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                height="70"
-                src="/placeholder.svg"
-                width="140"
-              />
-              <Image
-                alt="Logo"
-                className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                height="70"
-                src="/placeholder.svg"
-                width="140"
-              />
-              <Image
-                alt="Logo"
-                className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                height="70"
-                src="/placeholder.svg"
-                width="140"
-              />
-              <Image
-                alt="Logo"
-                className="aspect-[2/1] col-span-2 lg:col-span-1 overflow-hidden rounded-lg object-contain object-center"
-                height="70"
-                src="/placeholder.svg"
-                width="140"
-              />
-            </div>
+            {RandomPics()}
             <Button className="mx-auto w-[20em]">
               <Link href="#">Meet Our Full Team</Link>
             </Button>
@@ -230,5 +195,75 @@ function MailIcon(props: any) {
       <rect width="20" height="16" x="2" y="4" rx="2" />
       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </svg>
+  );
+}
+
+function RandomPics() {
+  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+  const names = [
+    "marlin",
+    "ankur",
+    "grace",
+    "angela",
+    "lucine",
+    "sydney",
+    "issac",
+    "madelyn",
+    "winston",
+    "maya",
+    "fatemtuz",
+    "emerson",
+    "ryan",
+    "janssen",
+    "veronica",
+    "sandy",
+    "poe",
+    "chloe",
+    "cecil",
+    "jiawen",
+    "arham",
+  ];
+  let transforms: Array<string> = [];
+  let amount: number = 0;
+  if (isMobile) {
+    transforms = [
+      "translate-x-[45%] z-10 scale-90 brightness-75 ",
+      "translate-x-[20%] z-20 scale-100 brightness-90 ",
+      "translate-x-[0%] z-30 scale-110 brightness-110 ",
+      "-translate-x-[20%] z-20 scale-100 brightness-90 ",
+      "-translate-x-[45%] z-10 scale-90 brightness-75 ",
+    ];
+    amount = 5;
+  } else {
+    transforms = [
+      "translate-x-[10rem] z-0 scale-75 brightness-50 ",
+      "translate-x-[5rem] z-10 scale-90 brightness-75 ",
+      "translate-x-[2rem] z-20 scale-110 brightness-90 ",
+      "translate-x-[0rem] z-30 scale-125 brightness-110 ",
+      "-translate-x-[2rem] z-20 scale-110 brightness-90 ",
+      "-translate-x-[5rem] z-10 scale-90 brightness-75 ",
+      "-translate-x-[10rem] z-0 scale-75 brightness-50 ",
+    ];
+    amount = 7;
+  }
+  return (
+    <div className="flex items-center gap-0 mx-0 h-[10rem] py-16 relative">
+      {names
+        .sort(() => Math.random() - 0.3)
+        .slice(0, amount)
+        .map((name: any, index: number) => (
+          <Image
+            alt="Logo"
+            className={
+              transforms[index] +
+              " aspect-square overflow-hidden rounded-full object-contain drop-shadow-lg outline-2"
+            }
+            height="140"
+            key={index}
+            src={`/crew/cropped/${name}.jpg`}
+            width="140"
+          />
+        ))}
+    </div>
   );
 }
