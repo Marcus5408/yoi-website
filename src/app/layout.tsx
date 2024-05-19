@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   description: "The Youth Oceanic Initiative website",
 };
 
-export const dmsans = DM_Sans({
+const dmsans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-dm-sans",
   weight: "400",
 });
 
-export const abril_fatface = Abril_Fatface({
+const abril_fatface = Abril_Fatface({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-abril-fatface",
