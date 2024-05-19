@@ -30,26 +30,37 @@ export default function Home() {
           </h1>
           <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
             Our mission is to educate the public about ocean threats and empower
-            today&apos;s youth through advocacy of existing and potential solutions.
+            today&apos;s youth through advocacy of existing and potential
+            solutions.
           </p>
         </Banner>
         <section className="items-center justify-between w-screen px-5 lg:px-10 py-10 pb-20">
           <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center">
             Meet Our Team
           </h1>
-          <Accordion type="multiple">
+          <Accordion
+            type="multiple"
+            className="w-full"
+            defaultValue={
+              // create an array of all values of the "department" key
+              data.map((department) => department.department)
+            }
+          >
             {data.map((department, index) => (
-              <AccordionItem value={"item" + (index + 1)} key={index}>
+              <AccordionItem value={department.department} key={index}>
                 <AccordionTrigger className="text-2xl">
+                  <div className="pl-4">
+
                   {department.department}
+                  </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-12 lg:px-14">
                   <Carousel>
-                    <CarouselContent className="">
+                    <CarouselContent className="flex">
                       {department.people.map((person, index) => (
                         <CarouselItem
                           key={index}
-                          className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 space-y-2 flex"
+                          className="md:basis-1/2 lg:basis-1/3 2xl:basis-1/4 space-y-2 flex"
                         >
                           <PersonCard
                             picture={person.image}
