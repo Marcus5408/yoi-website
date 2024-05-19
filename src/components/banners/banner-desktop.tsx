@@ -19,7 +19,7 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, children }) => {
             src={bg ?? ""}
             width="1080"
           />
-          <div className="flex flex-col justify-center space-y-4 absolute inset-0 w-1/2 sm:2/3 pl-[5%] pr-8 bg-gradient-to-r from-yoi-blue-4 dark:from-yoi-blue-1 from-40% to-transparent">
+          <div className="flex flex-col justify-center space-y-4 absolute inset-0 w-2/3 lg:w-1/2 pl-[5%] pr-8 bg-gradient-to-r from-yoi-blue-4 dark:from-yoi-blue-1 from-40% to-transparent">
             <div className="space-y-2 w-2/3 drop-shadow-xl">{children}</div>
           </div>
         </div>
