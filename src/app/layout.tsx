@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   description: "The Youth Oceanic Initiative website",
 };
 
-const dmsans = DM_Sans({
+export const dmsans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-dm-sans",
   weight: "400",
 });
 
-const abril_fatface = Abril_Fatface({
+export const abril_fatface = Abril_Fatface({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-abril-fatface",
@@ -44,11 +44,7 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <body
-        className={
-          dmsans.variable + abril_fatface.variable
-        }
-      >
+      <body className={`${dmsans.variable} ${abril_fatface.variable}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -98,18 +98,21 @@ h3 {
   font-weight: "bold";
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-family: "CooperHewitt", sans-serif;
   font-weight: "medium";
 }
 
-p, link {
-  font-family: "DM Sans", sans-serif;
+p,
+link {
+  font-family: var(--font-dm-sans);
   font-weight: "400";
 }
 
 .fancy {
-  font-family: "Abril Fatface", serif;
+  font-family: var(--font-abril-fatface);
 }
 
 .bold {

@@ -36,7 +36,7 @@ const Component = () => {
       <YOINav />
       <main className="flex-1 z-1">
         <Banner bg="/wexor-tmg-L-2p8fapOA8-unsplash.jpg">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             Learn. <br />
             Discuss. <br />
             Advocate. <br />

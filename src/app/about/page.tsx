@@ -25,7 +25,7 @@ export default function Home() {
       <YOINav />
       <main className="flex-1 z-1">
         <Banner bg="/shaun-low-v8Un2Roo1Ak-unsplash.jpg">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             We&apos;re creating oceanic stewards.
           </h1>
           <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
