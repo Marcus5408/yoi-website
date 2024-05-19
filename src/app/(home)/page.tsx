@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useMediaQuery } from "react-responsive";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -21,7 +21,16 @@ import Banner from "@/components/banners/banner.tsx";
 import YOIFooter from "@/components/footer.tsx";
 import RandomPics from "./randomCrew.tsx";
 
-export default function Component() {
+const Component = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      RandomPics();
+    }, 500); // 5000 milliseconds = 5 seconds
+
+    // Cleanup function to clear the timer when the component unmounts
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-[100dvh] w-screen">
       <YOINav />
@@ -177,7 +186,9 @@ export default function Component() {
       </Drawer>
     </div>
   );
-}
+};
+
+export default Component;
 
 function MailIcon(props: any) {
   return (
