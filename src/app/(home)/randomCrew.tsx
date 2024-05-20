@@ -56,7 +56,7 @@ const RandomPics = () => {
             alt="Logo"
             className={
               transforms[index] +
-              " aspect-square overflow-hidden rounded-full object-contain drop-shadow-lg outline-2"
+              " aspect-square overflow-hidden rounded object-contain drop-shadow-lg outline-4 outline-black"
             }
             height="140"
             key={index}
