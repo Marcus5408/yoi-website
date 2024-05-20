@@ -1,15 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import YOINav from "@/components/navigation/navigation.tsx";
-import { useTheme } from "next-themes";
 import Banner from "@/components/banners/banner";
 import TextSection from "@/components/sections/text-section";
 import YOIFooter from "@/components/footer";
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
-
   return (
     <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-screen">
       <YOINav />

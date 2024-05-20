@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import YOINav from "@/components/navigation/navigation.tsx";
 import Banner from "@/components/banners/banner";
-import TextSection from "@/components/sections/text-section";
 import ProjectCard from "@/components/project-card";
 import YOIFooter from "@/components/footer";
 

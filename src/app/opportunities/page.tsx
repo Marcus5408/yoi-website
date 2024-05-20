@@ -6,13 +6,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Image from "next/image";
 import YOINav from "@/components/navigation/navigation.tsx";
-import { useTheme } from "next-themes";
 import Banner from "@/components/banners/banner";
-import { sql } from "@vercel/postgres";
 import OpportunityCard from "@/components/opportunity";
-import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -131,25 +127,5 @@ export default function Home() {
       </section>
       <YOIFooter />
     </main>
-  );
-}
-
-function XIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
-    </svg>
   );
 }
