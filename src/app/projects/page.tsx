@@ -5,6 +5,7 @@ import YOINav from "@/components/navigation/navigation.tsx";
 import Banner from "@/components/banners/banner";
 import TextSection from "@/components/sections/text-section";
 import ProjectCard from "@/components/project-card";
+import YOIFooter from "@/components/footer";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <YOIFooter />
     </div>
   );
 }
