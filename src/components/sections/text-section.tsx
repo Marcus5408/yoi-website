@@ -6,6 +6,7 @@ type TextSectionProps = {
   title?: string;
   description?: string;
   link?: string;
+  buttonText?: string;
   side?: string;
   className?: string;
 };
@@ -15,6 +16,7 @@ const TextSection: React.FC<TextSectionProps> = ({
   title,
   description,
   link,
+  buttonText,
   side,
   className,
 }) => {
@@ -25,6 +27,7 @@ const TextSection: React.FC<TextSectionProps> = ({
         title={title}
         description={description}
         link={link}
+        buttonText={buttonText}
         className={className}
       />
     );
@@ -35,6 +38,7 @@ const TextSection: React.FC<TextSectionProps> = ({
         title={title}
         description={description}
         link={link}
+        buttonText={buttonText}
         className={className}
       />
     );
