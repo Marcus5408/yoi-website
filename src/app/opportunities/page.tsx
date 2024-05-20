@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/range-slider";
+import YOIFooter from "@/components/footer";
 
 export default function Home() {
   return (
@@ -128,6 +129,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <YOIFooter />
     </main>
   );
 }
