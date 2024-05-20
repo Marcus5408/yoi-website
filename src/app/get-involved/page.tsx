@@ -3,27 +3,50 @@
 import Image from "next/image";
 import YOINav from "@/components/navigation/navigation.tsx";
 import { useTheme } from "next-themes";
+import Banner from "@/components/banners/banner";
+import TextSection from "@/components/sections/text-section";
+import YOIFooter from "@/components/footer";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
+    <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-screen">
       <YOINav />
-      <div className="hero flex flex-col items-center justify-center p-10 m-96 h-1">
-        <h1 className="text-6xl text-yoi-blue-1 dark:text-yoi-blue-3">
-          About Us
-        </h1>
-        <h2 className="text-3xl text-yoi-black dark:text-yoi-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </h2>
-      </div>
-    </main>
+      <main className="flex-1 z-1">
+        <Banner bg="/shaun-low-v8Un2Roo1Ak-unsplash.jpg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
+            Join Our Mission
+          </h1>
+          <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+            Our mission is to educate the public about ocean threats and empower
+            today&apos;s youth through advocacy of existing and potential
+            solutions.
+          </p>
+        </Banner>
+        <section className="w-full pb-12 md:pb-24 lg:pb-32">
+          <TextSection
+            title="Find Opportunities"
+            description="Look through our curated opportunity database to find an event or opportunity being hosted by us or our partners organizations. We have a variety of opportunities for all ages and skill levels."
+            link="/volunteer"
+            buttonText="Find an Opportunity"
+          />
+          <TextSection
+            title="Join A Chapter"
+            description="Are you a student? Join a chapter at your school or start one! We have chapters throughout the US and are always looking for new members to join our mission."
+            link="/chapters"
+            buttonText="Find a Chapter"
+            side="right"
+          />
+          <TextSection
+            title="Volunteer"
+            description="Join our team of volunteers and help us make a difference. We have a variety of opportunities for all ages and skill levels."
+            link="/opportunities?provider=YOI"
+            buttonText="Contact Us"
+          />
+        </section>
+      </main>
+      <YOIFooter />
+    </div>
   );
 }

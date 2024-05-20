@@ -6,6 +6,7 @@ type LeftTextProps = {
   title?: string;
   description?: string;
   link?: string;
+  buttonText?: string;
   className?: string;
 };
 
@@ -14,13 +15,15 @@ const LeftText: React.FC<LeftTextProps> = ({
   title,
   description,
   link,
+  buttonText,
   className,
 }) => {
   const checkedImage = image ?? "/wexor-tmg-L-2p8fapOA8-unsplash.jpg";
   const checkedLink = link ?? "#";
+  const checkedButtonText = buttonText ?? "Learn More";
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-yoi-white dark:bg-yoi-black">
+    <section className="w-full py-12 md:py-24 lg:py-24 bg-yoi-white dark:bg-yoi-black">
       <div className="container px-4 md:px-6">
         <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
           <Image
@@ -44,7 +47,7 @@ const LeftText: React.FC<LeftTextProps> = ({
                 className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
                 href={checkedLink}
               >
-                Learn More
+                {checkedButtonText}
               </Link>
             </div>
           </div>
