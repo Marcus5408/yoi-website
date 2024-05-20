@@ -35,7 +35,7 @@ const Component = () => {
     <div className="flex flex-col min-h-[100dvh] w-screen">
       <YOINav />
       <main className="flex-1 z-1">
-        <Banner bg="/wexor-tmg-L-2p8fapOA8-unsplash.jpg">
+        <Banner bg="/header.png">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             Learn. <br />
             Discuss. <br />
