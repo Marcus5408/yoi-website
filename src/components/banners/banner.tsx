@@ -1,6 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 import BannerDesktop from "./banner-desktop";
 import BannerMobile from "./banner-mobile";
+import React from "react";
 
 type BannerProps = {
   bg?: string;

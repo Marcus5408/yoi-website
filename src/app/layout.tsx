@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Abril_Fatface, DM_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "YOI Website",

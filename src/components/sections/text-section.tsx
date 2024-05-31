@@ -1,5 +1,6 @@
 import LeftText from "./left-text";
 import RightText from "./right-text";
+import React from "react";
 
 type TextSectionProps = {
   image?: string;
