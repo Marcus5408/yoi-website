@@ -24,7 +24,7 @@ const RightText: React.FC<RightTextProps> = ({
   const checkedButtonText = buttonText ?? "Learn More";
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-24 bg-yoi-white dark:bg-gray-900">
+    <section className={"w-full py-12 md:py-24 lg:py-24 bg-yoi-white dark:bg-gray-900 " + className}>
       <div className="container px-4 md:px-6">
         <div className="grid items-center gap-6 lg:grid-cols-[500px_1fr] lg:gap-12 xl:grid-cols-[550px_1fr]">
           <div className="flex flex-col justify-center space-y-4 items-end">

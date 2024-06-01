@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const checkedLink = link ?? "#";
 
   return (
-    <div className="group relative overflow-hidden rounded-lg">
+    <div className={"group relative overflow-hidden rounded-lg " + className}>
       <Link className="absolute inset-0 z-10" href={checkedLink}>
         <span className="sr-only">View Project</span>
       </Link>

@@ -24,7 +24,7 @@ const LeftText: React.FC<LeftTextProps> = ({
   const checkedButtonText = buttonText ?? "Learn More";
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-24 bg-yoi-white dark:bg-yoi-black">
+    <section className={"w-full py-12 md:py-24 lg:py-24 bg-yoi-white dark:bg-yoi-black " + className}>
       <div className="container px-4 md:px-6">
         <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
           <Image

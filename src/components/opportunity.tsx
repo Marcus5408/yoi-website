@@ -35,7 +35,7 @@ const OpportunityCard: React.FC<OpportunityProps> = ({
   const checkedLink = link ?? "#";
 
   return (
-    <Card>
+    <Card className={className}>
       <CardHeader>
         <CardTitle className="text-2xl font-bold">{title}</CardTitle>
       </CardHeader>
