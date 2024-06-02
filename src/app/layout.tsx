@@ -3,6 +3,7 @@ import { Abril_Fatface, DM_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import React from "react";
+import { useTheme } from "next-themes";
 
 export const metadata: Metadata = {
   title: "YOI Website",
@@ -28,6 +29,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeColor = "#04328d";
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -44,6 +47,7 @@ export default function RootLayout({
           type="image/<generated>"
           sizes="<generated>"
         />
+        <meta name="theme-color" content={themeColor} />
       </head>
       <body className={`${dmsans.variable} ${abril_fatface.variable}`}>
         <ThemeProvider
