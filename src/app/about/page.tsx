@@ -68,6 +68,7 @@ export default function Home() {
                             pronouns={person.pronouns}
                             role={person.role}
                             description={person.description}
+                            className="basis-1/2 lg:basis-1/3 2xl:basis-1/4 space-y-2"
                           />
                         </CarouselItem>
                       ))}

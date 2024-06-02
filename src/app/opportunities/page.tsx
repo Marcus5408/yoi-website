@@ -83,7 +83,7 @@ export default function Home() {
                   Age Requirement
                 </AccordionTrigger>
                 <AccordionContent className="mb-2 p-2">
-                  <Slider min={0} max={20} minStepsBetweenThumbs={0} step={1} />
+                  <Slider min={0} max={25} minStepsBetweenThumbs={0} step={1} />
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="sort">
