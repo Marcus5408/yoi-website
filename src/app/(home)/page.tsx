@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -19,18 +18,40 @@ import { Label } from "@/components/ui/label";
 import YOINav from "@/components/navigation/navigation.tsx";
 import Banner from "@/components/banners/banner.tsx";
 import YOIFooter from "@/components/footer.tsx";
-import RandomPics from "./randomCrew.tsx";
+import data from "../about/yoi-execs.json";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion.tsx";
+import PersonMiniCard from "@/components/person-mini";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import React from "react";
+import Autoplay from "embla-carousel-autoplay";
 
 const Component = () => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      RandomPics();
-    }, 500); // 5000 milliseconds = 5 seconds
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
 
-    // Cleanup function to clear the timer when the component unmounts
-    return () => clearTimeout(timer);
-  }, []);
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
 
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
   return (
     <div className="flex flex-col min-h-[100dvh] w-screen">
       <YOINav />
@@ -102,7 +123,46 @@ const Component = () => {
                 passionate about the ocean.
               </p>
             </div>
-            {RandomPics()}
+            <Accordion
+              type="multiple"
+              className=""
+              defaultValue={data.map((department) => department.department)}
+            >
+              {data.map((department, index) => (
+                <AccordionItem value={department.department} key={index}>
+                  <AccordionTrigger className="text-2xl">
+                    <div className="pl-4">{department.department}</div>
+                  </AccordionTrigger>
+                  <AccordionContent className="w-[75vw] ">
+                    <Carousel
+                      setApi={setApi}
+                      plugins={[
+                        Autoplay({
+                          delay: department.people.length * 800,
+                        })
+                      ]}
+                    >
+                      <CarouselContent className="">
+                        {department.people.map((person, index) => (
+                          <CarouselItem
+                            key={index}
+                            className="md:basis-1/2 2xl:basis-1/3 space-y-2 flex grow"
+                          >
+                            <PersonMiniCard
+                              key={index}
+                              name={person.name}
+                              pronouns={person.pronouns}
+                              role={person.role}
+                              picture={person.image}
+                            />
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                    </Carousel>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
             <Button className="mx-auto w-[20em]">
               <Link href="#">Meet Our Full Team</Link>
             </Button>
@@ -119,6 +179,14 @@ const Component = () => {
                 to stay up-to-date on our latest initiatives and events.
               </p>
             </div>
+            {/* <iframe
+              title="Newsletter Signup"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
+              width="1320"
+              height="640"
+            >
+              Loading…
+            </iframe> */}
             <div className="mx-auto w-full max-w-sm space-y-2">
               <form className="flex space-x-2">
                 <Input
