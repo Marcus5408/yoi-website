@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import React from "react";
 import { useTheme } from "next-themes";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "YOI Website",
@@ -50,6 +51,7 @@ export default function RootLayout({
         <meta name="theme-color" content={themeColor} />
       </head>
       <body className={`${dmsans.variable} ${abril_fatface.variable}`}>
+        <SpeedInsights />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
