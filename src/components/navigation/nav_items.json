@@ -1,0 +1,62 @@
+[
+  {
+    "category": "About Us",
+    "links": [
+      {
+        "title": "Our Mission",
+        "href": "/about/mission",
+        "description": "Learn more about our mission to educate the public about ocean threats and empower today's youth."
+      },
+      {
+        "title": "Our Team",
+        "href": "/about/team",
+        "description": "Meet the team behind the Youth Oceanic Initiative and learn more about our members."
+      }
+    ]
+  },
+  {
+    "category": "Get Involved",
+    "links": [
+      {
+        "title": "Join Us",
+        "href": "/get-involved/join",
+        "description": "Join the Youth Oceanic Initiative and help us make a difference in the world."
+      },
+      {
+        "title": "Donate",
+        "href": "/get-involved/donate",
+        "description": "Support our mission by donating to the Youth Oceanic Initiative."
+      }
+    ]
+  },
+  {
+    "category": "Our Projects",
+    "links": [
+      {
+        "title": "Project 1",
+        "href": "/projects/project-1",
+        "description": "Learn more about our first project and how you can get involved."
+      },
+      {
+        "title": "Project 2",
+        "href": "/projects/project-2",
+        "description": "Learn more about our second project and how you can get involved."
+      }
+    ]
+  },
+  {
+    "category": "Opportunities",
+    "links": [
+      {
+        "title": "Blog",
+        "href": "/resources/blog",
+        "description": "Read our latest blog posts and stay up to date on the latest news."
+      },
+      {
+        "title": "FAQ",
+        "href": "/resources/faq",
+        "description": "Find answers to frequently asked questions about the Youth Oceanic Initiative."
+      }
+    ]
+  }
+]

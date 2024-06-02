@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -12,6 +13,26 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu";
+import nav_items from "./nav_items.json";
+
+type NavCatLinks = {
+  title: string;
+  href: string;
+  description: string;
+};
+
+type NavCategory = {
+  category: string;
+  links: NavCatLinks[];
+};
 
 type NavbarProps = {
   className?: string;
@@ -31,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         className="flex gap-2 items-center justify-center flex-none"
         href="/"
       >
-        <div className="logo h-75 w-75">
+        <div className="logo h-75 w-75 pr-4">
           <Image
             src="/yoi_logo.png"
             className="h-75 w-75"
@@ -49,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           </h1>
         </div>
       </Link>
-      <nav className="pr-6 ml-auto flex gap-4 sm:gap-6 items-center">
+      <NavigationMenu className="pr-4 ml-auto flex gap-4 items-center">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon">
@@ -70,33 +91,57 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <Link
-          className="text-m font-medium hover:underline underline-offset-4"
-          href="about"
-        >
-          About Us
-        </Link>
-        <Link
-          className="text-m font-medium hover:underline underline-offset-4"
-          href="get-involved"
-        >
-          Get Involved
-        </Link>
-        <Link
-          className="text-m font-medium hover:underline underline-offset-4"
-          href="projects"
-        >
-          Our Projects
-        </Link>
-        <Link
-          className="text-m font-medium hover:underline underline-offset-4"
-          href="opportunities"
-        >
-          Opportunities
-        </Link>
-      </nav>
+        <NavigationMenuList>
+          {
+            nav_items.map((item: NavCategory) => (
+              <NavigationMenuItem key={item.category}>
+                <NavigationMenuTrigger>{item.category}</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid p-2 md:grid-cols-2 w-[500px]">
+                    {item.links.map((NavCatLinks) => (
+                      <ListItem
+                        key={NavCatLinks.title}
+                        title={NavCatLinks.title}
+                        href={NavCatLinks.href}
+                      >
+                        {NavCatLinks.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            ))
+          }
+        </NavigationMenuList>
+      </NavigationMenu>
     </header>
   );
 };
 
 export default Navbar;
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";
