@@ -6,7 +6,7 @@ export default function YOIFooter() {
     <p className="text-xs text-gray-500 dark:text-gray-400">
       © 2024 The Youth Oceanic Initiative. All rights reserved.
     </p>
-    <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+    <nav className="sm:ml-auto flex gap-2 sm:gap-6">
       <Link className="text-xs hover:underline underline-offset-4" href="#">
         Privacy
       </Link>
