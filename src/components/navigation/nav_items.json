@@ -23,6 +23,11 @@
         "description": "Join the Youth Oceanic Initiative and help us make a difference in the world."
       },
       {
+        "title": "Find a Chapter",
+        "href": "/get-involved/chapters",
+        "description": "Find a local YOI chapter near you and get involved in your community."
+      },
+      {
         "title": "Donate",
         "href": "/get-involved/donate",
         "description": "Support our mission by donating to the Youth Oceanic Initiative."

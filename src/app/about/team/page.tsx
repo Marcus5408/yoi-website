@@ -16,7 +16,7 @@ import {
 import YOINav from "@/components/navigation/navigation.tsx";
 import Banner from "@/components/banners/banner.tsx";
 import YOIFooter from "@/components/footer.tsx";
-import data from "./yoi-execs.json";
+import data from "../yoi-execs.json";
 import PersonCard from "@/components/person.tsx";
 
 export default function Home() {
