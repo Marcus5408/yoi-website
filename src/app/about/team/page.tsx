@@ -49,10 +49,7 @@ export default function Home() {
             {data.map((department, index) => (
               <AccordionItem value={department.department} key={index}>
                 <AccordionTrigger className="text-2xl">
-                  <div className="pl-4">
-
-                  {department.department}
-                  </div>
+                  <div className="pl-4">{department.department}</div>
                 </AccordionTrigger>
                 <AccordionContent className="px-12 lg:px-14">
                   <Carousel>
