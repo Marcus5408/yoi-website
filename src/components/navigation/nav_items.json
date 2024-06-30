@@ -1,6 +1,7 @@
 [
   {
     "category": "About Us",
+    "root": "/about",
     "links": [
       {
         "title": "Our Mission",
@@ -16,6 +17,7 @@
   },
   {
     "category": "Get Involved",
+    "root": "/get-involved",
     "links": [
       {
         "title": "Join Us",
@@ -36,6 +38,7 @@
   },
   {
     "category": "Our Projects",
+    "root": "/projects",
     "links": [
       {
         "title": "Project 1",
@@ -56,6 +59,7 @@
   },
   {
     "category": "Opportunities",
+    "root": "/opportunities",
     "links": [
       {
         "title": "Blog",
