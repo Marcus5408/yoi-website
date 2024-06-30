@@ -31,6 +31,7 @@ type NavCatLinks = {
 
 type NavCategory = {
   category: string;
+  root: string;
   links: NavCatLinks[];
 };
 
@@ -95,7 +96,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           <NavigationMenuList>
             {nav_items.map((item: NavCategory) => (
               <NavigationMenuItem key={item.category}>
-                <NavigationMenuTrigger>{item.category}</NavigationMenuTrigger>
+                <NavigationMenuTrigger>
+                  <Link href={item.root}>{item.category}</Link>
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid p-2 md:grid-cols-2 w-[500px]">
                     {item.links.map((NavCatLinks) => (
@@ -104,7 +107,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                         title={NavCatLinks.title}
                         href={NavCatLinks.href}
                       >
-                        {NavCatLinks.description !== "" ? NavCatLinks.description : ""}
+                        {NavCatLinks.description !== ""
+                          ? NavCatLinks.description
+                          : ""}
                       </ListItem>
                     ))}
                   </ul>
