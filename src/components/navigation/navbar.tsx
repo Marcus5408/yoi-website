@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       }
     >
       <Link
-        className="flex gap-2 items-center justify-center flex-none"
+        className="flex gap-1 items-center justify-center flex-none"
         href="/"
       >
         <div className="logo h-75 w-75 pr-4">
@@ -65,12 +65,12 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <div className="text-xl leading-5">
           <h1 className="m-0">Youth</h1>
           <h1 className="m-0">Oceanic</h1>
-          <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4">
+          <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-2 dark:decoration-yoi-blue-4">
             Initiative
           </h1>
         </div>
       </Link>
-      <NavigationMenu className="pr-4 ml-auto flex gap-4 items-center">
+      <div className="pr-4 ml-auto flex gap-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon">
@@ -91,9 +91,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <NavigationMenuList>
-          {
-            nav_items.map((item: NavCategory) => (
+        <NavigationMenu className="flex items-center">
+          <NavigationMenuList>
+            {nav_items.map((item: NavCategory) => (
               <NavigationMenuItem key={item.category}>
                 <NavigationMenuTrigger>{item.category}</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -104,16 +104,16 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                         title={NavCatLinks.title}
                         href={NavCatLinks.href}
                       >
-                        {NavCatLinks.description}
+                        {NavCatLinks.description !== "" ? NavCatLinks.description : ""}
                       </ListItem>
                     ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-            ))
-          }
-        </NavigationMenuList>
-      </NavigationMenu>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
     </header>
   );
 };
