@@ -4,6 +4,8 @@ import YOINav from "@/components/navigation/navigation.tsx";
 import Banner from "@/components/banners/banner";
 import ProjectCard from "@/components/project-card";
 import YOIFooter from "@/components/footer";
+import Image from "next/image";
+import projects from "./projects.json";
 
 export default function Home() {
   return (
@@ -25,12 +27,12 @@ export default function Home() {
             Our Projects
           </h1>
           <div className="container grid grid-cols-1 gap-6 px-4 md:grid-cols-2 lg:grid-cols-3 md:px-6">
-            {[...Array(6)].map((e, index) => (
+            {projects.map((e, index) => (
               <ProjectCard
                 key={index}
-                title={`Project ${index}`}
-                description={`This is a description of project ${index}`}
-                image="/shaun-low-v8Un2Roo1Ak-unsplash.jpg"
+                title={projects[index].title}
+                description={projects[index].description}
+                image={projects[index].image}
                 link="#"
               />
             ))}

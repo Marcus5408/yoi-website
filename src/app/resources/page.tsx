@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 
 export default function RedirectSite() {
-  redirect("/about/team");
+  redirect("/resources/opportunities");
 
   return (
     <main className="w-screen h-screen flex flex-col items-center text-center justify-center bg-yoi-white dark:bg-yoi-black text-yoi-black dark:text-yoi-white">
@@ -9,10 +9,10 @@ export default function RedirectSite() {
       <p>
         Redirecting you to{" "}
         <a
-          href="/about/team"
+          href="/resources/opportunities"
           className="text-yoi-blue-1 dark:text-yoi-blue-5"
         >
-          theyoi.org/about/team
+          theyoi.org/resources/opportunities
         </a>
         ...
       </p>

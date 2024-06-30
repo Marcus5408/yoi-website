@@ -24,20 +24,20 @@ export default function Home() {
           <TextSection
             title="Find Opportunities"
             description="Look through our curated opportunity database to find an event or opportunity being hosted by us or our partners organizations. We have a variety of opportunities for all ages and skill levels."
-            link="/volunteer"
+            link="/join/volunteer"
             buttonText="Find an Opportunity"
           />
           <TextSection
             title="Join A Chapter"
             description="Are you a student? Join a chapter at your school or start one! We have chapters throughout the US and are always looking for new members to join our mission."
-            link="/chapters"
+            link="/join/chapters"
             buttonText="Find a Chapter"
             side="right"
           />
           <TextSection
             title="Volunteer"
             description="Join our team of volunteers and help us make a difference. We have a variety of opportunities for all ages and skill levels."
-            link="/opportunities?provider=YOI"
+            link="/join/opportunities?provider=YOI"
             buttonText="Contact Us"
           />
         </section>

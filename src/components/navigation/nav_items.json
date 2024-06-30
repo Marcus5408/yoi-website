@@ -17,21 +17,21 @@
   },
   {
     "category": "Get Involved",
-    "root": "/get-involved",
+    "root": "/join",
     "links": [
       {
         "title": "Join Us",
-        "href": "/get-involved/join",
+        "href": "/join/join",
         "description": "Help us make a difference in the world"
       },
       {
         "title": "Find a Chapter",
-        "href": "/get-involved/chapters",
+        "href": "/join/chapters",
         "description": "Find a local YOI chapter near you"
       },
       {
         "title": "Donate",
-        "href": "/get-involved/donate",
+        "href": "/join/donate",
         "description": "Support our mission by donating"
       }
     ]
@@ -41,17 +41,17 @@
     "root": "/projects",
     "links": [
       {
-        "title": "Project 1",
-        "href": "/projects/project-1",
-        "description": "Learn more about our first project and how you can get involved."
+        "title": "World Ocean Day 2024 Zine",
+        "href": "/projects/world-ocean-day-2024-zine",
+        "description": "See artworks and writings submitted by youth around the world for World Ocean Day 2024."
       },
       {
-        "title": "Project 2",
-        "href": "/projects/project-2",
-        "description": "Learn more about our second project and how you can get involved."
+        "title": "The Maritime Logs",
+        "href": "/projects/the-maritime-logs",
+        "description": "Read the entries from our monthly newsletter, The Maritime Logs."
       },
       {
-        "title": "More Projects",
+        "title": "All Projects",
         "href": "/projects",
         "description": "View all of our projects and learn how you can get involved."
       }
@@ -59,12 +59,12 @@
   },
   {
     "category": "Opportunities",
-    "root": "/opportunities",
+    "root": "/resources",
     "links": [
       {
-        "title": "Blog",
-        "href": "/resources/blog",
-        "description": "Read our latest blog posts and stay up to date on the latest news."
+        "title": "Opportunities Database",
+        "href": "/resources/database",
+        "description": "Find opportunities to get involved in ocean conservation."
       },
       {
         "title": "FAQ",
