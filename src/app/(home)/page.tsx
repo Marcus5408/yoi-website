@@ -53,16 +53,16 @@ const Component = () => {
     });
   }, [api]);
   return (
-    <div className="flex flex-col min-h-[100dvh] w-screen">
+    <div className="flex flex-col w-screen">
       <YOINav />
-      <main className="flex-1 z-1">
+      <main className="flex-1 flex-col">
         <Banner bg="/header.jpg">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             Learn. <br />
             Discuss. <br />
             Advocate. <br />
           </h1>
-          <p className="text-gray-500 md:text-xl dark:text-gray-400">
+          <p className="text-gray-800 md:text-xl dark:text-gray-400">
             The Youth Oceanic Initiative was founded to educate younger
             generations about the oceans. Join us and help us educate the next
             generation of ocean stewards.
