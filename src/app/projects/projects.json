@@ -4,8 +4,8 @@
     "description": "See artworks and writings submitted by youth around the world for World Ocean Day 2024.",
     "type": "zine",
     "status": "completed",
-    "image": "/shaun-low-v8Un2Roo1Ak-unsplash.jpg",
-    "link": "/projects/world-ocean-day-2024-zine",
+    "image": "/projects/wod2024.jpg",
+    "link": "/projects/WOD2024",
     "tags": [
       "art",
       "writing"
@@ -16,8 +16,8 @@
     "description": "Sign our petition to ensure the Hudson Canyon's designation as a marine sanctuary.",
     "type": "petition",
     "status": "active",
-    "image": "/shaun-low-v8Un2Roo1Ak-unsplash.jpg",
-    "link": "/projects/save-the-hudson-canyon",
+    "image": "/projects/hudson_canyon.jpg",
+    "link": "https://www.change.org/p/save-the-hudson-canyon-ensure-its-designation-as-a-marine-sanctuary",
     "tags": [
       "petition",
       "marine sanctuary",
@@ -29,8 +29,8 @@
     "description": "Sign our petition to set a national limit on industrial fishing nets.",
     "type": "petition",
     "status": "active",
-    "image": "/shaun-low-v8Un2Roo1Ak-unsplash.jpg",
-    "link": "/projects/fight-overfishing",
+    "image": "/projects/fight_overfishing.jpg",
+    "link": "https://www.change.org/p/fight-overfishing-set-a-national-limit-on-industrial-fishing-nets",
     "tags": [
       "petition",
       "overfishing",
@@ -42,7 +42,7 @@
     "description": "Read the entries from our monthly newsletter, The Maritime Logs.",
     "type": "newsletter",
     "status": "active",
-    "image": "/shaun-low-v8Un2Roo1Ak-unsplash.jpg",
+    "image": "/projects/the-maritime-logs.jpg",
     "link": "/projects/the-maritime-logs",
     "tags": [
       "newsletter",
