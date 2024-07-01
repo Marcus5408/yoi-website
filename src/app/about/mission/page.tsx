@@ -15,9 +15,7 @@ export default function Home() {
             For the Ocean.
           </h1>
           <p className="max-w-[600px] text-gray-800 md:text-xl dark:text-gray-400">
-            We are a team of passionate individuals dedicated to educating
-            today&apos;s youth about modern ocean threats and empowering them to
-            advocate for solutions.
+            YOI aims to provide young individuals from all around the globe, regardless of their background, with opportunities to expand their knowledge, gain experience in youth-led advocacy, access resources, and collaborate with others in all fields relating to our ocean.
           </p>
         </Banner>
         <section className="items-center justify-between px-5 lg:px-10 py-10 pb-20">
