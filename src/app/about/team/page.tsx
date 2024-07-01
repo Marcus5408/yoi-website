@@ -28,7 +28,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             We&apos;re creating oceanic stewards.
           </h1>
-          <p className="max-w-[600px] text-gray-700 md:text-xl dark:text-gray-400">
+          <p className="max-w-[600px] text-gray-800 md:text-xl dark:text-gray-400">
             Our mission is to educate the public about ocean threats and empower
             today&apos;s youth through advocacy of existing and potential
             solutions.

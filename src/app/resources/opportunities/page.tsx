@@ -25,7 +25,7 @@ export default function Home() {
           <h1 className="text-4xl tracking-tight sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             Help Us Make a Difference
           </h1>
-          <p className="max-w-[600px] text-gray-700 md:text-xl dark:text-gray-400">
+          <p className="max-w-[600px] text-gray-800 md:text-xl dark:text-gray-400">
             Help us fulfil our mission to educate the public and empower
             today&apos;s youth. Discover opportunities to get involved.
           </p>

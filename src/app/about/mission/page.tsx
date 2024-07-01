@@ -14,7 +14,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             For the Ocean.
           </h1>
-          <p className="max-w-[600px] text-gray-700 md:text-xl dark:text-gray-400">
+          <p className="max-w-[600px] text-gray-800 md:text-xl dark:text-gray-400">
             We are a team of passionate individuals dedicated to educating
             today&apos;s youth about modern ocean threats and empowering them to
             advocate for solutions.
