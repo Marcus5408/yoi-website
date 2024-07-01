@@ -22,6 +22,7 @@ import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import nav_items from "./nav_items.json";
+import "material-icons/iconfont/round.css";
 
 type NavCatLinks = {
   title: string;
@@ -118,6 +119,18 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
+        <Button
+          variant="default"
+          size="default"
+          className="text-yoi-white"
+        >
+          <Link href="/donate">
+            <div className="flex items-center gap-2">
+              <span className="material-icons-round">payments</span>
+              <span>Donate</span>
+            </div>
+          </Link>
+        </Button>
       </div>
     </header>
   );
