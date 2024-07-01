@@ -5,13 +5,34 @@ import React from "react";
 
 type BannerDesktopProps = {
   bg?: string;
+  size?: "small" | "medium" | "large";
   children?: React.ReactNode;
 };
 
-const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, children }) => {
+const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, size, children }) => {
+  let section_size = "min-h-96";
+  let div_size = "h-[95svh]"
+  switch (size) {
+    case "small":
+      section_size = "min-h-76";
+      div_size = "h-[75svh]"
+      break;
+    case "medium":
+      section_size = "min-h-86";
+      div_size = "h-[85svh]"
+      break;
+    case "large":
+      section_size = "min-h-96";
+      div_size = "h-[95svh]"
+      break;
+    case undefined:
+      section_size = "min-h-96";
+      div_size = "h-[95svh]"
+      break;
+  };
   return (
-    <section className="w-screen p-0 m-0 min-h-96 relative top-0 left-0">
-      <div className="h-[95svh]">
+    <section className={"w-screen p-0 m-0 relative top-0 left-0 " + section_size}>
+      <div className={div_size}>
         <div className="w-screen">
           <Image
             alt="Hero"
