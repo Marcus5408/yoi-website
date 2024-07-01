@@ -33,7 +33,7 @@ export default function Home() {
                 title={projects[index].title}
                 description={projects[index].description}
                 image={projects[index].image}
-                link="#"
+                link={projects[index].link}
               />
             ))}
           </div>
