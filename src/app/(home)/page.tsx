@@ -67,7 +67,11 @@ const Component = () => {
             generations about the oceans. Join us and help us educate the next
             generation of ocean stewards.
           </p>
-          <Button className="w-[75%]">Join Now</Button>
+          <Button className="w-[75%]">
+            <Link href="/join">
+            Join Now
+            </Link>
+            </Button>
         </Banner>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-yoi-white dark:bg-yoi-black">
           <div className="container px-4 md:px-6">
@@ -76,7 +80,7 @@ const Component = () => {
                 alt="Program"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
                 height="310"
-                src="/wexor-tmg-L-2p8fapOA8-unsplash.jpg"
+                src="/projects/wod2024.jpg"
                 width="550"
               />
               <div className="flex flex-col justify-center space-y-4">
@@ -97,7 +101,7 @@ const Component = () => {
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link
                     className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                    href="#"
+                    href="/projects/WOD2024"
                   >
                     Learn More
                   </Link>
@@ -166,7 +170,7 @@ const Component = () => {
               ))}
             </Accordion>
             <Button className="mx-auto w-[20em]">
-              <Link href="#">Meet Our Full Team</Link>
+              <Link href="/about/team">Meet Our Full Team</Link>
             </Button>
           </div>
         </section>
