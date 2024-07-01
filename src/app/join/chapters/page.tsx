@@ -14,7 +14,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             Find A YOI Chapter
           </h1>
-          <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+          <p className="max-w-[600px] text-gray-700 md:text-xl dark:text-gray-400">
             Use our interactive map to find a YOI chapter near you. If you
             don&apos;t see a chapter near you, consider starting one!
           </p>

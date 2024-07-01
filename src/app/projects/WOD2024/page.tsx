@@ -14,7 +14,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             World Ocean Day 2024 Zine
           </h1>
-          <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+          <p className="max-w-[600px] text-gray-700 md:text-xl dark:text-gray-400">
             To commemorate World Ocean Day 2024, we organized a contest inviting
             young individuals to contribute their artistic or literary
             creations. A selection of these submissions was then curated into a

@@ -87,7 +87,7 @@ const Component = () => {
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                     World Ocean Day 2024 Zine
                   </h2>
-                  <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  <p className="max-w-[600px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                     In addition to educating the youth, the Youth Oceanic
                     Initiative also has a number of projects that help to
                     protect the oceans. The rest of this is sample text to be
