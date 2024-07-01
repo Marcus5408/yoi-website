@@ -24,8 +24,8 @@ export default function Home() {
           <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center">
             Our Principles
           </h1>
-          <div className="pt-12 px-60 flex gap-20">
-            <div className="w-[30%] text-center flex flex-col items-center">
+          <div className="pt-12 px-auto sm:px-60 flex flex-col sm:flex-row gap-20">
+            <div className="sm:w-[30%] text-center flex flex-col items-center">
               <div className="h-24 w-24 rounded-full bg-yoi-blue-4 flex items-center justify-center">
                 <SchoolIcon className="fill-yoi-white size-14" />
               </div>
@@ -35,7 +35,7 @@ export default function Home() {
                 for our oceans.
               </p>
             </div>
-            <div className="w-[30%] text-center flex flex-col items-center">
+            <div className="sm:w-[30%] text-center flex flex-col items-center">
               <div className="h-24 w-24 rounded-full bg-yoi-blue-4 flex items-center justify-center">
                 <ForumIcon className="fill-yoi-white size-14" />
               </div>
@@ -45,7 +45,7 @@ export default function Home() {
                 solutions.
               </p>
             </div>
-            <div className="w-[30%] text-center flex flex-col items-center">
+            <div className="sm:w-[30%] text-center flex flex-col items-center">
               <div className="h-24 w-24 rounded-full bg-yoi-blue-4 flex items-center justify-center">
                 <CampaignIcon className="fill-yoi-white size-14" />
               </div>
