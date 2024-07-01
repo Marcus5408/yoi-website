@@ -37,7 +37,7 @@
     "links": [
       {
         "title": "World Ocean Day 2024 Zine",
-        "href": "/projects/world-ocean-day-2024-zine",
+        "href": "/projects/WOD2024",
         "description": "See artworks and writings submitted by youth around the world for World Ocean Day 2024."
       },
       {
@@ -60,11 +60,6 @@
         "title": "Opportunities Database",
         "href": "/resources/database",
         "description": "Find opportunities to get involved in ocean conservation."
-      },
-      {
-        "title": "FAQ",
-        "href": "/resources/faq",
-        "description": "Find answers to frequently asked questions about the Youth Oceanic Initiative."
       }
     ]
   }
