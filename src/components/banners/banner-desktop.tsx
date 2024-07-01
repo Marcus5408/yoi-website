@@ -11,23 +11,21 @@ type BannerDesktopProps = {
 
 const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, size, children }) => {
   let section_size = "min-h-96";
-  let div_size = "h-[95svh]"
+  let div_size = "h-[95svh]";
   switch (size) {
     case "small":
-      section_size = "min-h-76";
-      div_size = "h-[75svh]"
+      section_size = "min-h-56";
+      div_size = "h-[55svh]"
       break;
     case "medium":
-      section_size = "min-h-86";
-      div_size = "h-[85svh]"
+      section_size = "min-h-71";
+      div_size = "h-[70svh]"
       break;
     case "large":
       section_size = "min-h-96";
       div_size = "h-[95svh]"
       break;
     case undefined:
-      section_size = "min-h-96";
-      div_size = "h-[95svh]"
       break;
   };
   return (
@@ -36,7 +34,7 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, size, children }) => 
         <div className="w-screen">
           <Image
             alt="Hero"
-            className="overflow-hidden z-1 h-[95svh] w-full object-cover"
+            className={"overflow-hidden z-1 w-full object-cover " + div_size}
             height="1920"
             src={bg ?? ""}
             width="1080"
