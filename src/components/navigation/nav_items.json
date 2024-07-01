@@ -21,18 +21,13 @@
     "links": [
       {
         "title": "Join Us",
-        "href": "/join/join",
+        "href": "/join/yoi",
         "description": "Help us make a difference in the world"
       },
       {
         "title": "Find a Chapter",
         "href": "/join/chapters",
         "description": "Find a local YOI chapter near you"
-      },
-      {
-        "title": "Donate",
-        "href": "/join/donate",
-        "description": "Support our mission by donating"
       }
     ]
   },
