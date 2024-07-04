@@ -75,7 +75,7 @@ function PDF({
     return (
       <>
         <p className="text-center pb-10 px-auto">
-          If you are on mobile, tap the image below to open the zine.
+          Tap the image below to open the preview.
         </p>
         <Link
           href="./The Maritime Logs Preview.pdf"
