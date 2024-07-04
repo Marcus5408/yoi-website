@@ -4,6 +4,9 @@ import YOINav from "@/components/navigation/navigation.tsx";
 import Banner from "@/components/banners/banner";
 import YOIFooter from "@/components/footer";
 import Image from "next/image";
+import Link from "next/link";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -20,13 +23,83 @@ export default function Home() {
           </p>
         </Banner>
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center -mt-12 pb-12">
-            To be added...
-          </h1>
-          <p>To be added...</p>
+          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 pb-14">
+            <div className="space-y-3">
+              <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center -mt-12 pb-2">
+                June 2024 Issue Preview
+              </h1>
+              <p className="mx-auto max-w-[75%] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Like what you see below? Enter your email here to get the latest
+                issue delivered to your inbox monthly.
+              </p>
+            </div>
+            {/* <iframe
+              title="Newsletter Signup"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
+              width="1320"
+              height="640"
+            >
+              Loading…
+            </iframe> */}
+            <div className="mx-auto w-full max-w-sm space-y-2">
+              <form className="flex space-x-2">
+                <Input
+                  className="max-w-lg flex-1"
+                  placeholder="Enter your email"
+                  type="email"
+                />
+                <Button type="submit">Sign Up</Button>
+              </form>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                Sign up to get our monthly newsletter in your inbox.&nbsp;
+                <Link className="underline underline-offset-2" href="#">
+                  Terms & Conditions
+                </Link>
+              </p>
+            </div>
+          </div>
+          <PDF className="w-screen sm:mx-auto sm:w-[90svw] h-[90svh]" />
         </section>
       </main>
       <YOIFooter />
     </div>
   );
+}
+
+function PDF({
+  className = "",
+  ...props
+}: React.HTMLProps<HTMLIFrameElement> & { zoom?: string; pageView?: string }) {
+  // if user is on mobile, open the pdf in a new tab
+  if (typeof window !== "undefined" && window.innerWidth < 768) {
+    return (
+      <>
+        <p className="text-center pb-10 px-auto">
+          If you are on mobile, tap the image below to open the zine.
+        </p>
+        <Link
+          href="./The Maritime Logs Preview.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={className}
+        >
+          <Image
+            src="/projects/the-maritime-logs.png"
+            alt="The Maritime Logs June Issue Preview PDF"
+            width={1920}
+            height={1080}
+            layout="responsive"
+          />
+        </Link>
+      </>
+    );
+  } else {
+    return (
+      <iframe
+        title="The Maritime Logs Preview PDF"
+        src="./The Maritime Logs Preview.pdf"
+        className={className}
+      />
+    );
+  }
 }
