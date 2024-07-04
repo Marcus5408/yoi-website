@@ -68,10 +68,8 @@ const Component = () => {
             generation of ocean stewards.
           </p>
           <Button className="w-[75%]">
-            <Link href="/join">
-            Join Now
-            </Link>
-            </Button>
+            <Link href="/join">Join Now</Link>
+          </Button>
         </Banner>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-yoi-white dark:bg-yoi-black">
           <div className="container px-4 md:px-6">
@@ -80,22 +78,25 @@ const Component = () => {
                 alt="Program"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
                 height="310"
-                src="/projects/wod2024.jpg"
+                src="/projects/WOD2024-thumb.png"
                 width="550"
               />
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                    Our Latest Project
+                    Featured Project
                   </div>
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                     World Ocean Day 2024 Zine
                   </h2>
                   <p className="max-w-[600px] text-gray-800 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                    In addition to educating the youth, the Youth Oceanic
-                    Initiative also has a number of projects that help to
-                    protect the oceans. The rest of this is sample text to be
-                    replaced. Please keep it descriptive and concise.
+                    In celebration of World Ocean Day 2024, YOI organized a
+                    competition inviting artists and writers to contribute their
+                    creations for inclusion in a zine, with the added incentive
+                    of a prize draw. The initiative garnered over 20 entries
+                    globally, culminating in the presentation of the zine at
+                    YOI&apos;s World Ocean Day 2024 live webinar on June 8th,
+                    2024.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
