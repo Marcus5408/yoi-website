@@ -43,7 +43,7 @@ function PDF({
     return (
       <>
         <p className="text-center pb-10 px-auto">
-          If you are on mobile, tap the image below to open the zine.
+          Tap the image below to open the zine.
         </p>
         <Link
           href="./YOI World Ocean Day 2024 Zine.pdf"
