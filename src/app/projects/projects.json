@@ -42,7 +42,7 @@
     "description": "Read the entries from our monthly newsletter, The Maritime Logs.",
     "type": "newsletter",
     "status": "active",
-    "image": "/projects/the-maritime-logs.png",
+    "image": "/projects/the-maritime-logs-thumb.png",
     "link": "/projects/the-maritime-logs",
     "tags": [
       "newsletter",
