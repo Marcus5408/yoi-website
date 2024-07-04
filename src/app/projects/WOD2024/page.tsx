@@ -26,11 +26,6 @@ export default function Home() {
           <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center -mt-12 pb-12">
             Final Zine
           </h1>
-          {window.innerWidth < 768 ? (
-            <p className="text-center pb-10 px-auto">
-              If you are on mobile, tap the image below to open the zine.
-            </p>
-          ) : null}
           <PDF className="w-screen sm:mx-auto sm:w-[90svw] h-[90svh]" />
         </section>
       </main>
@@ -46,20 +41,25 @@ function PDF({
   // if user is on mobile, open the pdf in a new tab
   if (typeof window !== "undefined" && window.innerWidth < 768) {
     return (
-      <Link
-        href="./YOI World Ocean Day 2024 Zine.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={"w-screen sm:mx-auto sm:w-[90svw] h-[90svh] " + className}
-      >
-        <Image
-          src="/projects/WOD2024.png"
-          alt="World Ocean Day 2024 Zine PDF"
-          width={1920}
-          height={1080}
-          layout="responsive"
-        />
-      </Link>
+      <>
+        <p className="text-center pb-10 px-auto">
+          If you are on mobile, tap the image below to open the zine.
+        </p>
+        <Link
+          href="./YOI World Ocean Day 2024 Zine.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={className}
+        >
+          <Image
+            src="/projects/WOD2024.png"
+            alt="World Ocean Day 2024 Zine PDF"
+            width={1920}
+            height={1080}
+            layout="responsive"
+          />
+        </Link>
+      </>
     );
   } else {
     return (
