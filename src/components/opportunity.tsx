@@ -1,5 +1,6 @@
 // the card component for each opportunity
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
   CardContent,
@@ -7,14 +8,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Link from "next/link";
 import { Link2Icon } from "@radix-ui/react-icons";
+import Link from "next/link";
 import React from "react";
 
 type OpportunityProps = {
   title?: string;
   provider?: string;
+  date?: string;
   image?: string;
   description?: string;
   link?: string;
@@ -24,6 +25,7 @@ type OpportunityProps = {
 const OpportunityCard: React.FC<OpportunityProps> = ({
   title,
   provider,
+  date,
   image,
   description,
   link,
@@ -38,8 +40,6 @@ const OpportunityCard: React.FC<OpportunityProps> = ({
     <Card className={className}>
       <CardHeader>
         <CardTitle className="text-2xl font-bold">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
         <div className="flex items-center space-x-4">
           <Avatar>
             <AvatarImage
@@ -51,11 +51,23 @@ const OpportunityCard: React.FC<OpportunityProps> = ({
           <div className="gap-2">
             <p className="font-medium">{provider}</p>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Oct 8, 2023
+              {
+                // format date from MM-DD-YYYY to Month DD, YYYY
+                `Posted ${new Date(date ?? "").toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}`
+              }
             </p>
           </div>
         </div>
+      </CardHeader>
+      <CardContent className="space-y-4">
         <div className="prose prose-sm dark:prose-invert">{description}</div>
+        <div>
+          <h2>Requirements</h2>
+        </div>
       </CardContent>
       <CardFooter className="flex justify-end">
         <Link
