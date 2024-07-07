@@ -7,15 +7,10 @@
     "description": "Are you a youth artist with a passion for ocean conservation? We are currently accepting submissions for ART FOR OCEANS, a youth art show that will be exhibited in June 2024 at Wild Geese Gallery in Upper West Side, Manhattan, NYC. This is a NOAA Ocean Guardian Youth Ambassador Community Event.",
     "provider": {
       "name": "NOAA Ocean Guardian Youth Ambassador Hayden Almeraz",
-      "link": "https://www.wildgeesegallery.com/art-of-the-o"
+      "url": "https://www.wildgeesegallery.com/art-of-the-o"
     },
-    "url": "https://docs.google.com/forms/d/e/1FAlpQLSfLjP6DMcTp6AxD3MNWcOYD5pPGr57pF5_S-LU-HwbQ5aRocA/viewform",
-    "availability": {
-      "allAges": false,
-      "min": 12,
-      "max": 24,
-      "open": false
-    },
+    "link": "https://docs.google.com/forms/d/e/1FAlpQLSfLjP6DMcTp6AxD3MNWcOYD5pPGr57pF5_S-LU-HwbQ5aRocA/viewform",
+    "availability": { "allAges": true, "min": 12, "max": 24, "open": true },
     "tags": ["art", "ocean conservation", "youth", "NYC"],
     "requirements": [
       "Art must speak to issues of ocean conservation and/or climate activism",
@@ -30,15 +25,10 @@
     "description": "Students are invited to enter the free 2024 Marine Art Contest. The theme is 'Exploring The Biological Diversity of Stellwagen Bank National Marine Sanctuary.' The art can depict one or more representative species, show a predator-prey relationship, or illustrate diverse species in a sanctuary habitat.",
     "provider": {
       "name": "Stellwagen Bank National Marine Sanctuary",
-      "link": "https://stellwagen.noaa.gov/"
+      "url": "https://stellwagen.noaa.gov/"
     },
-    "url": "https://stellwagen.noaa.gov/pgallery/kidscorner.html",
-    "availability": {
-      "allAges": true,
-      "min": 5,
-      "max": 18,
-      "open": true
-    },
+    "link": "https://stellwagen.noaa.gov/pgallery/kidscorner.html",
+    "availability": { "allAges": true, "min": 5, "max": 18, "open": true },
     "tags": ["art", "marine biology", "K-12", "online"],
     "requirements": [
       "Art must be original and created by the student",
