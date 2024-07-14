@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -52,15 +52,15 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        'yoi-black': '#1D1B34',
-        'yoi-blue-1': '#00246B',
-        'yoi-blue-2': '#04328D',
-        'yoi-white': '#FFFAF6',
-        'yoi-blue-3': '#057FBE',
-        'yoi-blue-4': '#21A0D2',
-        'yoi-blue-5': '#23BAD2',
-        'tml-yellow': '#FFBD59',
-        'tml-red': '#D80027'
+        "yoi-black": "#1D1B34",
+        "yoi-blue-1": "#00246B",
+        "yoi-blue-2": "#04328D",
+        "yoi-white": "#FFFAF6",
+        "yoi-blue-3": "#057FBE",
+        "yoi-blue-4": "#21A0D2",
+        "yoi-blue-5": "#23BAD2",
+        "tml-yellow": "#FFBD59",
+        "tml-red": "#D80027",
       },
       dark: "selector",
       borderRadius: {
@@ -87,9 +87,62 @@ const config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      radialShape: {
+        ellipse: "ellipse",
+        circle: "circle",
+      },
+      radialSize: {
+        "close-corner": "closest-corner",
+        "close-side": "closest-side",
+        "far-corner": "farthest-corner",
+        "far-side": "farthest-side",
+        "custom-size": (size: string) => size, // Allows custom sizes
+      },
+      radialPosition: {
+        center: "at center",
+        t: "at top",
+        r: "at right",
+        b: "at bottom",
+        l: "at left",
+        tr: "at top right",
+        br: "at bottom right",
+        bl: "at bottom left",
+        tl: "at top left",
+        custom: (position: string) => `at ${position}`, // Allows custom positions
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
+  plugins: [
+    require("tailwindcss-animate"),
+    require("tailwindcss/plugin")(function ({
+      matchUtilities,
+      theme,
+    }: {
+      matchUtilities: any;
+      theme: any;
+    }) {
+      matchUtilities(
+        {
+          "bg-radial": (value: string) => {
+        const [radialShape, radialSize, radialPosition] = value.split(" ");
+        const shape = theme(`radialShape.${radialShape}`, radialShape);
+        const size = theme(`radialSize.${radialSize}`, radialSize);
+        const position = theme(`radialPosition.${radialPosition}`, radialPosition);
+        return {
+          "background-image": `radial-gradient(${shape} ${size} ${position}, var(--tw-gradient-stops))`,
+        };
+          },
+        },
+        {
+          values: [
+        config.theme.extend.radialShape,
+        config.theme.extend.radialSize,
+        config.theme.extend.radialPosition,
+          ],
+        }
+      );
+    }),
+  ],
+} satisfies Config;
 
-export default config
+export default config;
