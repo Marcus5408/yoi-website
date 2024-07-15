@@ -205,7 +205,7 @@ class AddToDB(tk.Tk):
                 getattr(self, f"{entry}_entry").delete(0, tk.END)
 
     def add_entry(self):
-        self.entry_window("Add Entry")
+        self.entry("Add Entry")
 
     def edit_entry(self):
         # check amount of selected entries
