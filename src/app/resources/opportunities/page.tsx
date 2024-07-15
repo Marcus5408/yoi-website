@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   Accordion,
@@ -19,6 +19,7 @@ import opportunities from "./opportunity_db.json";
 
 type ProviderInfo = {
   name: string;
+  image: string;
   url: string;
 };
 
@@ -143,7 +144,10 @@ export default function Home() {
                 key={index}
                 title={item.title}
                 provider={item.provider.name}
-                date={item.posted}
+                posted_date={
+                    // format date from MM-DD-YYYY to Month DD, YYYY
+                    `Posted ${formatDate(item.posted)}`
+                }
                 image="/images/placeholder.png"
                 description={item.description}
                 link={item.link}
@@ -157,3 +161,14 @@ export default function Home() {
     </main>
   );
 }
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return isNaN(date.getTime())
+    ? "Date Unavailable"
+    : date.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      });
+};
