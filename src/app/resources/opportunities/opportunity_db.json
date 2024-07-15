@@ -364,7 +364,7 @@
     "availability": {
       "allAges": false,
       "min": 17,
-      "max": "99",
+      "max": 99,
       "open": true
     },
     "tags": ["ocean", "conservation", "science", "internship"],
@@ -390,7 +390,7 @@
     "availability": {
       "allAges": false,
       "min": 18,
-      "max": "99",
+      "max": 99,
       "open": true
     },
     "tags": ["marine science", "aquarium", "internship", "California"],
