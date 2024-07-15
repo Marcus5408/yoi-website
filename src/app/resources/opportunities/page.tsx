@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   Accordion,
@@ -15,8 +15,35 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/range-slider";
 import YOIFooter from "@/components/footer";
+import opportunities from "./opportunity_db.json";
 
-export default function Home() {
+type ProviderInfo = {
+  name: string;
+  image: string;
+  url: string;
+};
+
+type AvailabilityInfo = {
+  allAges: boolean;
+  min: number;
+  max: number;
+  open: boolean;
+};
+
+type OpportunityInfo = {
+  title: string;
+  posted: string;
+  deadline: string;
+  location: string;
+  description: string;
+  provider: ProviderInfo;
+  link: string;
+  availability: AvailabilityInfo;
+  tags: string[];
+  requirements: string[];
+};
+
+export default function OpportunitiesPage() {
   return (
     <main className="flex w-screen min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
       <YOINav />
@@ -111,14 +138,10 @@ export default function Home() {
           </div>
           {/* grid-cols-1 sm:grid-cols-2 md:grid-cols-2 2xl:grid-cols-4 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 2xl:grid-cols-4 gap-4">
-            {[...Array(60)].map((e, index) => (
+            {opportunities.map((item: OpportunityInfo, index) => (
               <OpportunityCard
                 key={index}
-                title={`Opportunity #${index + 1} Name`}
-                provider={`Provider #${index + 1} Name`}
-                image="/images/placeholder.png"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi."
-                link="#"
+                opportunityData={item}
                 className=""
               />
             ))}

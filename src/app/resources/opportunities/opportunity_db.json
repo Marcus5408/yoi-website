@@ -1,0 +1,167 @@
+[
+  {
+    "title": "ART FOR OCEANS Youth Art Show",
+    "posted": "04-24-2024",
+    "deadline": "05-01-2024",
+    "location": "Manhattan, NYC",
+    "description": "Are you a youth artist with a passion for ocean conservation? We are currently accepting submissions for ART FOR OCEANS, a youth art show that will be exhibited in June 2024 at Wild Geese Gallery in Upper West Side, Manhattan, NYC. This is a NOAA Ocean Guardian Youth Ambassador Community Event.",
+    "provider": {
+      "name": "NOAA Ocean Guardian Youth Ambassador Hayden Almeraz",
+      "image": "/opportunities/hayden_almeraz.jpg",
+      "url": "https://www.wildgeesegallery.com/art-of-the-o"
+    },
+    "link": "https://docs.google.com/forms/d/e/IFAlpQLSfLjPEDMcTp6AxD3MNWcOYD5pPGr57PF5_S-LU-HwbQ5aRocA/viewform",
+    "availability": { "allAges": false, "min": 12, "max": 24, "open": true },
+    "tags": ["ocean conservation", "youth art", "climate activism"],
+    "requirements": [
+      "Artist(s) must be aged 12 - 24",
+      "Art must speak to the issues of ocean conservation and/or climate activism",
+      "Submissions can be any medium of art"
+    ]
+  },
+  {
+    "title": "Marine Art Contest for Grades K-12",
+    "posted": "04-24-2024",
+    "deadline": "05-10-2024",
+    "location": "Online",
+    "description": "Students are invited to enter the free 2024 Marine Art Contest. The theme is 'Exploring The Biological Diversity of Stellwagen Bank National Marine Sanctuary.' The art can depict one or more representative species, show a predator-prey relationship, or illustrate diverse species in a sanctuary habitat.",
+    "provider": {
+      "name": "Stellwagen Bank National Marine Sanctuary",
+      "image": "/hetllo.png",
+      "url": "https://stellwagen.noaa.gov/"
+    },
+    "link": "https://stellwagen.noaa.gov/pgallery/kidscorner.html",
+    "availability": { "allAges": false, "min": 5, "max": 18, "open": true },
+    "tags": ["marine biology", "youth art", "sanctuary species"],
+    "requirements": ["Participants must be in grades K-12", "Contest will be held online with virtual submissions", "Prizes range from $50 cash rewards to certificates"]
+  },
+  {
+    "title": "YE4C Ripple Effect: Make Waves for Water Awareness Contest",
+    "posted": "04-24-2024",
+    "deadline": "05-12-2024",
+    "location": "Online",
+    "description": "Create an original piece of content (video, artwork, photography, or written) that highlights the importance of water in our communities or showcases potential careers in the field. No copyrighted or AI-generated submissions will be accepted. Three winners will be selected to receive $100 gift cards.",
+    "provider": {
+      "name": "Youth Engaged 4 Change",
+      "image": "/ye4c.png",
+      "url": "https://instagram.com/youthengaged4change"
+    },
+    "link": "https://engage.youth.gov/opportunities/2024-epa-water-contest",
+    "availability": {
+      "allAges": true,
+      "min": 13,
+      "max": 24,
+      "open": false
+    },
+    "tags": ["water", "ye4c"],
+    "requirements": [
+      "Participants must be aged 13 - 24",
+      "Content must be original and not copyrighted",
+      "Content must not be AI-generated",
+      "Content must highlight the importance of water or showcase potential careers in the field"
+    ]
+  },
+  {
+    "title": "Atlantic Marine Conservation Society Volunteering",
+    "posted": "04-24-2024",
+    "deadline": "12-31-9999",
+    "location": "New York",
+    "description": "AMCS' goal is to work in the communities of New York to better combat the issues challenging our environment. Volunteers can help in beach monitoring, fundraising/marketing, and volunteer program management. Volunteers may also work in Excel data analysis, grant writing, IT, etc.\\n\\nNote: Only volunteers aged 18+ can engage in hands-on contact with animals.",
+    "provider": {
+      "name": "Alantic Marine Conservation Society",
+      "image": "/amcs.png",
+      "url": "https://amseas.org"
+    },
+    "link": "https://www.amseas.org/volunteer",
+    "availability": {
+      "allAges": false,
+      "min": 12,
+      "max": 99,
+      "open": true
+    },
+    "tags": ["marine conservation", "volunteering", "community service"],
+    "requirements": [
+      "Volunteers must be aged 12+",
+      "Volunteers under 18 must be accompanied by an adult",
+      "Volunteers aged 18+ should be comfortable with hands-on contact with animals"
+    ]
+  },
+  {
+    "title": "National Weather Service Virtual School Talks",
+    "posted": "04-24-2024",
+    "deadline": "12-31-9999",
+    "location": "Online",
+    "description": "The National Weather Service (NWS) National School Outreach team is ready to teach and answer your students' weather questions. The NWS, through Google Meet, Zoom, or Skype, jumps into the classroom to help teach these topics to elementary through high school students.",
+    "provider": {
+      "name": "National Weather Service",
+      "image": "/nws.png",
+      "url": "https://weather.gov"
+    },
+    "link": "https://weather.gov/epz/education",
+    "availability": { "allAges": true, "min": 0, "max": 99, "open": true },
+    "tags": ["weather", "education", "virtual"],
+    "requirements": [
+      "Schools must have a Google Meet, Zoom, or Skype account",
+      "Sessions are available for elementary through high school students",
+      "Sessions are available for all ages"
+    ]
+  },
+  {
+    "title": "YOI World Ocean Day Zine",
+    "posted": "05-24-2024",
+    "deadline": "06-01-2024",
+    "location": "Online",
+    "description": "The Youth Oceanic Initiative (YOI) invites youth ages 13-21 to participate in their 2024 World Ocean Day Zine! Submit artwork(s) related to the ocean to be showcased live on their World Ocean Day webinar for a chance to win $20!",
+    "provider": {
+      "name": "Youth Oceanic Initiative",
+      "image": "/yoi.png",
+      "url": "https://theyoi.org"
+    },
+    "link": "https://docs.google.com/document/d/1uY19BTMtxxYnaoV53M5ktKIDjBYeLfH0l_NYa0Vsf5A/edit?usp=sharing",
+    "availability": { "allAges": false, "min": 13, "max": 21, "open": false },
+    "tags": ["ocean", "youth art", "zine"],
+    "requirements": [
+      "Participants must be aged 13 - 21",
+      "Artwork must be related to the ocean",
+      "Artwork will be showcased live on the World Ocean Day webinar"
+    ]
+  },
+  {
+    "title": "Bowseat 2024 Ocean Awareness Contest",
+    "posted": "05-24-2024",
+    "deadline": "06-10-2024",
+    "location": "Online",
+    "description": "The 2024 Ocean Awareness Contest encourages you to become a climate witness and share your own unique climate story. Use this opportunity to learn about the climate crisis and how it impacts your family and community, and to examine your individual responses to our evolving world.",
+    "provider": {
+      "name": "Bowseat Ocean Awareness Programs",
+      "image": "/bowseat.png",
+      "url": "https://bowseat.org"
+    },
+    "link": "https://bowseat.org/programs/ocean-awareness-contest/contest-overview/",
+    "availability": { "allAges": false, "min": 11, "max": 18, "open": false },
+    "tags": ["climate change", "youth art", "climate activism"],
+    "requirements": [
+      "Participants must be aged 11 - 18",
+      "Artwork must be related to the climate crisis",
+      "Artwork will be showcased in the 2024 Ocean Awareness Contest"
+    ]
+  },
+  {
+    "title": "Young Changemakers Fellowship",
+    "posted": "05-24-2024",
+    "deadline": "06-10-2024",
+    "location": "Online",
+    "description": "Participating students will design and carry out an action project to address an ocean or environmental issue in their home community and share their perspectives with NOAA on important ocean and environmental issues.",
+    "provider": {
+      "name": "National Oceanic and Atmospheric Administration (NOAA)",
+      "image": "/noaa.jpg",
+      "url": "https://noaa.gov"
+    },
+    "link": "https://noaa.gov/young-changemakers-fellowship",
+    "availability": { "allAges": false, "min": 13, "max": 18, "open": false },
+    "tags": ["environmental issues", "youth activism", "community projects"],
+    "requirements": [
+      "Must be a high school student at least 13 years of age"
+    ]
+  }
+]
