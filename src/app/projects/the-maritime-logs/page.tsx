@@ -7,10 +7,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
-  const [iframeWidth, setIframeWidth] = useState(window.innerWidth < 640 ? '100%' : '80%');
+  const [iframeWidth, setIframeWidth] = useState('');
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  useEffect(() => {
+    setIframeWidth(isTabletOrMobile ? '100%' : '80%');
+  }, [isTabletOrMobile]);
   return (
     <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-screen">
       <YOINav />

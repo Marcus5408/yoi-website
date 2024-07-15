@@ -32,28 +32,34 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
+import { useMediaQuery } from "react-responsive";
 
 const Component = () => {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+  const [iframeWidth, setIframeWidth] = useState<string>('0');
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  useEffect(() => {
+  }, [isTabletOrMobile]);
+  useEffect(() => {
+    setIframeWidth(isTabletOrMobile ? '100%' : '80%');
 
-  React.useEffect(() => {
     if (!api) {
       return;
     }
-
+    
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
-
+    
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
-  }, [api]);
 
-  const [iframeWidth, setIframeWidth] = useState(window.innerWidth < 640 ? '100%' : '80%');
+  }, [api, isTabletOrMobile]);
+
   return (
     <div className="flex w-screen flex-col">
       <YOINav />
