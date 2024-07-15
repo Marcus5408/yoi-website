@@ -44,7 +44,7 @@ type OpportunityInfo = {
 };
 
 export const opportunitiesData: OpportunityInfo[] = opportunities;
-export default function Home() {
+export default function OpportunitiesPage() {
   return (
     <main className="flex w-screen min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
       <YOINav />
