@@ -43,7 +43,9 @@ type OpportunityInfo = {
   requirements: string[];
 };
 
-export const opportunitiesData: OpportunityInfo[] = opportunities;
+const opportunitiesData: OpportunityInfo[] = opportunities;
+
+export { opportunitiesData };
 export default function OpportunitiesPage() {
   return (
     <main className="flex w-screen min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
