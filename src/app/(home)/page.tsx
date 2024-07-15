@@ -53,25 +53,27 @@ const Component = () => {
     });
   }, [api]);
   return (
-    <div className="flex flex-col w-screen">
+    <div className="flex w-screen flex-col">
       <YOINav />
       <main className="flex-1 flex-col">
-        <Banner bg="/header.jpg">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
+        <Banner bg="/heroes/dark_sea.png">
+          <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
             Learn. <br />
             Discuss. <br />
             Advocate. <br />
           </h1>
-          <p className="text-gray-800 md:text-xl dark:text-gray-400">
+          <p className="text-gray-800 dark:text-gray-400 md:text-xl">
             The Youth Oceanic Initiative was founded to educate younger
             generations about the oceans. Join us and help us educate the next
             generation of ocean stewards.
           </p>
           <Button className="w-[75%]">
-            <Link href="https://www.instagram.com/youth_oceanic_initiative/">Check Out Our Instagram!</Link>
+            <Link href="https://www.instagram.com/youth_oceanic_initiative/">
+              Check Out Our Instagram!
+            </Link>
           </Button>
         </Banner>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-yoi-white dark:bg-yoi-black">
+        <section className="w-full bg-yoi-white py-12 dark:bg-yoi-black md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
               <Image
@@ -89,7 +91,7 @@ const Component = () => {
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                     World Ocean Day 2024 Zine
                   </h2>
-                  <p className="max-w-[600px] text-gray-800 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  <p className="max-w-[600px] text-gray-800 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     In celebration of World Ocean Day 2024, YOI organized a
                     competition inviting artists and writers to contribute their
                     creations for inclusion in a zine, with the added incentive
@@ -125,7 +127,7 @@ const Component = () => {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Our Team
               </h2>
-              <p className="mx-auto max-w-[75%] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="mx-auto max-w-[75%] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Our team is composed of a diverse group of students all
                 passionate about the ocean.
               </p>
@@ -140,7 +142,7 @@ const Component = () => {
                   <AccordionTrigger className="text-2xl">
                     <div className="pl-4">{department.department}</div>
                   </AccordionTrigger>
-                  <AccordionContent className="w-[75vw] ">
+                  <AccordionContent className="w-[75vw]">
                     <Carousel
                       setApi={setApi}
                       plugins={[
@@ -153,7 +155,7 @@ const Component = () => {
                         {department.people.map((person, index) => (
                           <CarouselItem
                             key={index}
-                            className="md:basis-1/2 2xl:basis-1/3 space-y-2 flex grow"
+                            className="flex grow space-y-2 md:basis-1/2 2xl:basis-1/3"
                           >
                             <PersonMiniCard
                               key={index}
@@ -175,13 +177,13 @@ const Component = () => {
             </Button>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 border-t">
+        <section className="w-full border-t py-12 md:py-24 lg:py-32">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
                 Stay Connected
               </h2>
-              <p className="mx-auto max-w-[75%] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="mx-auto max-w-[75%] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Sign up for our monthly newsletter, <em>The Maritime Logs</em>,
                 to stay up-to-date on our latest initiatives and events.
               </p>
@@ -220,9 +222,9 @@ const Component = () => {
             className="fixed bottom-4 right-4 z-50 sm:hidden"
             variant="outline"
           >
-            <div className="flex gap-2 align-middle content-center items-center">
+            <div className="flex content-center items-center gap-2 align-middle">
               Sign up for our newsletter!
-              <MailIcon className="w-4 h-4" />
+              <MailIcon className="h-4 w-4" />
               <span className="sr-only">Open newsletter signup</span>
             </div>
           </Button>
