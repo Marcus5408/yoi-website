@@ -84,7 +84,7 @@ function PDF({
           className={className}
         >
           <Image
-            src="/projects/the-maritime-logs.png"
+            src="/projects/the-maritime-logs.jpg"
             alt="The Maritime Logs June Issue Preview PDF"
             width={1920}
             height={1080}
