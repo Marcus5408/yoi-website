@@ -19,7 +19,7 @@ export default function Home() {
     <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
       <YOINav />
       <main className="z-1 flex-1">
-        <Banner bg="/heroes/shaun-low-v8Un2Roo1Ak-unsplash.jpg" size="small">
+        <Banner bg="/heroes/shaun-low-v8Un2Roo1Ak-unsplash.jpg" size="medium">
           <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
             World Ocean Day 2024 Zine
           </h1>
@@ -30,7 +30,7 @@ export default function Home() {
             zine.
           </p>
         </Banner>
-        <section className="w-full py-12 md:py-24 lg:py-32 px-8 sm:px-0">
+        <section className="w-full px-8 py-12 pt-24 sm:px-0 md:py-24 lg:py-32">
           <h1 className="-mt-12 pb-12 text-center text-3xl font-bold sm:text-4xl xl:text-4xl/none">
             Thank you to all the participants!
           </h1>
@@ -44,7 +44,7 @@ export default function Home() {
             artists that will receive monetary prizes from YOI during the
             webinar, and the winners were...
           </p>
-          <div className="flex flex-col gap-6 sm:gap-20 px-4 pt-6 sm:pt-12 sm:flex-row sm:px-96">
+          <div className="flex flex-col gap-6 px-4 pt-6 sm:flex-row sm:gap-20 sm:px-96 sm:pt-12">
             <Card className="sm:w-1/2">
               <CardHeader>
                 <div className="flex items-center justify-center gap-4">
@@ -55,7 +55,9 @@ export default function Home() {
                     />
                     <AvatarFallback>KL</AvatarFallback>
                   </Avatar>
-                  <CardTitle className="font-medium">Kevin Lin, Age 17</CardTitle>
+                  <CardTitle className="font-medium">
+                    Kevin Lin, Age 17
+                  </CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -80,7 +82,9 @@ export default function Home() {
                     />
                     <AvatarFallback>AS</AvatarFallback>
                   </Avatar>
-                  <CardTitle className="font-medium">Ava Saucedo, Age 17</CardTitle>
+                  <CardTitle className="font-medium">
+                    Ava Saucedo, Age 17
+                  </CardTitle>
                 </div>
               </CardHeader>
               <CardContent>

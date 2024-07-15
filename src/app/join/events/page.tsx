@@ -36,7 +36,7 @@ export default function Home() {
             we&apos;re currently running!
           </p>
         </Banner>
-        <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+        <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl pt-12 sm:pt-0">
           Current Events
         </h1>
         <TextSection
@@ -59,8 +59,11 @@ export default function Home() {
                     </CardHeader>
                     <CardContent>
                       <CardDescription className="font-medium">
-                        {event.date}
+                        {`This event happened on ${event.date}.`}
                       </CardDescription>
+                      <br />
+                      Event Description:
+                      <br />
                       <CardDescription>{event.description}</CardDescription>
                     </CardContent>
                   </Card>

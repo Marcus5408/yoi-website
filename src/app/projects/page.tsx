@@ -22,7 +22,7 @@ export default function Home() {
             solutions.
           </p>
         </Banner>
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-12 md:py-24 lg:py-32 pt-24 sm:pt-12">
           <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center -mt-12 pb-12">
             Our Projects
           </h1>

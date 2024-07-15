@@ -12,6 +12,7 @@ type BannerDesktopProps = {
 const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, size, children }) => {
   let section_size = "min-h-96";
   let div_size = "h-[95svh]";
+  let pad_top = "";
   switch (size) {
     case "small":
       section_size = "min-h-56";
@@ -19,7 +20,8 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, size, children }) => 
       break;
     case "medium":
       section_size = "min-h-71";
-      div_size = "h-[70svh]"
+      div_size = "h-[70svh]";
+      pad_top = "pt-12";
       break;
     case "large":
       section_size = "min-h-96";
@@ -39,8 +41,8 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, size, children }) => 
             src={bg ?? ""}
             width="1080"
           />
-          <div className="flex flex-col justify-center space-y-4 absolute inset-0 w-2/3 lg:w-1/2 pl-[5%] pr-8 bg-gradient-to-r from-yoi-blue-4 dark:from-yoi-blue-1 from-40% to-transparent">
-            <div className="space-y-2 w-2/3 drop-shadow-xl">{children}</div>
+          <div className="flex flex-col justify-center space-y-4 absolute inset-0 w-3/4 2xl:w-1/2 pl-[5%] pr-8 bg-gradient-to-r from-yoi-blue-4 dark:from-yoi-blue-1 from-40% to-transparent">
+            <div className={"space-y-2 w-3/4 xl:w-2/3 drop-shadow-xl " + pad_top}>{children}</div>
           </div>
         </div>
       </div>
