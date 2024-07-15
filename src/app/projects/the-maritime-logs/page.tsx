@@ -8,13 +8,14 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
   const [iframeWidth, setIframeWidth] = useState('');
-  
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
   useEffect(() => {
-    setIframeWidth(window.innerWidth < 640 ? '100%' : '80%');
-  }, []);
+    setIframeWidth(isTabletOrMobile ? '100%' : '80%');
+  }, [isTabletOrMobile]);
   return (
     <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-screen">
       <YOINav />
