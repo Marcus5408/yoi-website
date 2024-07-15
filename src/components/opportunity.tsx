@@ -8,70 +8,126 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Link2Icon } from "@radix-ui/react-icons";
+import { AvatarIcon, Link2Icon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import React from "react";
 
+type ProviderInfo = {
+  name: string;
+  image: string;
+  url: string;
+};
+
+type AvailabilityInfo = {
+  allAges: boolean;
+  min: number;
+  max: number;
+  open: boolean;
+};
+
+type OpportunityInfo = {
+  title: string;
+  posted: string;
+  deadline: string;
+  location: string;
+  description: string;
+  provider: ProviderInfo;
+  link: string;
+  availability: AvailabilityInfo;
+  tags: string[];
+  requirements: string[];
+};
+
 type OpportunityProps = {
-  title?: string;
-  provider?: string;
-  date?: string;
-  image?: string;
-  description?: string;
-  link?: string;
+  opportunityData: OpportunityInfo;
   className?: string;
 };
 
 const OpportunityCard: React.FC<OpportunityProps> = ({
-  title,
-  provider,
-  date,
-  image,
-  description,
-  link,
+  opportunityData,
   className,
 }) => {
-  const checkedName = provider ?? "Provider Name";
+  const data = opportunityData;
+  const checkedName = data.provider.name ?? "Provider Name";
   const splitName = checkedName.split(" ");
   const initials = `${splitName[0].charAt(0)}`;
-  const checkedLink = link ?? "#";
+  const checkedLink = data.link ?? "#";
 
   return (
-    <Card className={className}>
-      <CardHeader>
-        <CardTitle className="text-2xl font-bold">{title}</CardTitle>
+    <Card className={`flex h-full flex-col ${className}`}>
+      <CardHeader className="grow-0">
+        <CardTitle className="h-16 overflow-hidden align-text-bottom text-2xl font-bold">
+          {data.title}
+        </CardTitle>
         <div className="flex items-center space-x-4">
           <Avatar>
             <AvatarImage
-              alt={provider}
-              src={image ?? "/images/placeholder.png"}
+              alt={data.provider.name}
+              src={data.provider.image ?? "/images/placeholder.png"}
             />
             <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
-          <div className="gap-2">
-            <p className="font-medium">{provider}</p>
+          <div className="gap-2 self-start">
+            <p className="font-medium leading-4">{data.provider.name}</p>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              {
-                // format date from MM-DD-YYYY to Month DD, YYYY
-                `Posted ${new Date(date ?? "").toLocaleDateString("en-US", {
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                })}`
-              }
+              {data.posted
+                ? `Posted ${formatDate(data.posted)}`
+                : "Unknown post date"}
             </p>
           </div>
         </div>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="prose prose-sm dark:prose-invert">{description}</div>
+      <CardContent className="grow space-y-4">
+        <div className="prose prose-sm dark:prose-invert">
+          {data.description}
+        </div>
+        {
+          // add requirements section if there are any and add the requirements as an unordered list
+          data.requirements.length > 0 ? (
+            <div>
+              <h2>Requirements</h2>
+              <ul className="list-outside list-disc pl-5">
+                {data.requirements.map((requirement, index) => (
+                  <li key={index}>{requirement}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null
+        }
         <div>
-          <h2>Requirements</h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Deadline:{" "}
+            {data.deadline === "12-31-9999"
+              ? "No Deadline"
+              : formatDate(data.deadline)}
+          </p>
         </div>
       </CardContent>
-      <CardFooter className="flex justify-end">
+      <CardFooter className="flex grow-0">
+        {
+          // add a horizontal scroll of all the tags on the card
+          data.tags.length > 0 ? (
+            <div className="scrollbar-hide -mb-3 overflow-x-scroll">
+              <div className="flex gap-2">
+                {data.tags.map((tag, index) => (
+                  <div
+                    key={index}
+                    className="text-nowrap rounded-full bg-gray-900 px-4 py-1"
+                  >
+                    {tag}
+                  </div>
+                ))}
+                <div className="w-6 flex-shrink-0" />
+              </div>
+              <div className="bg-red w-24 absolute top-0 left-0"></div>
+            </div>
+          ) : null
+        }
+        {
+          // create a gradient behind the link but in front of the tags
+        }
         <Link
-          className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+          className="ml-auto inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
           href={checkedLink}
         >
           <Link2Icon className="h-4 w-4" />
@@ -82,3 +138,14 @@ const OpportunityCard: React.FC<OpportunityProps> = ({
 };
 
 export default OpportunityCard;
+
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return isNaN(date.getTime())
+    ? "Date Unavailable"
+    : date.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      });
+}
