@@ -32,7 +32,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import React from "react";
+import React, { useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
 const Component = () => {
@@ -52,6 +52,8 @@ const Component = () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
+
+  const [iframeWidth, setIframeWidth] = useState(window.innerWidth < 640 ? '100%' : '80%');
   return (
     <div className="flex w-screen flex-col">
       <YOINav />
@@ -142,7 +144,7 @@ const Component = () => {
                   <AccordionTrigger className="text-2xl">
                     <div className="pl-4">{department.department}</div>
                   </AccordionTrigger>
-                  <AccordionContent className="w-[100vw] sm:w-[75vw] justify-center">
+                  <AccordionContent className="w-[100vw] lg:w-[75vw] justify-center">
                     <Carousel
                       setApi={setApi}
                       plugins={[
@@ -188,14 +190,16 @@ const Component = () => {
                 to stay up-to-date on our latest initiatives and events.
               </p>
             </div>
-            {/* <iframe
+            <iframe
               title="Newsletter Signup"
               src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
-              width="1320"
+              width={iframeWidth}
               height="640"
+              className="mx-auto"
             >
               Loading…
-            </iframe> */}
+            </iframe>
+            { /*
             <div className="mx-auto w-full max-w-sm space-y-2">
               <form className="flex space-x-2">
                 <Input
@@ -211,7 +215,7 @@ const Component = () => {
                   Terms & Conditions
                 </Link>
               </p>
-            </div>
+            </div> */ }
           </div>
         </section>
       </main>
@@ -239,6 +243,16 @@ const Component = () => {
               newsletter.
             </DrawerDescription>
           </DrawerHeader>
+          <iframe
+              title="Newsletter Signup"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
+              width={iframeWidth}
+              height="340"
+              className="mx-auto"
+            >
+              Loading…
+            </iframe>
+          { /*
           <div className="px-4">
             <form className="space-y-4">
               <div className="space-y-2">
@@ -254,6 +268,7 @@ const Component = () => {
               </Button>
             </form>
           </div>
+          */ }
           <DrawerFooter>
             <DrawerClose asChild>
               <Button variant="outline">Close</Button>
