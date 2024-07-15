@@ -68,7 +68,7 @@ const Component = () => {
             generation of ocean stewards.
           </p>
           <Button className="w-[75%]">
-            <Link href="/join">Join Now</Link>
+            <Link href="https://www.instagram.com/youth_oceanic_initiative/">Check Out Our Instagram!</Link>
           </Button>
         </Banner>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-yoi-white dark:bg-yoi-black">

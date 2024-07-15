@@ -7,11 +7,17 @@ export default function YOIFooter() {
       © 2024 The Youth Oceanic Initiative. All rights reserved.
     </p>
     <nav className="sm:ml-auto flex gap-2 sm:gap-6">
-      <Link className="text-xs hover:underline underline-offset-4" href="#">
-        Privacy
+      <Link className="text-xs hover:underline underline-offset-4" href="https://www.instagram.com/youth_oceanic_initiative/">
+        Instagram
       </Link>
-      <Link className="text-xs hover:underline underline-offset-4" href="#">
-        Terms of Service
+      <Link className="text-xs hover:underline underline-offset-4" href="https://www.tiktok.com/@youthoceanicinitiative">
+        TikTok
+      </Link>
+      <Link className="text-xs hover:underline underline-offset-4" href="mailto:youthoceanicinitiative@gmail.com">
+        Email
+      </Link>
+      <Link className="text-xs hover:underline underline-offset-4" href="mailto:youthoceanicinitiative+webmaster@gmail.com?cc=issac@matchaflavored.site&subject=YOI%20Website%20Issue">
+        Website Problems?
       </Link>
     </nav>
   </footer>
