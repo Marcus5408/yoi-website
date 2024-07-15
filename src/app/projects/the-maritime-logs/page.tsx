@@ -7,8 +7,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export default function Home() {
+  const [iframeWidth, setIframeWidth] = useState(window.innerWidth < 640 ? '100%' : '80%');
   return (
     <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-screen">
       <YOINav />
@@ -33,14 +35,16 @@ export default function Home() {
                 issue delivered to your inbox monthly.
               </p>
             </div>
-            {/* <iframe
+            <iframe
               title="Newsletter Signup"
               src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
-              width="1320"
-              height="640"
+              width={iframeWidth}
+              height="340"
+              className="mx-auto"
             >
               Loading…
-            </iframe> */}
+            </iframe>
+            { /*
             <div className="mx-auto w-full max-w-sm space-y-2">
               <form className="flex space-x-2">
                 <Input
@@ -57,6 +61,7 @@ export default function Home() {
                 </Link>
               </p>
             </div>
+            */ }
           </div>
           <PDF className="w-screen sm:mx-auto sm:w-[90svw] h-[90svh]" />
         </section>
