@@ -29,7 +29,7 @@ export default function Home() {
             the YOI team every month.
           </p>
         </Banner>
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-12 md:py-24 lg:py-32 pt-24 sm:pt-12">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 pb-14">
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center -mt-12 pb-2">
