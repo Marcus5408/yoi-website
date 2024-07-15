@@ -24,7 +24,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-screen">
       <YOINav />
       <main className="flex-1 z-1">
-        <Banner bg="/shaun-low-v8Un2Roo1Ak-unsplash.jpg">
+        <Banner bg="/heroes/blue_mountains.png">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             We&apos;re creating oceanic stewards.
           </h1>

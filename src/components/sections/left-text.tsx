@@ -19,7 +19,7 @@ const LeftText: React.FC<LeftTextProps> = ({
   buttonText,
   className,
 }) => {
-  const checkedImage = image ?? "/wexor-tmg-L-2p8fapOA8-unsplash.jpg";
+  const checkedImage = image ?? "/heroes/wexor-tmg-L-2p8fapOA8-unsplash.jpg";
   const checkedLink = link ?? "#";
   const checkedButtonText = buttonText ?? "Learn More";
 

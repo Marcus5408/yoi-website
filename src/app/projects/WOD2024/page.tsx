@@ -19,7 +19,7 @@ export default function Home() {
     <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
       <YOINav />
       <main className="z-1 flex-1">
-        <Banner bg="/shaun-low-v8Un2Roo1Ak-unsplash.jpg" size="small">
+        <Banner bg="/heroes/shaun-low-v8Un2Roo1Ak-unsplash.jpg" size="small">
           <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
             World Ocean Day 2024 Zine
           </h1>

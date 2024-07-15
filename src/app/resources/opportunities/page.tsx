@@ -48,7 +48,7 @@ export default function OpportunitiesPage() {
     <main className="flex w-screen min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
       <YOINav />
       <section className="flex-1 z-1">
-        <Banner bg="/shaun-low-v8Un2Roo1Ak-unsplash.jpg">
+        <Banner bg="/heroes/deep_dark.png">
           <h1 className="text-4xl tracking-tight sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             Help Us Make a Difference
           </h1>

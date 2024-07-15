@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   className,
 }) => {
   const checkedTitle = title ?? "Project Title";
-  const checkedImage = image ?? "/wexor-tmg-L-2p8fapOA8-unsplash.jpg";
+  const checkedImage = image ?? "/heroes/wexor-tmg-L-2p8fapOA8-unsplash.jpg";
   const checkedLink = link ?? "#";
 
   return (
