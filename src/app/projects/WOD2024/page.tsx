@@ -44,8 +44,8 @@ export default function Home() {
             artists that will receive monetary prizes from YOI during the
             webinar, and the winners were...
           </p>
-          <div className="flex flex-col gap-20 pt-12 sm:flex-row sm:px-96">
-            <Card className="w-1/2">
+          <div className="flex flex-col gap-6 sm:gap-20 px-4 pt-6 sm:pt-12 sm:flex-row sm:px-96">
+            <Card className="sm:w-1/2">
               <CardHeader>
                 <div className="flex items-center justify-center gap-4">
                   <Avatar className="size-[8rem] content-center">
@@ -70,7 +70,7 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="w-1/2">
+            <Card className="sm:w-1/2">
               <CardHeader>
                 <div className="flex items-center justify-center gap-4">
                   <Avatar className="size-[8rem] content-center">
