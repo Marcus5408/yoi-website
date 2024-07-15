@@ -30,7 +30,7 @@ export default function Home() {
             zine.
           </p>
         </Banner>
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-12 md:py-24 lg:py-32 px-8 sm:px-0">
           <h1 className="-mt-12 pb-12 text-center text-3xl font-bold sm:text-4xl xl:text-4xl/none">
             Thank you to all the participants!
           </h1>
@@ -51,11 +51,11 @@ export default function Home() {
                   <Avatar className="size-[8rem] content-center">
                     <AvatarImage
                       src="/projects/wod2024/kevin.png"
-                      alt="Kevin Lin, 17"
+                      alt="Kevin Lin, Age 17"
                     />
                     <AvatarFallback>KL</AvatarFallback>
                   </Avatar>
-                  <CardTitle className="font-medium">Kevin Lin, 17</CardTitle>
+                  <CardTitle className="font-medium">Kevin Lin, Age 17</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -76,11 +76,11 @@ export default function Home() {
                   <Avatar className="size-[8rem] content-center">
                     <AvatarImage
                       src="/projects/wod2024/ava.jpeg"
-                      alt="Ava Saucedo, 17"
+                      alt="Ava Saucedo, Age 17"
                     />
                     <AvatarFallback>AS</AvatarFallback>
                   </Avatar>
-                  <CardTitle className="font-medium">Ava Saucedo, 17</CardTitle>
+                  <CardTitle className="font-medium">Ava Saucedo, Age 17</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>

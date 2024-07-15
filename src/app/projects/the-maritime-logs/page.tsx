@@ -26,7 +26,7 @@ export default function Home() {
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 pb-14">
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center -mt-12 pb-2">
-                June 2024 Issue Preview
+                July 2024 Issue Preview
               </h1>
               <p className="mx-auto max-w-[75%] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                 Like what you see below? Enter your email here to get the latest
