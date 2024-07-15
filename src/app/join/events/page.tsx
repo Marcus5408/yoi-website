@@ -37,7 +37,7 @@ export default function Home() {
           </p>
         </Banner>
         <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          Current Event
+          Current Events
         </h1>
         <TextSection
           title="YOI Ocean Activism Workshop"
