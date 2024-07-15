@@ -28,6 +28,11 @@
         "title": "Find a Chapter",
         "href": "/join/chapters",
         "description": "Find a local YOI chapter near you"
+      },
+      {
+        "title": "Participate in an Event",
+        "href": "/join/events",
+        "description": "Join us at an upcoming event or look at past events"
       }
     ]
   },
