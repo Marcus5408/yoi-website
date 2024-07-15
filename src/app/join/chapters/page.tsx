@@ -53,15 +53,15 @@ export default function Home() {
         <YOINav />
         <main className="z-1 flex flex-col">
           <section className="h-screen w-screen pb-12 md:pb-24 lg:pb-32">
-            <div id="map-container" className="h-screen pt-96" />
+            <div id="map-container" className="h-screen" />
           </section>
           <div className="z-2 bg-radial-ellipse-tl absolute from-yoi-blue-4 from-25% to-transparent pl-6 pr-6 pt-20 dark:from-yoi-blue-1 sm:pt-28">
             <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
-              Find A Location
+              Find A Chapter
             </h1>
-            <p className="max-w-[600px] text-gray-800 dark:text-gray-400 md:text-xl">
-              Use our interactive map to find a location near you. If you
-              don&apos;t see a location near you, consider starting one!
+            <p className="max-w-[600px] text-gray-800 dark:text-gray-400 md:text-xl pt-4">
+              Use our interactive map to find a YOI chapter near you. If you
+              don&apos;t see one near you, consider starting one!
             </p>
           </div>
         </main>
