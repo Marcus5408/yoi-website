@@ -1,12 +1,35 @@
 "use client";
 
+import geojson from "./chapters.json";
+import Head from "next/head";
+import mapboxgl from "mapbox-gl";
 import React, { useEffect, useState } from "react";
 import YOIFooter from "@/components/footer";
 import YOINav from "@/components/navigation/navigation";
-import Banner from "@/components/banners/banner";
-import mapboxgl from "mapbox-gl";
-import Head from "next/head";
 import { useMediaQuery } from "react-responsive";
+import "./mapbox.css";
+import InstagramSVG from "./instagram.svg"
+import { InstagramLogoIcon } from "@radix-ui/react-icons";
+
+type Feature = {
+  type: "Feature";
+  geometry: {
+    type:
+      | "Point"
+      | "LineString"
+      | "Polygon"
+      | "MultiPoint"
+      | "MultiLineString"
+      | "MultiPolygon";
+    coordinates: [number, number];
+  };
+  properties: {
+    title: string;
+    description: string;
+    instagram: string;
+    "marker-color": string;
+  };
+};
 
 export default function Home() {
   const [pageIsMounted, setPageIsMounted] = useState(false);
@@ -37,16 +60,45 @@ export default function Home() {
         },
       },
     });
+
+    geojson.features.map((feature) => {
+      const [lng, lat] = feature.geometry.coordinates;
+      new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map);
+      new mapboxgl.Marker()
+        .setLngLat([lng, lat])
+        .setPopup(
+          new mapboxgl.Popup({ offset: 40, className: "custom-popup" }) // add popups
+        .setHTML(
+          `<h3>${feature.properties.title}</h3>
+          <p>${feature.properties.description}</p>
+          <a
+            href="https://instagram.com/${feature.properties.instagram}"
+            target="_blank"
+            rel="noreferrer"
+            class="flex gap-1 items-center"
+          >
+            <img src="/instagram.svg" alt="Instagram" class="w-5 h-5" />
+            <div>@${feature.properties.instagram}</div>
+          </a>
+          `,
+        ),
+        )
+        .addTo(map);
+    });
+
+    map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
+
     return () => {
       document.head.removeChild(link);
+      map.remove();
     };
   }, [zoom]);
   return (
     <>
       <Head>
-        <link
-          rel="stylesheet"
-          href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css"
+        <script
+          async
+          src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"
         />
       </Head>
       <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
@@ -59,7 +111,7 @@ export default function Home() {
             <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
               Find A Chapter
             </h1>
-            <p className="max-w-[600px] text-gray-800 dark:text-gray-400 md:text-xl pt-4">
+            <p className="max-w-[600px] pt-4 text-gray-800 dark:text-gray-400 md:text-xl">
               Use our interactive map to find a YOI chapter near you. If you
               don&apos;t see one near you, consider starting one!
             </p>

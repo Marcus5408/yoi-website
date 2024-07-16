@@ -1,0 +1,18 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.976477, 40.689003]
+      },
+      "properties": {
+        "title": "BTHS YOI",
+        "description": "Brooklyn Tech's YOI Chapter. Also the birthplace of the YOI.",
+        "instagram": "bths.oceanic",
+        "marker-color": "#23BAD2"
+      }
+    }
+  ]
+}
