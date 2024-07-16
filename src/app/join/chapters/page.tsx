@@ -1,13 +1,15 @@
 "use client";
 
+import geojson from "./chapters.json";
+import Head from "next/head";
+import mapboxgl from "mapbox-gl";
 import React, { useEffect, useState } from "react";
 import YOIFooter from "@/components/footer";
 import YOINav from "@/components/navigation/navigation";
-import Banner from "@/components/banners/banner";
-import mapboxgl from "mapbox-gl";
-import Head from "next/head";
 import { useMediaQuery } from "react-responsive";
-import geojson from "./chapters.json";
+import "./mapbox.css";
+import InstagramSVG from "./instagram.svg"
+import { InstagramLogoIcon } from "@radix-ui/react-icons";
 
 type Feature = {
   type: "Feature";
@@ -59,64 +61,45 @@ export default function Home() {
       },
     });
 
-    for (const feature of geojson.features) {
-      // create a HTML element for each feature
-      const el = document.createElement("div");
-      el.className = "marker";
-      el.style.backgroundImage = "url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png')";
-      el.style.color = feature.properties["marker-color"];
-      el.style.backgroundSize = "cover";
-      el.style.width = "50px";
-      el.style.height = "50px";
-      el.style.borderRadius = "50%";
-      el.style.cursor = "pointer";
-
-      // make a marker for each feature and add to the map
+    geojson.features.map((feature) => {
       const [lng, lat] = feature.geometry.coordinates;
-      new mapboxgl.Marker(el)
+      new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map);
+      new mapboxgl.Marker()
         .setLngLat([lng, lat])
         .setPopup(
-          new mapboxgl.Popup({ offset: 25, className: 'custom-popup' }) // add popups
+          new mapboxgl.Popup({ offset: 40, className: "custom-popup" }) // add popups
         .setHTML(
-          `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`,
+          `<h3>${feature.properties.title}</h3>
+          <p>${feature.properties.description}</p>
+          <a
+            href="https://instagram.com/${feature.properties.instagram}"
+            target="_blank"
+            rel="noreferrer"
+            class="flex gap-1 items-center"
+          >
+            <img src="/instagram.svg" alt="Instagram" class="w-5 h-5" />
+            <div>@${feature.properties.instagram}</div>
+          </a>
+          `,
         ),
         )
         .addTo(map);
-    }
+    });
+
+    map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
 
     return () => {
       document.head.removeChild(link);
+      map.remove();
     };
   }, [zoom]);
   return (
     <>
       <Head>
-        <script async src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js" />
-        <style jsx>{`
-          body {
-            margin: 0;
-            padding: 0;
-          }
-
-          .marker {
-            background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
-            background-size: cover;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-          }
-
-          .mapboxgl-popup {
-            max-width: 200px;
-          }
-
-          .mapboxgl-popup-content {
-            text-align: center;
-            font-family: "Open Sans", sans-serif;
-            background: red;
-          }
-        `}</style>
+        <script
+          async
+          src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"
+        />
       </Head>
       <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
         <YOINav />
