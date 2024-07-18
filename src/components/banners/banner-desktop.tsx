@@ -31,9 +31,9 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, size, children }) => 
       break;
   };
   return (
-    <section className={"w-screen p-0 m-0 relative top-0 left-0 " + section_size}>
+    <section className={"w-full p-0 m-0 relative top-0 left-0 " + section_size}>
       <div className={div_size}>
-        <div className="w-screen">
+        <div className="w-100">
           <Image
             alt="Hero"
             className={"overflow-hidden z-1 w-full object-cover " + div_size}
