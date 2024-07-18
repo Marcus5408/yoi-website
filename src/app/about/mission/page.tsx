@@ -7,7 +7,7 @@ import "material-icons/iconfont/round.css";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-screen">
+    <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-full">
       <YOINav />
       <main className="flex-1 z-1">
         <Banner bg="/heroes/shaun-low-v8Un2Roo1Ak-unsplash.jpg" size="medium">

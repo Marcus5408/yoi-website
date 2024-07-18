@@ -61,7 +61,7 @@ const Component = () => {
   }, [api, isTabletOrMobile]);
 
   return (
-    <div className="flex w-screen flex-col">
+    <div className="flex w-full flex-col">
       <YOINav />
       <main className="flex-1 flex-col">
         <Banner bg="/heroes/dark_sea.png">
