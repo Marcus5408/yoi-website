@@ -24,7 +24,12 @@ const LeftText: React.FC<LeftTextProps> = ({
   const checkedButtonText = buttonText ?? "Learn More";
 
   return (
-    <section className={"w-full py-12 md:py-24 lg:py-24 bg-yoi-white dark:bg-yoi-black " + className}>
+    <section
+      className={
+        "w-full bg-yoi-white py-12 dark:bg-yoi-black md:py-24 lg:py-24 " +
+        className
+      }
+    >
       <div className="container px-4 md:px-6">
         <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
           <Image
@@ -39,7 +44,7 @@ const LeftText: React.FC<LeftTextProps> = ({
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 {title}
               </h2>
-              <p className="max-w-[600px] text-gray-800 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="max-w-[600px] text-gray-800 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 {description}
               </p>
             </div>

@@ -24,34 +24,33 @@ export const metadata: Metadata = {
   title: "YOI Website",
   description: "The Youth Oceanic Initiative website",
   openGraph: {
-    title: 'The YOI',
-    description: 'The official website of the Youth Oceanic Initiative.',
+    title: "The YOI",
+    description: "The official website of the Youth Oceanic Initiative.",
     // link to opengraph.png in public folder
-    url: 'https://www.theyoi.org',
+    url: "https://www.theyoi.org",
     images: [
       {
-        url: 'https://www.theyoi.org/opengraph.png',
+        url: "https://www.theyoi.org/opengraph.png",
         width: 1280,
         height: 720,
-        alt: 'The YOI',
+        alt: "The YOI",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@site',
-    creator: '@handle',
-    title: 'The YOI',
-    description: 'The official website of the Youth Oceanic Initiative.',
+    card: "summary_large_image",
+    site: "@site",
+    creator: "@handle",
+    title: "The YOI",
+    description: "The official website of the Youth Oceanic Initiative.",
     images: [
       {
-        url: 'https://www.theyoi.org/opengraph.png',
-        alt: 'The YOI',
+        url: "https://www.theyoi.org/opengraph.png",
+        alt: "The YOI",
       },
     ],
   },
 };
-
 
 export default function RootLayout({
   children,

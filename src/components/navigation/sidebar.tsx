@@ -50,12 +50,12 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   return (
     <header
       className={
-        "px-4 py-4 pb-8 lg:px-6 h-58 flex items-center bg-gradient-to-b from-yoi-blue-4 dark:from-yoi-blue-1 from-30% to-transparent to-75% w-screen" +
+        "h-58 flex w-screen items-center bg-gradient-to-b from-yoi-blue-4 from-30% to-transparent to-75% px-4 py-4 pb-8 dark:from-yoi-blue-1 lg:px-6" +
         className
       }
     >
       <Link
-        className="flex gap-2 items-center justify-center flex-none"
+        className="flex flex-none items-center justify-center gap-2"
         href="/"
       >
         <div className="logo h-50 w-50">
@@ -71,7 +71,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
         <div className="text-m leading-4">
           <h1 className="m-0">Youth</h1>
           <h1 className="m-0">Oceanic</h1>
-          <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4">
+          <h1 className="m-0 mb-2 underline decoration-yoi-blue-4 decoration-wavy decoration-2 underline-offset-4">
             Initiative
           </h1>
         </div>
@@ -81,14 +81,14 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
       <Sheet>
         <SheetTrigger asChild>
           <Button className="rounded-full" size="icon" variant="ghost">
-            <MenuIcon className="h-6 w-6 mr-3" />
+            <MenuIcon className="mr-3 h-6 w-6" />
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
         <SheetContent className="w-72 bg-yoi-black text-yoi-white" side="right">
-          <div className="flex h-20 items-center justify-between px-0 border-b border-gray-700">
+          <div className="flex h-20 items-center justify-between border-b border-gray-700 px-0">
             <Link
-              className="flex gap-2 items-center justify-center flex-none"
+              className="flex flex-none items-center justify-center gap-2"
               href="#"
             >
               <div className="logo h-50 w-50">
@@ -104,7 +104,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
               <div className="text-m leading-4">
                 <h1 className="m-0">Youth</h1>
                 <h1 className="m-0">Oceanic</h1>
-                <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-4">
+                <h1 className="m-0 mb-2 underline decoration-yoi-blue-4 decoration-wavy decoration-2 underline-offset-4">
                   Initiative
                 </h1>
               </div>
@@ -122,7 +122,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
                 <NavigationMenuItem key={item.category}>
                   <NavigationMenuTrigger>{item.category}</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid p-2 md:grid-cols-2 w-[500px]">
+                    <ul className="grid w-[500px] p-2 md:grid-cols-2">
                       {item.links.map((NavCatLinks) => (
                         <ListItem
                           key={NavCatLinks.title}
@@ -140,7 +140,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
           </NavigationMenu>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="default" className="w-full mt-6">
+              <Button variant="outline" size="default" className="mt-6 w-full">
                 <div className="flex gap-3 px-4">
                   <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                   <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -327,7 +327,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            className,
           )}
           {...props}
         >

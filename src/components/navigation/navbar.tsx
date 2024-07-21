@@ -46,12 +46,12 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
   return (
     <header
       className={
-        "px-4 py-4 pb-8 lg:px-6 h-83 flex items-center bg-gradient-to-b from-yoi-blue-4 from-50% dark:from-yoi-blue-1 to-transparent " +
+        "h-83 flex items-center bg-gradient-to-b from-yoi-blue-4 from-50% to-transparent px-4 py-4 pb-8 dark:from-yoi-blue-1 lg:px-6 " +
         className
       }
     >
       <Link
-        className="flex gap-1 items-center justify-center flex-none"
+        className="flex flex-none items-center justify-center gap-1"
         href="/"
       >
         <div className="logo h-75 w-75 pr-4">
@@ -67,12 +67,12 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <div className="text-xl leading-5">
           <h1 className="m-0">Youth</h1>
           <h1 className="m-0">Oceanic</h1>
-          <h1 className="m-0 mb-2 underline decoration-wavy decoration-2 underline-offset-4 decoration-yoi-blue-2 dark:decoration-yoi-blue-4">
+          <h1 className="m-0 mb-2 underline decoration-yoi-blue-2 decoration-wavy decoration-2 underline-offset-4 dark:decoration-yoi-blue-4">
             Initiative
           </h1>
         </div>
       </Link>
-      <div className="pr-4 ml-auto flex gap-4">
+      <div className="ml-auto flex gap-4 pr-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon">
@@ -101,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                   <Link href={item.root}>{item.category}</Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid p-2 md:grid-cols-2 w-[500px]">
+                  <ul className="grid w-[500px] p-2 md:grid-cols-2">
                     {item.links.map((NavCatLinks) => (
                       <ListItem
                         key={NavCatLinks.title}
@@ -119,11 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        <Button
-          variant="default"
-          size="default"
-          className="text-yoi-white"
-        >
+        <Button variant="default" size="default" className="text-yoi-white">
           <Link href="/donate">
             <div className="flex items-center gap-2">
               <span className="material-icons-round">payments</span>
@@ -149,7 +145,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            className,
           )}
           {...props}
         >
