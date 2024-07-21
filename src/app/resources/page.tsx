@@ -4,7 +4,7 @@ export default function RedirectSite() {
   redirect("/resources/opportunities");
 
   return (
-    <main className="w-screen h-screen flex flex-col items-center text-center justify-center bg-yoi-white dark:bg-yoi-black text-yoi-black dark:text-yoi-white">
+    <main className="flex h-screen w-screen flex-col items-center justify-center bg-yoi-white text-center text-yoi-black dark:bg-yoi-black dark:text-yoi-white">
       <h1 className="text-4xl">Automatic Redirect</h1>
       <p>
         Redirecting you to{" "}

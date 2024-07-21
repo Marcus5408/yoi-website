@@ -8,7 +8,7 @@ import YOIFooter from "@/components/footer";
 import YOINav from "@/components/navigation/navigation";
 import { useMediaQuery } from "react-responsive";
 import "./mapbox.css";
-import InstagramSVG from "./instagram.svg"
+import InstagramSVG from "./instagram.svg";
 import { InstagramLogoIcon } from "@radix-ui/react-icons";
 
 type Feature = {
@@ -68,8 +68,8 @@ export default function Home() {
         .setLngLat([lng, lat])
         .setPopup(
           new mapboxgl.Popup({ offset: 40, className: "custom-popup" }) // add popups
-        .setHTML(
-          `<h3>${feature.properties.title}</h3>
+            .setHTML(
+              `<h3>${feature.properties.title}</h3>
           <p>${feature.properties.description}</p>
           <a
             href="https://instagram.com/${feature.properties.instagram}"
@@ -81,7 +81,7 @@ export default function Home() {
             <div>@${feature.properties.instagram}</div>
           </a>
           `,
-        ),
+            ),
         )
         .addTo(map);
     });

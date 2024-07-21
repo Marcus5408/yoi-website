@@ -7,48 +7,51 @@ import "material-icons/iconfont/round.css";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-full">
+    <div className="flex min-h-screen w-full flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
       <YOINav />
-      <main className="flex-1 z-1">
+      <main className="z-1 flex-1">
         <Banner bg="/heroes/shaun-low-v8Un2Roo1Ak-unsplash.jpg" size="medium">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
+          <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
             For the Ocean.
           </h1>
-          <p className="max-w-[600px] text-gray-800 md:text-xl dark:text-gray-400">
-            YOI aims to provide young individuals from all around the globe, regardless of their background, with opportunities to expand their knowledge, gain experience in youth-led advocacy, access resources, and collaborate with others in all fields relating to our ocean.
+          <p className="max-w-[600px] text-gray-800 dark:text-gray-400 md:text-xl">
+            YOI aims to provide young individuals from all around the globe,
+            regardless of their background, with opportunities to expand their
+            knowledge, gain experience in youth-led advocacy, access resources,
+            and collaborate with others in all fields relating to our ocean.
           </p>
         </Banner>
-        <section className="items-center justify-between px-5 lg:px-10 py-10 pb-20">
-          <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center">
+        <section className="items-center justify-between px-5 py-10 pb-20 lg:px-10">
+          <h1 className="text-center text-3xl font-bold sm:text-4xl xl:text-4xl/none">
             Our Principles
           </h1>
-          <div className="pt-12 px-auto sm:px-60 flex flex-col sm:flex-row gap-20">
-            <div className="sm:w-[30%] text-center flex flex-col items-center">
-              <div className="h-24 w-24 rounded-full bg-yoi-blue-4 flex items-center justify-center">
-                <SchoolIcon className="fill-yoi-white size-14" />
+          <div className="px-auto flex flex-col gap-20 pt-12 sm:flex-row sm:px-60">
+            <div className="flex flex-col items-center text-center sm:w-[30%]">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-yoi-blue-4">
+                <SchoolIcon className="size-14 fill-yoi-white" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold pt-2">Learn</h2>
-              <p className="text-lg pt-5">
+              <h2 className="pt-2 text-2xl font-bold sm:text-3xl">Learn</h2>
+              <p className="pt-5 text-lg">
                 We believe that education is the key to creating a better future
                 for our oceans.
               </p>
             </div>
-            <div className="sm:w-[30%] text-center flex flex-col items-center">
-              <div className="h-24 w-24 rounded-full bg-yoi-blue-4 flex items-center justify-center">
-                <ForumIcon className="fill-yoi-white size-14" />
+            <div className="flex flex-col items-center text-center sm:w-[30%]">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-yoi-blue-4">
+                <ForumIcon className="size-14 fill-yoi-white" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold pt-2">Discuss</h2>
-              <p className="text-lg pt-5">
+              <h2 className="pt-2 text-2xl font-bold sm:text-3xl">Discuss</h2>
+              <p className="pt-5 text-lg">
                 We encourage open dialogue about ocean issues and potential
                 solutions.
               </p>
             </div>
-            <div className="sm:w-[30%] text-center flex flex-col items-center">
-              <div className="h-24 w-24 rounded-full bg-yoi-blue-4 flex items-center justify-center">
-                <CampaignIcon className="fill-yoi-white size-14" />
+            <div className="flex flex-col items-center text-center sm:w-[30%]">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-yoi-blue-4">
+                <CampaignIcon className="size-14 fill-yoi-white" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold pt-2">Advocate</h2>
-              <p className="text-lg pt-5">
+              <h2 className="pt-2 text-2xl font-bold sm:text-3xl">Advocate</h2>
+              <p className="pt-5 text-lg">
                 We advocate for change and empower youth to take action.
               </p>
             </div>

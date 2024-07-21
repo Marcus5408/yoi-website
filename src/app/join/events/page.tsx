@@ -36,7 +36,7 @@ export default function Home() {
             we&apos;re currently running!
           </p>
         </Banner>
-        <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl pt-12 sm:pt-0">
+        <h1 className="pt-12 text-center text-3xl font-bold tracking-tighter sm:pt-0 sm:text-4xl md:text-5xl">
           Current Events
         </h1>
         <TextSection
@@ -45,11 +45,11 @@ export default function Home() {
           link="https://forms.gle/hVaFoYV61DXd9EF9A"
           buttonText="Sign up!"
         ></TextSection>
-        <section className="flex flex-col w-full px-12 items-center">
+        <section className="flex w-full flex-col items-center px-12">
           <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Past Events
           </h1>
-          <Carousel className="h-auto py-6 sm:mx-24 w-[75vw]">
+          <Carousel className="h-auto w-[75vw] py-6 sm:mx-24">
             <CarouselContent>
               {pastEvents.map((event, index) => (
                 <CarouselItem key={index} className="basis-full lg:basis-1/2">

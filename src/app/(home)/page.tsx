@@ -40,24 +40,22 @@ const Component = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
-  const [iframeWidth, setIframeWidth] = useState<string>('0');
+  const [iframeWidth, setIframeWidth] = useState<string>("0");
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  useEffect(() => {}, [isTabletOrMobile]);
   useEffect(() => {
-  }, [isTabletOrMobile]);
-  useEffect(() => {
-    setIframeWidth(isTabletOrMobile ? '100%' : '80%');
+    setIframeWidth(isTabletOrMobile ? "100%" : "80%");
 
     if (!api) {
       return;
     }
-    
+
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
-    
+
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
-
   }, [api, isTabletOrMobile]);
 
   return (
@@ -150,7 +148,7 @@ const Component = () => {
                   <AccordionTrigger className="text-2xl">
                     <div className="pl-4">{department.department}</div>
                   </AccordionTrigger>
-                  <AccordionContent className="w-[100vw] lg:w-[75vw] justify-center">
+                  <AccordionContent className="w-[100vw] justify-center lg:w-[75vw]">
                     <Carousel
                       setApi={setApi}
                       plugins={[
@@ -205,7 +203,7 @@ const Component = () => {
             >
               Loading…
             </iframe>
-            { /*
+            {/*
             <div className="mx-auto w-full max-w-sm space-y-2">
               <form className="flex space-x-2">
                 <Input
@@ -221,7 +219,7 @@ const Component = () => {
                   Terms & Conditions
                 </Link>
               </p>
-            </div> */ }
+            </div> */}
           </div>
         </section>
       </main>
@@ -250,15 +248,15 @@ const Component = () => {
             </DrawerDescription>
           </DrawerHeader>
           <iframe
-              title="Newsletter Signup"
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
-              width={iframeWidth}
-              height="340"
-              className="mx-auto"
-            >
-              Loading…
-            </iframe>
-          { /*
+            title="Newsletter Signup"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
+            width={iframeWidth}
+            height="340"
+            className="mx-auto"
+          >
+            Loading…
+          </iframe>
+          {/*
           <div className="px-4">
             <form className="space-y-4">
               <div className="space-y-2">
@@ -274,7 +272,7 @@ const Component = () => {
               </Button>
             </form>
           </div>
-          */ }
+          */}
           <DrawerFooter>
             <DrawerClose asChild>
               <Button variant="outline">Close</Button>
