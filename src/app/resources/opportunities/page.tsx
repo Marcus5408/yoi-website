@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Accordion,
@@ -6,7 +6,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import YOINav from "@/components/navigation/navigation.tsx";
 import Banner from "@/components/banners/banner";
 import OpportunityCard from "@/components/opportunity";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -14,7 +13,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/range-slider";
-import YOIFooter from "@/components/footer";
 import opportunities from "./opportunity_db.json";
 
 type ProviderInfo = {
@@ -45,20 +43,16 @@ type OpportunityInfo = {
 
 export default function OpportunitiesPage() {
   return (
-    <main className="flex w-screen min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
-      <YOINav />
-      <section className="flex-1 z-1">
-        <Banner bg="/heroes/deep_dark.png">
-          <h1 className="text-4xl tracking-tight sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
-            Help Us Make a Difference
-          </h1>
-          <p className="max-w-[600px] text-gray-800 md:text-xl dark:text-gray-400">
-            Help us fulfil our mission to educate the public and empower
-            today&apos;s youth. Discover opportunities to get involved.
-          </p>
-        </Banner>
+    <main className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
+      <section className="z-1 flex-1">
+        <Banner
+          bg="/heroes/deep_dark.png"
+          title="Help Us Make a Difference"
+          description="Help us fulfil our mission to educate the public and
+            empower today's youth. Discover opportunities to get involved."
+        />
         {/* grid grid-cols-1 md:grid-cols-2 gap-8 py-8 md:py-12 */}
-        <div className="mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 px-12 py-8 md:py-12">
+        <div className="mx-auto grid grid-cols-1 gap-8 px-12 py-8 md:py-12 lg:grid-cols-[280px_1fr]">
           <div className="flex flex-col gap-4">
             <h2 className="text-lg font-semibold">Search Options</h2>
             <Input
@@ -71,7 +65,7 @@ export default function OpportunitiesPage() {
                 <AccordionTrigger className="flex w-full justify-between">
                   Category
                 </AccordionTrigger>
-                <AccordionContent className="space-y-2 mb-4 p-2">
+                <AccordionContent className="mb-4 space-y-2 p-2">
                   <Label className="flex items-center gap-2 font-normal">
                     <Checkbox id="category-advocacy" />
                     Advocacy
@@ -94,7 +88,7 @@ export default function OpportunitiesPage() {
                 <AccordionTrigger className="flex w-full justify-between">
                   Location
                 </AccordionTrigger>
-                <AccordionContent className="space-y-2 mb-4 p-2">
+                <AccordionContent className="mb-4 space-y-2 p-2">
                   <Label className="flex items-center gap-2 font-normal">
                     <Checkbox id="location-physical" />
                     In-Person
@@ -137,7 +131,7 @@ export default function OpportunitiesPage() {
             </Accordion>
           </div>
           {/* grid-cols-1 sm:grid-cols-2 md:grid-cols-2 2xl:grid-cols-4 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 2xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 2xl:grid-cols-4">
             {opportunities.map((item: OpportunityInfo, index) => (
               <OpportunityCard
                 key={index}
@@ -148,7 +142,6 @@ export default function OpportunitiesPage() {
           </div>
         </div>
       </section>
-      <YOIFooter />
     </main>
   );
 }

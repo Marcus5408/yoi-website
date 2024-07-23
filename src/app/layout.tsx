@@ -3,8 +3,9 @@ import { Abril_Fatface, DM_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import React from "react";
-import { useTheme } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import YOINav from "@/components/navigation/navigation";
+import YOIFooter from "@/components/footer";
 
 const dmsans = DM_Sans({
   subsets: ["latin"],
@@ -24,34 +25,33 @@ export const metadata: Metadata = {
   title: "YOI Website",
   description: "The Youth Oceanic Initiative website",
   openGraph: {
-    title: 'The YOI',
-    description: 'The official website of the Youth Oceanic Initiative.',
+    title: "The YOI",
+    description: "The official website of the Youth Oceanic Initiative.",
     // link to opengraph.png in public folder
-    url: 'https://www.theyoi.org',
+    url: "https://www.theyoi.org",
     images: [
       {
-        url: 'https://www.theyoi.org/opengraph.png',
+        url: "https://www.theyoi.org/opengraph.png",
         width: 1280,
         height: 720,
-        alt: 'The YOI',
+        alt: "The YOI",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@site',
-    creator: '@handle',
-    title: 'The YOI',
-    description: 'The official website of the Youth Oceanic Initiative.',
+    card: "summary_large_image",
+    site: "@site",
+    creator: "@handle",
+    title: "The YOI",
+    description: "The official website of the Youth Oceanic Initiative.",
     images: [
       {
-        url: 'https://www.theyoi.org/opengraph.png',
-        alt: 'The YOI',
+        url: "https://www.theyoi.org/opengraph.png",
+        alt: "The YOI",
       },
     ],
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -86,7 +86,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <YOINav />
           {children}
+          <YOIFooter />
         </ThemeProvider>
       </body>
     </html>

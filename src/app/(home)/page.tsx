@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import {
   DrawerTrigger,
@@ -14,8 +15,7 @@ import {
   DrawerContent,
   Drawer,
 } from "@/components/ui/drawer";
-import { Label } from "@/components/ui/label";
-import YOINav from "@/components/navigation/navigation.tsx";
+import YOINav from "@/components/navigation/navigation";
 import Banner from "@/components/banners/banner.tsx";
 import YOIFooter from "@/components/footer.tsx";
 import data from "../about/yoi-execs.json";
@@ -40,47 +40,36 @@ const Component = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
-  const [iframeWidth, setIframeWidth] = useState<string>('0');
+  const [iframeWidth, setIframeWidth] = useState<string>("0");
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  useEffect(() => {}, [isTabletOrMobile]);
   useEffect(() => {
-  }, [isTabletOrMobile]);
-  useEffect(() => {
-    setIframeWidth(isTabletOrMobile ? '100%' : '80%');
+    setIframeWidth(isTabletOrMobile ? "100%" : "80%");
 
     if (!api) {
       return;
     }
-    
+
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
-    
+
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
-
   }, [api, isTabletOrMobile]);
 
   return (
     <div className="flex w-full flex-col">
-      <YOINav />
       <main className="flex-1 flex-col">
-        <Banner bg="/heroes/dark_sea.png">
-          <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
-            Learn. <br />
-            Discuss. <br />
-            Advocate. <br />
-          </h1>
-          <p className="text-gray-800 dark:text-gray-400 md:text-xl">
-            The Youth Oceanic Initiative was founded to educate younger
-            generations about the oceans. Join us and help us educate the next
-            generation of ocean stewards.
-          </p>
-          <Button className="w-[75%]">
-            <Link href="https://www.instagram.com/youth_oceanic_initiative/">
-              Check Out Our Instagram!
-            </Link>
-          </Button>
-        </Banner>
+        <Banner
+          bg="/heroes/dark_sea.png"
+          title={"Learn.\nDiscuss.\nAdvocate."}
+          description="The Youth Oceanic Initiative was founded to educate
+          younger generations about the oceans. Join us and help us educate
+          the next generation of ocean stewards."
+          buttonName="Check out our Instagram!"
+          buttonLink="https://www.instagram.com/youth_oceanic_initiative/"
+        />
         <section className="w-full bg-yoi-white py-12 dark:bg-yoi-black md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
@@ -150,7 +139,7 @@ const Component = () => {
                   <AccordionTrigger className="text-2xl">
                     <div className="pl-4">{department.department}</div>
                   </AccordionTrigger>
-                  <AccordionContent className="w-[100vw] lg:w-[75vw] justify-center">
+                  <AccordionContent className="w-[100vw] justify-center lg:w-[75vw]">
                     <Carousel
                       setApi={setApi}
                       plugins={[
@@ -205,7 +194,7 @@ const Component = () => {
             >
               Loading…
             </iframe>
-            { /*
+            {/*
             <div className="mx-auto w-full max-w-sm space-y-2">
               <form className="flex space-x-2">
                 <Input
@@ -221,11 +210,10 @@ const Component = () => {
                   Terms & Conditions
                 </Link>
               </p>
-            </div> */ }
+            </div> */}
           </div>
         </section>
       </main>
-      <YOIFooter />
       <Drawer>
         <DrawerTrigger asChild>
           <Button
@@ -250,15 +238,15 @@ const Component = () => {
             </DrawerDescription>
           </DrawerHeader>
           <iframe
-              title="Newsletter Signup"
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
-              width={iframeWidth}
-              height="340"
-              className="mx-auto"
-            >
-              Loading…
-            </iframe>
-          { /*
+            title="Newsletter Signup"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
+            width={iframeWidth}
+            height="340"
+            className="mx-auto"
+          >
+            Loading…
+          </iframe>
+          {/*
           <div className="px-4">
             <form className="space-y-4">
               <div className="space-y-2">
@@ -274,7 +262,7 @@ const Component = () => {
               </Button>
             </form>
           </div>
-          */ }
+          */}
           <DrawerFooter>
             <DrawerClose asChild>
               <Button variant="outline">Close</Button>

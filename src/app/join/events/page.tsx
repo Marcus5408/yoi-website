@@ -1,9 +1,7 @@
 "use client";
 
-import YOINav from "@/components/navigation/navigation.tsx";
 import Banner from "@/components/banners/banner";
 import TextSection from "@/components/sections/text-section";
-import YOIFooter from "@/components/footer";
 import {
   Carousel,
   CarouselContent,
@@ -25,18 +23,15 @@ import pastEvents from "./past_events.json";
 export default function Home() {
   return (
     <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
-      <YOINav />
       <main className="z-1 flex-1">
-        <Banner bg="/heroes/wave.png" size="medium">
-          <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
-            YOI Events
-          </h1>
-          <p className="max-w-[600px] text-gray-800 dark:text-gray-400 md:text-xl">
-            We hold a variety of events throughout the year. Check out what
-            we&apos;re currently running!
-          </p>
-        </Banner>
-        <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl pt-12 sm:pt-0">
+        <Banner
+          bg="/heroes/wave.png"
+          size="medium"
+          title="YOI Events"
+          description="We hold a variety of events throughout the year.
+            Check out what events we're currently running!"
+        />
+        <h1 className="pt-12 text-center text-3xl font-bold tracking-tighter sm:pt-0 sm:text-4xl md:text-5xl">
           Current Events
         </h1>
         <TextSection
@@ -45,11 +40,11 @@ export default function Home() {
           link="https://forms.gle/hVaFoYV61DXd9EF9A"
           buttonText="Sign up!"
         ></TextSection>
-        <section className="flex flex-col w-full px-12 items-center">
+        <section className="flex w-full flex-col items-center px-12">
           <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Past Events
           </h1>
-          <Carousel className="h-auto py-6 sm:mx-24 w-[75vw]">
+          <Carousel className="h-auto w-[75vw] py-6 sm:mx-24">
             <CarouselContent>
               {pastEvents.map((event, index) => (
                 <CarouselItem key={index} className="basis-full lg:basis-1/2">
@@ -75,7 +70,6 @@ export default function Home() {
           </Carousel>
         </section>
       </main>
-      <YOIFooter />
     </div>
   );
 }

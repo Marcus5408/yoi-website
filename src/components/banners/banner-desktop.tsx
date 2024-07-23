@@ -2,14 +2,27 @@
 
 import Image from "next/image";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 type BannerDesktopProps = {
   bg?: string;
   size?: "small" | "medium" | "large";
-  children?: React.ReactNode;
+  title: string;
+  description: string;
+  button: {
+    text: string;
+    link: string;
+  } | null;
 };
 
-const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, size, children }) => {
+const BannerDesktop: React.FC<BannerDesktopProps> = ({
+  bg,
+  size,
+  title,
+  description,
+  button,
+}) => {
   let section_size = "min-h-96";
   let div_size = "h-[95svh]";
   let pad_top = "";
@@ -41,8 +54,25 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({ bg, size, children }) => 
             src={bg ?? ""}
             width="1080"
           />
-          <div className="flex flex-col justify-center space-y-4 absolute inset-0 w-3/4 2xl:w-1/2 pl-[5%] pr-8 bg-gradient-to-r from-yoi-blue-4 dark:from-yoi-blue-1 from-40% to-transparent">
-            <div className={"space-y-2 w-3/4 xl:w-2/3 drop-shadow-xl " + pad_top}>{children}</div>
+          <div className="absolute inset-0 flex w-3/4 flex-col justify-center space-y-4 bg-gradient-to-r from-yoi-blue-4 from-40% to-transparent pl-[5%] pr-8 dark:from-yoi-blue-1 2xl:w-1/2">
+            <div
+              className={"w-3/4 space-y-2 drop-shadow-xl xl:w-2/3 " + pad_top}
+            >
+              <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
+                {title}
+              </h1>
+              <p className="text-gray-800 dark:text-gray-400 md:text-xl">
+                {description}
+              </p>
+              {
+                // ternary to check for if button
+                button === null ? null : (
+                  <Button className="w-[75%]">
+                    <Link href={button.link}>{button.text}</Link>
+                  </Button>
+                )
+              }
+            </div>
           </div>
         </div>
       </div>

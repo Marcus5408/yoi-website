@@ -13,7 +13,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import YOINav from "@/components/navigation/navigation.tsx";
+import YOINav from "@/components/navigation/navigation";
 import Banner from "@/components/banners/banner.tsx";
 import YOIFooter from "@/components/footer.tsx";
 import data from "../yoi-execs.json";
@@ -21,21 +21,17 @@ import PersonCard from "@/components/person.tsx";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-screen">
-      <YOINav />
-      <main className="flex-1 z-1">
-        <Banner bg="/heroes/blue_mountains.png">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
-            We&apos;re creating oceanic stewards.
-          </h1>
-          <p className="max-w-[600px] text-gray-800 md:text-xl dark:text-gray-400">
-            Our mission is to educate the public about ocean threats and empower
-            today&apos;s youth through advocacy of existing and potential
-            solutions.
-          </p>
-        </Banner>
-        <section className="items-center justify-between w-screen px-5 lg:px-10 py-10 pb-20">
-          <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center">
+    <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
+      <main className="z-1 flex-1">
+        <Banner
+          bg="/heroes/blue_mountains.png"
+          title="We're creating oceanic stewards."
+          description="Our mission is to educate the public about ocean
+          threats and empower today's youth through advocacy of existing and
+          potential solutions."
+        />
+        <section className="w-screen items-center justify-between px-5 py-10 pb-20 lg:px-10">
+          <h1 className="text-center text-3xl font-bold sm:text-4xl xl:text-4xl/none">
             Meet Our Team
           </h1>
           <Accordion
@@ -57,7 +53,7 @@ export default function Home() {
                       {department.people.map((person, index) => (
                         <CarouselItem
                           key={index}
-                          className="md:basis-1/2 lg:basis-1/3 2xl:basis-1/4 space-y-2 flex"
+                          className="flex space-y-2 md:basis-1/2 lg:basis-1/3 2xl:basis-1/4"
                         >
                           <PersonCard
                             picture={person.image}
@@ -65,7 +61,7 @@ export default function Home() {
                             pronouns={person.pronouns}
                             role={person.role}
                             description={person.description}
-                            className="basis-1/2 lg:basis-1/3 2xl:basis-1/4 space-y-2"
+                            className="basis-1/2 space-y-2 lg:basis-1/3 2xl:basis-1/4"
                           />
                         </CarouselItem>
                       ))}
@@ -79,7 +75,6 @@ export default function Home() {
           </Accordion>
         </section>
       </main>
-      <YOIFooter />
     </div>
   );
 }
