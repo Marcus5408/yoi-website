@@ -31,7 +31,7 @@ export default function Home() {
           description="We hold a variety of events throughout the year.
             Check out what events we're currently running!"
         />
-        <h1 className="pt-12 text-center text-3xl font-bold tracking-tighter sm:pt-0 sm:text-4xl md:text-5xl">
+        <h1 className="pt-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           Current Events
         </h1>
         <TextSection

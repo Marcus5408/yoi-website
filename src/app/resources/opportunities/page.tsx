@@ -46,7 +46,7 @@ export default function OpportunitiesPage() {
     <main className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
       <section className="z-1 flex-1">
         <Banner
-          bg="/heroes/deep_dark.png"
+          bg="/heroes/ocg-saving-the-ocean-xch7jXAaqqo-unsplash.jpg"
           title="Help Us Make a Difference"
           description="Help us fulfil our mission to educate the public and
             empower today's youth. Discover opportunities to get involved."
