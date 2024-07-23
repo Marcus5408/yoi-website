@@ -21,21 +21,21 @@ import PersonCard from "@/components/person.tsx";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
+    <div className="flex min-h-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black w-screen">
       <YOINav />
-      <main className="z-1 flex-1">
+      <main className="flex-1 z-1">
         <Banner bg="/heroes/blue_mountains.png">
-          <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none fancy">
             We&apos;re creating oceanic stewards.
           </h1>
-          <p className="max-w-[600px] text-gray-800 dark:text-gray-400 md:text-xl">
+          <p className="max-w-[600px] text-gray-800 md:text-xl dark:text-gray-400">
             Our mission is to educate the public about ocean threats and empower
             today&apos;s youth through advocacy of existing and potential
             solutions.
           </p>
         </Banner>
-        <section className="w-screen items-center justify-between px-5 py-10 pb-20 lg:px-10">
-          <h1 className="text-center text-3xl font-bold sm:text-4xl xl:text-4xl/none">
+        <section className="items-center justify-between w-screen px-5 lg:px-10 py-10 pb-20">
+          <h1 className="text-3xl sm:text-4xl xl:text-4xl/none font-bold text-center">
             Meet Our Team
           </h1>
           <Accordion
@@ -57,7 +57,7 @@ export default function Home() {
                       {department.people.map((person, index) => (
                         <CarouselItem
                           key={index}
-                          className="flex space-y-2 md:basis-1/2 lg:basis-1/3 2xl:basis-1/4"
+                          className="md:basis-1/2 lg:basis-1/3 2xl:basis-1/4 space-y-2 flex"
                         >
                           <PersonCard
                             picture={person.image}
@@ -65,7 +65,7 @@ export default function Home() {
                             pronouns={person.pronouns}
                             role={person.role}
                             description={person.description}
-                            className="basis-1/2 space-y-2 lg:basis-1/3 2xl:basis-1/4"
+                            className="basis-1/2 lg:basis-1/3 2xl:basis-1/4 space-y-2"
                           />
                         </CarouselItem>
                       ))}

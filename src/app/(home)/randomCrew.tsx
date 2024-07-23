@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 
 const RandomPics = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
-
+  
   const names = [
     "marlin",
     "ankur",
@@ -47,7 +47,7 @@ const RandomPics = () => {
   const amount = isMobile ? 5 : 7;
 
   return (
-    <div className="relative mx-0 flex h-[10rem] items-center gap-0 py-16">
+    <div className="flex items-center gap-0 mx-0 h-[10rem] py-16 relative">
       {names
         .sort(() => Math.random() - (isMobile ? 0.5 : 0.7))
         .slice(0, amount)
@@ -56,7 +56,7 @@ const RandomPics = () => {
             alt="Logo"
             className={
               transforms[index] +
-              " aspect-square overflow-hidden rounded object-contain outline-4 outline-black drop-shadow-lg"
+              " aspect-square overflow-hidden rounded object-contain drop-shadow-lg outline-4 outline-black"
             }
             height="140"
             key={index}
@@ -66,6 +66,6 @@ const RandomPics = () => {
         ))}
     </div>
   );
-};
+}
 
 export default RandomPics;

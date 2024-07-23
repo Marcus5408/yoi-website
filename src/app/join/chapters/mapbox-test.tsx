@@ -1,10 +1,9 @@
-"use client";
+"use client"
 
-import React, { useRef, useEffect, useState } from "react";
-import mapboxgl from "mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import React, { useRef, useEffect, useState } from 'react';
+import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
-mapboxgl.accessToken =
-  "pk.eyJ1IjoiaXNzYWNsMTQiLCJhIjoiY2x5bGEzdDF0MHdtODJycTNtN3VieG5vZyJ9.F8snvu7kdrjnvbmYJ7TeKg";
+mapboxgl.accessToken = "pk.eyJ1IjoiaXNzYWNsMTQiLCJhIjoiY2x5bGEzdDF0MHdtODJycTNtN3VieG5vZyJ9.F8snvu7kdrjnvbmYJ7TeKg";
 
 export default function App() {
   const mapContainer = useRef(null);
@@ -16,13 +15,13 @@ export default function App() {
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
-      container: mapContainer.current || "",
-      style: "mapbox://styles/mapbox/streets-v12",
+      container: mapContainer.current || '',
+      style: 'mapbox://styles/mapbox/streets-v12',
       center: [lng, lat],
-      zoom: zoom,
+      zoom: zoom
     });
 
-    map.current.on("move", () => {
+    map.current.on('move', () => {
       if (map.current) {
         setLng(Number(map.current.getCenter().lng.toFixed(4)));
         setLat(Number(map.current.getCenter().lat.toFixed(4)));

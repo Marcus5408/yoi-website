@@ -419,6 +419,8 @@
       "open": true
     },
     "tags": ["ocean", "conservation", "advocacy", "Seattle"],
-    "requirements": ["Enrolled in grades 9-12 at the time of application"]
+    "requirements": [
+      "Enrolled in grades 9-12 at the time of application"
+    ]
   }
 ]
