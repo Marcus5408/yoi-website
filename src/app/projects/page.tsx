@@ -10,7 +10,7 @@ export default function Home() {
     <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
       <main className="z-1 flex-1">
         <Banner
-          bg="/shaun-low-v8Un2Roo1Ak-unsplash.jpg"
+          bg="/heroes/shaun-low-v8Un2Roo1Ak-unsplash.jpg"
           title="What we're doing"
           description="Our mission is to educate the public about ocean threats
             and empower today's youth through advocacy of existing and potential
