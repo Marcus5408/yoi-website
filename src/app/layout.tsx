@@ -3,7 +3,6 @@ import { Abril_Fatface, DM_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import React from "react";
-import { useTheme } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import YOINav from "@/components/navigation/navigation";
 import YOIFooter from "@/components/footer";
