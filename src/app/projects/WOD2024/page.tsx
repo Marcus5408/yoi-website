@@ -17,7 +17,7 @@ export default function Home() {
     <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
       <main className="z-1 flex-1">
         <Banner
-          bg="/heroes/shaun-low-v8Un2Roo1Ak-unsplash.jpg"
+          bg="/heroes/blue_mountains.png"
           size="medium"
           title="World Ocean Day 2024 Zine"
           description="To commemorate World Ocean Day 2024, we organized a 
