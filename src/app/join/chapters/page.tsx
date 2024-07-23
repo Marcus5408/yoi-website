@@ -4,11 +4,9 @@ import geojson from "./chapters.json";
 import Head from "next/head";
 import mapboxgl from "mapbox-gl";
 import React, { useEffect, useState } from "react";
-import YOIFooter from "@/components/footer";
-import YOINav from "@/components/navigation/navigation";
 import { useMediaQuery } from "react-responsive";
 import "./mapbox.css";
-import InstagramSVG from "./instagram.svg"
+import InstagramSVG from "./instagram.svg";
 import { InstagramLogoIcon } from "@radix-ui/react-icons";
 
 type Feature = {
@@ -68,8 +66,8 @@ export default function Home() {
         .setLngLat([lng, lat])
         .setPopup(
           new mapboxgl.Popup({ offset: 40, className: "custom-popup" }) // add popups
-        .setHTML(
-          `<h3>${feature.properties.title}</h3>
+            .setHTML(
+              `<h3>${feature.properties.title}</h3>
           <p>${feature.properties.description}</p>
           <a
             href="https://instagram.com/${feature.properties.instagram}"
@@ -81,7 +79,7 @@ export default function Home() {
             <div>@${feature.properties.instagram}</div>
           </a>
           `,
-        ),
+            ),
         )
         .addTo(map);
     });
@@ -102,7 +100,6 @@ export default function Home() {
         />
       </Head>
       <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
-        <YOINav />
         <main className="z-1 flex flex-col">
           <section className="h-screen w-screen pb-12 md:pb-24 lg:pb-32">
             <div id="map-container" className="h-screen" />
@@ -117,7 +114,6 @@ export default function Home() {
             </p>
           </div>
         </main>
-        <YOIFooter />
       </div>
     </>
   );

@@ -1,8 +1,6 @@
 "use client";
 
-import YOINav from "@/components/navigation/navigation.tsx";
 import Banner from "@/components/banners/banner";
-import YOIFooter from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -17,19 +15,16 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export default function Home() {
   return (
     <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
-      <YOINav />
       <main className="z-1 flex-1">
-        <Banner bg="/heroes/shaun-low-v8Un2Roo1Ak-unsplash.jpg" size="medium">
-          <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
-            World Ocean Day 2024 Zine
-          </h1>
-          <p className="max-w-[600px] text-gray-800 dark:text-gray-400 md:text-xl">
-            To commemorate World Ocean Day 2024, we organized a contest inviting
-            young individuals to contribute their artistic or literary
-            creations. A selection of these submissions was then curated into a
-            zine.
-          </p>
-        </Banner>
+        <Banner
+          bg="/heroes/shaun-low-v8Un2Roo1Ak-unsplash.jpg"
+          size="medium"
+          title="World Ocean Day 2024 Zine"
+          description="To commemorate World Ocean Day 2024, we organized a 
+            contest inviting young individuals to contribute their artistic
+            or literary creations. A selection of these submissions was then
+            curated into a zine."
+        />
         <section className="w-full px-8 py-12 pt-24 sm:px-0 md:py-24 lg:py-32">
           <h1 className="-mt-12 pb-12 text-center text-3xl font-bold sm:text-4xl xl:text-4xl/none">
             Thank you to all the participants!
@@ -107,7 +102,6 @@ export default function Home() {
           <PDF className="h-[90svh] w-screen sm:mx-auto sm:w-[90svw]" />
         </section>
       </main>
-      <YOIFooter />
     </div>
   );
 }
