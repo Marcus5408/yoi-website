@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import Sidebar from "./sidebar";
@@ -11,15 +13,11 @@ function YOINav() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  if (isMobile) {
-    return (
-      <div className="absolute z-10 w-full">
-        <Sidebar />
-      </div>
-    );
-  } else {
-    return <div className="absolute z-10 w-full"><Navbar /></div>;
-  }
+  return (
+    <div className="absolute z-10 w-full">
+      {isMobile ? <Sidebar /> : <Navbar />}
+    </div>
+  );
 }
 
 export default YOINav;
