@@ -34,7 +34,7 @@ const PersonCard: React.FC<PersonProps> = ({
   return (
     <Card className={"h-full grow " + className}>
       <CardHeader>
-        <div className="mr-auto flex content-start justify-center gap-4">
+        <div className="flex content-start justify-center gap-4 mr-auto">
           <Avatar className="size-[6rem] content-center">
             <AvatarImage
               alt={name}
@@ -42,14 +42,14 @@ const PersonCard: React.FC<PersonProps> = ({
             />
             <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
-          <div className="flex flex-col justify-between text-left">
+          <div className="text-left justify-between flex flex-col">
             <span>
               <CardTitle className="font-medium">{name}</CardTitle>
               <CardDescription className="text-sm text-gray-500 dark:text-gray-400">
                 {pronouns}
               </CardDescription>
             </span>
-            <CardTitle className="text-wrap font-medium">{role}</CardTitle>
+            <CardTitle className="font-medium text-wrap">{role}</CardTitle>
           </div>
         </div>
       </CardHeader>

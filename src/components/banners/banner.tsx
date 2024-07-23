@@ -14,11 +14,7 @@ const Banner: React.FC<BannerProps> = ({ bg, size, children }) => {
   if (isTabletOrMobile) {
     return <BannerMobile bg={bg ?? ""}>{children}</BannerMobile>;
   } else {
-    return (
-      <BannerDesktop bg={bg ?? ""} size={size ?? "large"}>
-        {children}
-      </BannerDesktop>
-    );
+    return <BannerDesktop bg={bg ?? ""} size={size ?? "large"}>{children}</BannerDesktop>;
   }
 };
 

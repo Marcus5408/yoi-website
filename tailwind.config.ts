@@ -124,25 +124,22 @@ const config = {
       matchUtilities(
         {
           "bg-radial": (value: string) => {
-            const [radialShape, radialSize, radialPosition] = value.split(" ");
-            const shape = theme(`radialShape.${radialShape}`, radialShape);
-            const size = theme(`radialSize.${radialSize}`, radialSize);
-            const position = theme(
-              `radialPosition.${radialPosition}`,
-              radialPosition,
-            );
-            return {
-              "background-image": `radial-gradient(${shape} ${size} ${position}, var(--tw-gradient-stops))`,
-            };
+        const [radialShape, radialSize, radialPosition] = value.split(" ");
+        const shape = theme(`radialShape.${radialShape}`, radialShape);
+        const size = theme(`radialSize.${radialSize}`, radialSize);
+        const position = theme(`radialPosition.${radialPosition}`, radialPosition);
+        return {
+          "background-image": `radial-gradient(${shape} ${size} ${position}, var(--tw-gradient-stops))`,
+        };
           },
         },
         {
           values: [
-            config.theme.extend.radialShape,
-            config.theme.extend.radialSize,
-            config.theme.extend.radialPosition,
+        config.theme.extend.radialShape,
+        config.theme.extend.radialSize,
+        config.theme.extend.radialPosition,
           ],
-        },
+        }
       );
     }),
   ],

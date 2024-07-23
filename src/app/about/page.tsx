@@ -4,11 +4,14 @@ export default function RedirectSite() {
   redirect("/about/team");
 
   return (
-    <main className="flex h-screen w-screen flex-col items-center justify-center bg-yoi-white text-center text-yoi-black dark:bg-yoi-black dark:text-yoi-white">
+    <main className="w-screen h-screen flex flex-col items-center text-center justify-center bg-yoi-white dark:bg-yoi-black text-yoi-black dark:text-yoi-white">
       <h1 className="text-4xl">Automatic Redirect</h1>
       <p>
         Redirecting you to{" "}
-        <a href="/about/team" className="text-yoi-blue-1 dark:text-yoi-blue-5">
+        <a
+          href="/about/team"
+          className="text-yoi-blue-1 dark:text-yoi-blue-5"
+        >
           theyoi.org/about/team
         </a>
         ...
