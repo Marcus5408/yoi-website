@@ -29,7 +29,7 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({
   switch (size) {
     case "small":
       section_size = "min-h-56";
-      div_size = "h-[55svh]"
+      div_size = "h-[55svh]";
       break;
     case "medium":
       section_size = "min-h-71";
@@ -38,18 +38,20 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({
       break;
     case "large":
       section_size = "min-h-96";
-      div_size = "h-[95svh]"
+      div_size = "h-[95svh]";
       break;
     case undefined:
       break;
-  };
+  }
   return (
-    <section className={"w-screen p-0 m-0 relative top-0 left-0 " + section_size}>
+    <section
+      className={"relative left-0 top-0 m-0 w-screen p-0 " + section_size}
+    >
       <div className={div_size}>
         <div className="w-screen">
           <Image
             alt="Hero"
-            className={"overflow-hidden z-1 w-full object-cover " + div_size}
+            className={"z-1 w-full overflow-hidden object-cover " + div_size}
             height="1920"
             src={bg ?? ""}
             width="1080"

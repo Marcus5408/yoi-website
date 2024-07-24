@@ -6,10 +6,7 @@
     "status": "completed",
     "image": "/projects/WOD2024-thumb.png",
     "link": "/projects/WOD2024",
-    "tags": [
-      "art",
-      "writing"
-    ]
+    "tags": ["art", "writing"]
   },
   {
     "title": "Save The Hudson Canyon",
@@ -18,11 +15,7 @@
     "status": "active",
     "image": "/projects/hudson_canyon.jpg",
     "link": "https://www.change.org/p/save-the-hudson-canyon-ensure-its-designation-as-a-marine-sanctuary",
-    "tags": [
-      "petition",
-      "marine sanctuary",
-      "ongoing"
-    ]
+    "tags": ["petition", "marine sanctuary", "ongoing"]
   },
   {
     "title": "Fight Overfishing",
@@ -31,11 +24,7 @@
     "status": "active",
     "image": "/projects/fight_overfishing.jpg",
     "link": "https://www.change.org/p/fight-overfishing-set-a-national-limit-on-industrial-fishing-nets",
-    "tags": [
-      "petition",
-      "overfishing",
-      "ongoing"
-    ]
+    "tags": ["petition", "overfishing", "ongoing"]
   },
   {
     "title": "The Maritime Logs",
@@ -44,9 +33,6 @@
     "status": "active",
     "image": "/projects/the-maritime-logs-thumb.png",
     "link": "/projects/the-maritime-logs",
-    "tags": [
-      "newsletter",
-      "ongoing"
-    ]
+    "tags": ["newsletter", "ongoing"]
   }
 ]

@@ -105,23 +105,23 @@ const OpportunityCard: React.FC<OpportunityProps> = ({
       </CardContent>
       <CardFooter className="flex grow-0">
         {
-            // add a horizontal scroll of all the tags on the card
-            data.tags.length > 0 ? (
+          // add a horizontal scroll of all the tags on the card
+          data.tags.length > 0 ? (
             <div className="scrollbar-hide overflow-x-scroll overscroll-x-contain">
-              <div className="flex gap-2 flex-nowrap">
-              {data.tags.map((tag, index) => (
-                <div
-                key={index}
-                className="text-nowrap rounded-full bg-gray-200 px-4 py-1 dark:bg-gray-800 flex-shrink-0"
-                >
-                {tag}
-                </div>
-              ))}
-              <div className="w-6 flex-shrink-0" />
+              <div className="flex flex-nowrap gap-2">
+                {data.tags.map((tag, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 text-nowrap rounded-full bg-gray-200 px-4 py-1 dark:bg-gray-800"
+                  >
+                    {tag}
+                  </div>
+                ))}
+                <div className="w-6 flex-shrink-0" />
               </div>
               <div className="bg-red absolute left-0 top-0 w-24"></div>
             </div>
-            ) : null
+          ) : null
           // create a gradient behind the link but in front of the tags
         }
         <Link
