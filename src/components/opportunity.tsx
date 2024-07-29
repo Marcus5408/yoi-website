@@ -52,6 +52,13 @@ const OpportunityCard: React.FC<OpportunityProps> = ({
   const splitName = checkedName.split(" ");
   const initials = `${splitName[0].charAt(0)}`;
   const checkedLink = data.link ?? "#";
+  const formattedDates = {
+    posted: formatDate(data.posted),
+    deadline:
+      data.deadline === "12-31-9999"
+        ? "No Deadline"
+        : formatDate(data.deadline),
+  };
 
   return (
     <Card className={`flex h-full flex-col ${className}`}>
@@ -70,9 +77,7 @@ const OpportunityCard: React.FC<OpportunityProps> = ({
           <div className="gap-2 self-start">
             <p className="font-medium leading-4">{data.provider.name}</p>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              {data.posted
-                ? `Posted ${formatDate(data.posted)}`
-                : "Unknown post date"}
+              {`Posted ${formattedDates.posted}`}
             </p>
           </div>
         </div>
@@ -96,10 +101,7 @@ const OpportunityCard: React.FC<OpportunityProps> = ({
         }
         <div>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Deadline:{" "}
-            {data.deadline === "12-31-9999"
-              ? "No Deadline"
-              : formatDate(data.deadline)}
+            {`Deadline: ${formattedDates.deadline}`}
           </p>
         </div>
       </CardContent>
@@ -138,7 +140,12 @@ const OpportunityCard: React.FC<OpportunityProps> = ({
 export default OpportunityCard;
 
 function formatDate(dateString: string): string {
-  const date = new Date(dateString);
+  const [month, day, year] = dateString.split("-").map(Number);
+  if (isNaN(month) || isNaN(day) || isNaN(year)) {
+    return "Invalid Date";
+  }
+  const date = new Date(year, month - 1, day);
+  
   return isNaN(date.getTime())
     ? "Date Unavailable"
     : date.toLocaleDateString("en-US", {
