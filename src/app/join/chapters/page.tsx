@@ -99,7 +99,7 @@ export default function Home() {
           src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"
         />
       </Head>
-      <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
+      <div className="flex w-full flex-col bg-yoi-white dark:bg-yoi-black">
         <main className="z-1 flex flex-col">
           <section className="h-screen w-screen pb-12 md:pb-24 lg:pb-32">
             <div id="map-container" className="h-screen" />

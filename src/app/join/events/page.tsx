@@ -22,7 +22,7 @@ import pastEvents from "./past_events.json";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen w-screen flex-col items-center justify-between bg-yoi-white dark:bg-yoi-black">
+    <div className="flex w-full flex-col bg-yoi-white dark:bg-yoi-black">
       <main className="z-1 flex-1">
         <Banner
           bg="/heroes/wave.png"
