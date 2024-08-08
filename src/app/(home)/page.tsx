@@ -139,7 +139,7 @@ const Component = () => {
                   <AccordionTrigger className="text-2xl">
                     <div className="pl-4">{department.department}</div>
                   </AccordionTrigger>
-                  <AccordionContent className="w-[100vw] justify-center lg:w-[75vw]">
+                  <AccordionContent className="max-w-[99vw] justify-center lg:w-[75vw]">
                     <Carousel
                       setApi={setApi}
                       plugins={[
