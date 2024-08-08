@@ -19,7 +19,7 @@ export default function Home() {
       <main className="z-1 flex-1">
         <Banner
           bg="/heroes/wexor-tmg-L-2p8fapOA8-unsplash.jpg"
-          size="small"
+          size="medium"
           title="The Maritime Logs"
           description="A newsletter with all the latest marine news and content,
             curated by the YOI team every month."
