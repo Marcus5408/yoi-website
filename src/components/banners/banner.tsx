@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import BannerDesktop from "./banner-desktop";
 import BannerMobile from "./banner-mobile";
