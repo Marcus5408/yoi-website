@@ -7,7 +7,7 @@ import Sidebar from "./sidebar";
 function YOINav() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 910);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
