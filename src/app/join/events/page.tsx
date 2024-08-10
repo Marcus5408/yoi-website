@@ -35,10 +35,13 @@ export default function Home() {
           Current Events
         </h1>
         <TextSection
-          title="YOI Ocean Activism Workshop"
-          description="The YOI is hosting an ocean activism workshop where participants can learn more about advocacy, network with people, and win a monetary prize: Sign up to our free Ocean Activism Workshop!"
-          link="https://forms.gle/hVaFoYV61DXd9EF9A"
+          title="Marine Sustainability In Media Workshop"
+          description="The YOI is hosting a workshop on how media is used to
+          promote eco-friendly behaviors and how each individual can use online
+          resources to encourage marine sustainability in their own communities."
+          link="https://forms.gle/x6EguoXNhm5TjnjB9"
           buttonText="Sign up!"
+          image="/events/marine_sustainability.png"
         ></TextSection>
         <section className="flex w-full flex-col items-center px-12">
           <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
