@@ -21,6 +21,9 @@ import Link from "next/link";
 import pastEvents from "./past_events.json";
 
 export default function Home() {
+  // get first event from past events, and remove it from the list
+  const [firstEvent, ...restEvents] = pastEvents;
+
   return (
     <div className="flex w-full flex-col bg-yoi-white dark:bg-yoi-black">
       <main className="z-1 flex-1">
@@ -35,13 +38,11 @@ export default function Home() {
           Current Events
         </h1>
         <TextSection
-          title="Marine Sustainability In Media Workshop"
-          description="The YOI is hosting a workshop on how media is used to
-          promote eco-friendly behaviors and how each individual can use online
-          resources to encourage marine sustainability in their own communities."
-          link="https://forms.gle/x6EguoXNhm5TjnjB9"
+          title={firstEvent.title}
+          image={firstEvent.image}
+          description={firstEvent.description}
+          link={firstEvent.link}
           buttonText="Sign up!"
-          image="/events/marine_sustainability.png"
         ></TextSection>
         <section className="flex w-full flex-col items-center px-12">
           <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -49,15 +50,22 @@ export default function Home() {
           </h1>
           <Carousel className="h-auto w-[75vw] py-6 sm:mx-24">
             <CarouselContent>
-              {pastEvents.map((event, index) => (
+              {restEvents.map((event, index) => (
                 <CarouselItem key={index} className="basis-full lg:basis-1/2">
                   <Card>
+                    <Image
+                      src={event.image}
+                      alt={event.title}
+                      width={1280}
+                      height={720}
+                      className="object-cover h-48 w-full overflow-hidden rounded-t-lg"
+                    />
                     <CardHeader>
                       <CardTitle>{event.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <CardDescription className="font-medium">
-                        {`This event happened on ${event.date}.`}
+                        {`This event happened on ${event.date}, ${event.location === "Online" ? "Online" : `at the ${event.location}`}.`}
                       </CardDescription>
                       <br />
                       Event Description:
