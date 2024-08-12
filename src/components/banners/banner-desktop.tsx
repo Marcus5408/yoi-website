@@ -44,9 +44,7 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({
       break;
   }
   return (
-    <section
-      className={"relative left-0 top-0 m-0 w-full p-0 " + section_size}
-    >
+    <section className={"relative left-0 top-0 m-0 w-full p-0 " + section_size}>
       <div className={div_size}>
         <div className="w-full">
           <Image

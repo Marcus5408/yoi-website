@@ -39,8 +39,8 @@ export default function Home() {
             artists that will receive monetary prizes from YOI during the
             webinar, and the winners were...
           </p>
-          <div className="pt-6 grid grid-rows-1 mx-5 lg:mx-[5em] xl:mx-[10em]">
-            <div className="flex flex-col gap-6 md:table md:table-fixed md:border-spacing-x-8 sm:gap-6">
+          <div className="mx-5 grid grid-rows-1 pt-6 lg:mx-[5em] xl:mx-[10em]">
+            <div className="flex flex-col gap-6 sm:gap-6 md:table md:table-fixed md:border-spacing-x-8">
               <Card className="md:table-cell md:w-1/3">
                 <CardHeader>
                   <div className="flex items-center justify-center gap-4">

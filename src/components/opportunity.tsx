@@ -145,7 +145,7 @@ function formatDate(dateString: string): string {
     return "Invalid Date";
   }
   const date = new Date(year, month - 1, day);
-  
+
   return isNaN(date.getTime())
     ? "Date Unavailable"
     : date.toLocaleDateString("en-US", {

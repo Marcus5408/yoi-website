@@ -120,7 +120,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
                 <NavigationMenuItem key={item.category}>
                   <NavigationMenuTrigger>{item.category}</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-full p-2 md:grid-rows">
+                    <ul className="md:grid-rows grid w-full p-2">
                       {item.links.map((NavCatLinks) => (
                         <ListItem
                           key={NavCatLinks.title}
@@ -138,7 +138,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className }) => {
           </NavigationMenu>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="default" className=" w-full">
+              <Button variant="outline" size="default" className="w-full">
                 <div className="flex gap-3 px-4 text-yoi-black dark:text-yoi-white">
                   <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                   <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />

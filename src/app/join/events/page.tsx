@@ -58,7 +58,7 @@ export default function Home() {
                       alt={event.title}
                       width={1280}
                       height={720}
-                      className="object-cover h-48 w-full overflow-hidden rounded-t-lg"
+                      className="h-48 w-full overflow-hidden rounded-t-lg object-cover"
                     />
                     <CardHeader>
                       <CardTitle>{event.title}</CardTitle>
