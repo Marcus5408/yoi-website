@@ -17,7 +17,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
-import Link from "next/link";
 import pastEvents from "./past_events.json";
 
 export default function Home() {
