@@ -38,11 +38,12 @@ export default function Home() {
           Current Events
         </h1>
         <TextSection
+          toast={`Happening ${formatDate(firstEvent.date, false)}, ${firstEvent.location === "Online" ? "Online" : `at the ${firstEvent.location}`}`}
           title={firstEvent.title}
-          image={firstEvent.image}
           description={firstEvent.description}
           link={firstEvent.link}
           buttonText="Sign up!"
+          image={firstEvent.image}
         ></TextSection>
         <section className="flex w-full flex-col items-center px-12">
           <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -65,7 +66,7 @@ export default function Home() {
                     </CardHeader>
                     <CardContent>
                       <CardDescription className="font-medium">
-                        {`This event happened on ${event.date}, ${event.location === "Online" ? "Online" : `at the ${event.location}`}.`}
+                        {`This event happened on ${formatDate(event.date)}, ${event.location === "Online" ? "Online" : `at the ${event.location}`}.`}
                       </CardDescription>
                       <br />
                       Event Description:
@@ -83,4 +84,28 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+function formatDate(dateString: string, includeYear: boolean = true): string {
+  const [month, day, year] = dateString.split("-").map(Number);
+  if (isNaN(month) || isNaN(day) || isNaN(year)) {
+    return "Invalid Date";
+  }
+  const date = new Date(year, month - 1, day);
+  if (includeYear) {
+    return isNaN(date.getTime())
+      ? "Date Unavailable"
+      : date.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        });
+  } else {
+    return isNaN(date.getTime())
+      ? "Date Unavailable"
+      : date.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+        });
+  }
 }
