@@ -3,43 +3,47 @@ import RightText from "./right-text";
 import React from "react";
 
 type TextSectionProps = {
-  image?: string;
+  side?: string;
+  toast?: string | null;
   title?: string;
   description?: string;
   link?: string;
   buttonText?: string;
-  side?: string;
+  image?: string;
   className?: string;
 };
 
 const TextSection: React.FC<TextSectionProps> = ({
-  image,
+  side,
+  toast = null,
   title,
   description,
   link,
   buttonText,
-  side,
+  image,
   className,
 }) => {
   if (side === "right") {
     return (
       <RightText
-        image={image}
+        toast={toast}
         title={title}
         description={description}
         link={link}
         buttonText={buttonText}
+        image={image}
         className={className}
       />
     );
   } else {
     return (
       <LeftText
-        image={image}
+        toast={toast}
         title={title}
         description={description}
         link={link}
         buttonText={buttonText}
+        image={image}
         className={className}
       />
     );

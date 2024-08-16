@@ -3,20 +3,22 @@ import Image from "next/image";
 import React from "react";
 
 type LeftTextProps = {
-  image?: string;
+  toast?: string | null;
   title?: string;
   description?: string;
   link?: string;
   buttonText?: string;
+  image?: string;
   className?: string;
 };
 
 const LeftText: React.FC<LeftTextProps> = ({
-  image,
+  toast,
   title,
   description,
   link,
   buttonText,
+  image,
   className,
 }) => {
   const checkedImage = image ?? "/heroes/wexor-tmg-L-2p8fapOA8-unsplash.jpg";
@@ -41,6 +43,11 @@ const LeftText: React.FC<LeftTextProps> = ({
           />
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
+              {toast !== null && (
+                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                  {toast}
+                </div>
+              )}
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 {title}
               </h2>
