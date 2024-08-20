@@ -25,7 +25,7 @@ const PersonMiniCard: React.FC<PersonMiniProps> = ({
   className,
 }) => {
   // process name to extract initials
-  // nullcheck name
+  // null-check name
   const checkedName = name ?? "Person Name";
   const splitName = checkedName.split(" ");
   const initials = `${splitName[0].charAt(0)}${splitName[1]?.charAt(0)}`;
@@ -37,16 +37,16 @@ const PersonMiniCard: React.FC<PersonMiniProps> = ({
         className
       }
     >
-      <Avatar className="aspect-square h-full w-auto overflow-hidden rounded">
+      <Avatar className="aspect-square h-full w-auto overflow-hidden rounded-md">
         <AvatarImage alt={name} src={picture ?? "/images/placeholder.png"} />
         <AvatarFallback>{initials}</AvatarFallback>
       </Avatar>
-      <div className="h-full flex-1 grow text-left align-middle">
-        <CardHeader className="flex flex-1">
-          <CardTitle className="">{checkedName}</CardTitle>
+      <div className="h-full text-left align-middle justify-between">
+        <CardHeader className="flex flex-col pb-0">
+          <CardTitle>{checkedName}</CardTitle>
           <CardDescription>({pronouns})</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="justify-self-end">
           <CardTitle className="text-gray-500 dark:text-gray-400">
             {role}
           </CardTitle>
