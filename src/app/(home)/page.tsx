@@ -15,9 +15,7 @@ import {
   DrawerContent,
   Drawer,
 } from "@/components/ui/drawer";
-import YOINav from "@/components/navigation/navigation";
 import Banner from "@/components/banners/banner.tsx";
-import YOIFooter from "@/components/footer.tsx";
 import data from "../about/yoi-execs.json";
 import {
   Accordion,
@@ -43,7 +41,7 @@ import {
   TextSectionDescription,
   TextSectionButton,
   TextSectionImage,
-} from "@/components/sections/text-section";
+} from "@/components/text-section";
 
 const Component = () => {
   const [api, setApi] = useState<CarouselApi>();
