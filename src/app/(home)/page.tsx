@@ -35,6 +35,15 @@ import {
 import { useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { useMediaQuery } from "react-responsive";
+import {
+  TextSection,
+  TextSectionContent,
+  TextSectionToast,
+  TextSectionTitle,
+  TextSectionDescription,
+  TextSectionButton,
+  TextSectionImage,
+} from "@/components/sections/text-section";
 
 const Component = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -70,54 +79,27 @@ const Component = () => {
           buttonName="Check out our Instagram!"
           buttonLink="https://www.instagram.com/youth_oceanic_initiative/"
         />
-        <section className="w-full bg-yoi-white py-12 dark:bg-yoi-black md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
-              <Image
-                alt="Program"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-                height="310"
-                src="/projects/WOD2024-thumb.png"
-                width="550"
-              />
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                    Featured Project
-                  </div>
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    World Ocean Day 2024 Zine
-                  </h2>
-                  <p className="max-w-[600px] text-gray-800 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    In celebration of World Ocean Day 2024, YOI organized a
-                    competition inviting artists and writers to contribute their
-                    creations for inclusion in a zine, with the added incentive
-                    of a prize draw. The initiative garnered over 20 entries
-                    globally, culminating in the presentation of the zine at
-                    YOI&apos;s World Ocean Day 2024 live webinar on June 8th,
-                    2024.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link
-                    className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                    href="/projects/WOD2024"
-                  >
-                    Learn More
-                  </Link>
-                  {/*
-                  <Link
-                    className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-                    href="#"
-                  >
-                    Get Involved
-                  </Link>
-                  */}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <TextSection>
+          <TextSectionImage
+            alt="World Ocean Day 2024 Thumbnail"
+            src="/projects/WOD2024-thumb.png"
+          />
+          <TextSectionContent>
+            <TextSectionToast>Featured Project</TextSectionToast>
+            <TextSectionTitle>World Ocean Day 2024 Zine</TextSectionTitle>
+            <TextSectionDescription>
+              In celebration of World Ocean Day 2024, YOI organized a
+              competition inviting artists and writers to contribute their
+              creations for inclusion in a zine, with the added incentive of a
+              prize draw. The initiative garnered over 20 entries globally,
+              culminating in the presentation of the zine at YOI&apos;s World
+              Ocean Day 2024 live webinar on June 8th, 2024.
+            </TextSectionDescription>
+            <TextSectionButton href="/projects/WOD2024">
+              Learn More
+            </TextSectionButton>
+          </TextSectionContent>
+        </TextSection>
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
             <div className="space-y-3">
@@ -148,11 +130,11 @@ const Component = () => {
                         }),
                       ]}
                     >
-                      <CarouselContent className="">
+                      <CarouselContent>
                         {department.people.map((person, index) => (
                           <CarouselItem
                             key={index}
-                            className="flex grow space-y-2 md:basis-1/2 2xl:basis-1/3"
+                            className="my-1 flex grow space-y-2 md:basis-1/2 2xl:basis-1/3"
                           >
                             <PersonMiniCard
                               key={index}
