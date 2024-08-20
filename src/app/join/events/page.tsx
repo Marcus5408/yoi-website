@@ -1,7 +1,7 @@
 "use client";
 
 import Banner from "@/components/banners/banner";
-import TextSection from "@/components/sections/text-section";
+import TextSection from "@/components/text-section";
 import {
   Carousel,
   CarouselContent,

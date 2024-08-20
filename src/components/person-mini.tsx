@@ -41,7 +41,7 @@ const PersonMiniCard: React.FC<PersonMiniProps> = ({
         <AvatarImage alt={name} src={picture ?? "/images/placeholder.png"} />
         <AvatarFallback>{initials}</AvatarFallback>
       </Avatar>
-      <div className="h-full text-left align-middle justify-between">
+      <div className="h-full justify-between text-left align-middle">
         <CardHeader className="flex flex-col pb-0">
           <CardTitle>{checkedName}</CardTitle>
           <CardDescription>({pronouns})</CardDescription>
