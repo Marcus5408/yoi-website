@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Accordion,
   AccordionContent,
@@ -13,11 +11,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import YOINav from "@/components/navigation/navigation";
-import Banner from "@/components/banners/banner.tsx";
-import YOIFooter from "@/components/footer.tsx";
+import Banner from "@/components/banners/banner";
+import PersonCard from "@/components/person";
 import data from "../yoi-execs.json";
-import PersonCard from "@/components/person.tsx";
 
 export default function Home() {
   return (
