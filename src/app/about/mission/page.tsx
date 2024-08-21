@@ -1,8 +1,6 @@
 "use client";
 
-import YOINav from "@/components/navigation/navigation";
 import Banner from "@/components/banners/banner.tsx";
-import YOIFooter from "@/components/footer.tsx";
 import "material-icons/iconfont/round.css";
 
 export default function Home() {
