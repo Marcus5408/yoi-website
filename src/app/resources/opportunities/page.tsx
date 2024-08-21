@@ -1,5 +1,7 @@
 "use client";
 
+import Banner from "@/components/banners/banner";
+import OpportunityCard, { OpportunityInfo } from "@/components/opportunity";
 import {
   Accordion,
   AccordionContent,
@@ -12,32 +14,6 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/range-slider";
 import opportunities from "./opportunity_db.json";
-
-type ProviderInfo = {
-  name: string;
-  image: string;
-  url: string;
-};
-
-type AvailabilityInfo = {
-  allAges: boolean;
-  min: number;
-  max: number;
-  open: boolean;
-};
-
-type OpportunityInfo = {
-  title: string;
-  posted: string;
-  deadline: string;
-  location: string;
-  description: string;
-  provider: ProviderInfo;
-  link: string;
-  availability: AvailabilityInfo;
-  tags: string[];
-  requirements: string[];
-};
 
 export default function OpportunitiesPage() {
   return (
