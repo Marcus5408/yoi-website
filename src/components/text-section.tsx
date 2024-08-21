@@ -146,6 +146,8 @@ const TextSectionImage = React.forwardRef<
   React.HTMLAttributes<HTMLImageElement> & {
     src: string;
     alt: string;
+    width?: number;
+    height?: number;
   }
 >(({ className, src, alt, ...props }, ref) => {
   // Check image source
@@ -158,8 +160,8 @@ const TextSectionImage = React.forwardRef<
         "mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last",
         className,
       )}
-      width="550"
-      height="310"
+      width={props.width ?? 550}
+      height={props.height ?? 310}
       src={checkedSrc}
       alt={alt}
       {...props}
