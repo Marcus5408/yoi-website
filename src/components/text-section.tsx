@@ -3,25 +3,26 @@ import Link from "next/link";
 import React from "react";
 import { cn } from "@/lib/utils";
 
-type TextSectionProps = {
-  side?: string;
-  children?: React.ReactNode;
-};
-
 const TextSection = React.forwardRef<
   HTMLDivElement,
-  TextSectionProps & React.HTMLAttributes<HTMLDivElement>
->(({ side = "left", children, className, ...props }, ref) => {
+  React.HTMLAttributes<HTMLDivElement> & {
+    imageLeft?: boolean;
+    children?: React.ReactNode;
+  }
+>(({ imageLeft = false, children, className, ...props }, ref) => {
   // Find specific components
   const childrenArray = React.Children.toArray(children);
-  const SectionImageComponent = childrenArray.find(
-    (child: React.ReactNode) =>
-      React.isValidElement(child) && child.type === TextSectionImage,
-  );
-  const TextSectionContentComponent = childrenArray.find(
-    (child: React.ReactNode) =>
-      React.isValidElement(child) && child.type === TextSectionContent,
-  );
+  // Check if children are expected components: TextSectionContent and TextSectionImage
+  // If not exactly those two, e.g., one is missing, throw an error
+  if (childrenArray.length !== 2) {
+    throw new Error(
+      "TextSection component requires exactly 2 children: TextSectionContent and TextSectionImage",
+    );
+  }
+  const gridConfig = imageLeft
+    ? "lg:grid-cols-[550px_1fr]"
+    : "lg:grid-cols-[1fr_550px]";
+  const imageConfig = imageLeft ? "lg:order-first" : "lg:order-last";
 
   return (
     <section
@@ -32,18 +33,18 @@ const TextSection = React.forwardRef<
       {...props}
     >
       <div className="container px-4 md:px-6">
-        <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
-          {side === "right" ? (
-            <>
-              {TextSectionContentComponent}
-              {SectionImageComponent}
-            </>
-          ) : (
-            <>
-              {SectionImageComponent}
-              {TextSectionContentComponent}
-            </>
-          )}
+        <div className={cn("grid items-center gap-6 lg:gap-12", gridConfig)}>
+          {
+            // Apply children to the grid. If current child is TextSectionImage, apply imageConfig className
+            React.Children.map(children, (child, index) => {
+              return React.cloneElement(child as React.ReactElement, {
+                className: cn(
+                  (child as React.ReactElement).props.className,
+                  index === 1 ? imageConfig : "",
+                ),
+              });
+            })
+          }
         </div>
       </div>
     </section>
