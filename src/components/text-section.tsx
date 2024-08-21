@@ -22,6 +22,7 @@ const TextSection = React.forwardRef<
   const gridConfig = imageLeft
     ? "lg:grid-cols-[550px_1fr]"
     : "lg:grid-cols-[1fr_550px]";
+    const textAlign = imageLeft ? "text-right items-end" : "text-left items-start";
   const imageConfig = imageLeft ? "lg:order-first" : "lg:order-last";
 
   return (
@@ -40,6 +41,7 @@ const TextSection = React.forwardRef<
               return React.cloneElement(child as React.ReactElement, {
                 className: cn(
                   (child as React.ReactElement).props.className,
+                  index === 0 ? textAlign : "",
                   index === 1 ? imageConfig : "",
                 ),
               });
