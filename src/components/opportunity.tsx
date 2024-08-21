@@ -1,5 +1,3 @@
-// the card component for each opportunity
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
@@ -138,6 +136,10 @@ const OpportunityCard: React.FC<OpportunityProps> = ({
 };
 
 export default OpportunityCard;
+export type {
+  AvailabilityInfo, OpportunityInfo,
+  ProviderInfo
+};
 
 function formatDate(dateString: string): string {
   const [month, day, year] = dateString.split("-").map(Number);
