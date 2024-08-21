@@ -42,14 +42,31 @@ export default function Home() {
         <h1 className="pt-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           Current Events
         </h1>
-        <TextSection
-          toast={`Happening ${formatDate(firstEvent.date, false)}, ${firstEvent.location === "Online" ? "Online" : `at the ${firstEvent.location}`}`}
-          title={firstEvent.title}
-          description={firstEvent.description}
-          link={firstEvent.link}
-          buttonText="Sign up!"
-          image={firstEvent.image}
-        ></TextSection>
+        <TextSection>
+          <TextSectionContent>
+            <TextSectionToast>{`Happening ${formatDate(firstEvent.date, false)}, ${firstEvent.location === "Online" ? "Online" : `at the ${firstEvent.location}`}`}</TextSectionToast>
+            <TextSectionTitle>{firstEvent.title}</TextSectionTitle>
+            <TextSectionDescription>
+              {firstEvent.description}
+            </TextSectionDescription>
+            <TextSectionButton
+              href={
+                firstEvent.link.startsWith("http://")
+                  ? firstEvent.link
+                  : `https://${firstEvent.link}`
+              }
+            >
+              Sign up!
+            </TextSectionButton>
+          </TextSectionContent>
+          <TextSectionImage
+            src={firstEvent.image}
+            alt={firstEvent.title}
+            width={1280}
+            height={720}
+            className="rounded-lg"
+          ></TextSectionImage>
+        </TextSection>
         <section className="flex w-full flex-col items-center px-12">
           <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Past Events
