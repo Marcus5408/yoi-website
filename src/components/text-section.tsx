@@ -173,6 +173,7 @@ const TextSectionImage = React.forwardRef<
 });
 TextSectionImage.displayName = "SectionImage";
 
+export default TextSection;
 export {
   TextSection,
   TextSectionContent,
