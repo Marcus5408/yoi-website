@@ -1,8 +1,7 @@
 "use client";
 
-import YOINav from "@/components/navigation/navigation";
-import Banner from "@/components/banners/banner";
-import TextSection from "@/components/text-section";
+import Banner from '@/components/banners/banner';
+import TextSection from '@/components/text-section';
 
 export default function Home() {
   return (

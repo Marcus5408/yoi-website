@@ -1,13 +1,13 @@
 "use client";
 
-import geojson from "./chapters.json";
-import Head from "next/head";
+import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import mapboxgl from "mapbox-gl";
+import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import "./mapbox.css";
+import geojson from "./chapters.json";
 import InstagramSVG from "./instagram.svg";
-import { InstagramLogoIcon } from "@radix-ui/react-icons";
+import "./mapbox.css";
 
 type Feature = {
   type: "Feature";

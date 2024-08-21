@@ -1,6 +1,4 @@
-"use client";
-
-import Banner from "@/components/banners/banner.tsx";
+import Banner from "@/components/banners/banner";
 import "material-icons/iconfont/round.css";
 
 export default function Home() {

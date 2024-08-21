@@ -1,3 +1,5 @@
+import Banner from "@/components/banners/banner";
+import PersonCard from "@/components/person";
 import {
   Accordion,
   AccordionContent,
@@ -11,8 +13,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Banner from "@/components/banners/banner";
-import PersonCard from "@/components/person";
 import data from "../yoi-execs.json";
 
 export default function Home() {

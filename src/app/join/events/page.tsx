@@ -1,14 +1,13 @@
-"use client";
-
 import Banner from "@/components/banners/banner";
-import TextSection from "@/components/text-section";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+  TextSection,
+  TextSectionButton,
+  TextSectionContent,
+  TextSectionDescription,
+  TextSectionImage,
+  TextSectionTitle,
+  TextSectionToast,
+} from "@/components/text-section";
 import {
   Card,
   CardContent,
@@ -16,6 +15,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import Image from "next/image";
 import pastEvents from "./past_events.json";
 

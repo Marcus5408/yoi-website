@@ -1,47 +1,47 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import {
-  DrawerTrigger,
-  DrawerTitle,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerClose,
-  DrawerFooter,
-  DrawerContent,
-  Drawer,
-} from "@/components/ui/drawer";
 import Banner from "@/components/banners/banner.tsx";
-import data from "../about/yoi-execs.json";
+import PersonMiniCard from "@/components/person-mini";
+import {
+  TextSection,
+  TextSectionButton,
+  TextSectionContent,
+  TextSectionDescription,
+  TextSectionImage,
+  TextSectionTitle,
+  TextSectionToast,
+} from "@/components/text-section";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion.tsx";
-import PersonMiniCard from "@/components/person-mini";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { useEffect, useState } from "react";
-import Autoplay from "embla-carousel-autoplay";
-import { useMediaQuery } from "react-responsive";
 import {
-  TextSection,
-  TextSectionContent,
-  TextSectionToast,
-  TextSectionTitle,
-  TextSectionDescription,
-  TextSectionButton,
-  TextSectionImage,
-} from "@/components/text-section";
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import data from "../about/yoi-execs.json";
 
 const Component = () => {
   const [api, setApi] = useState<CarouselApi>();

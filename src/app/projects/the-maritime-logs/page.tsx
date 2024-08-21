@@ -1,10 +1,8 @@
-"use client";
-
 import Banner from "@/components/banners/banner";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 

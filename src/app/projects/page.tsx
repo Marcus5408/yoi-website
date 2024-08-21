@@ -1,5 +1,3 @@
-"use client";
-
 import Banner from "@/components/banners/banner";
 import ProjectCard from "@/components/project-card";
 import Image from "next/image";
