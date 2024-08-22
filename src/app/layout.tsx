@@ -1,11 +1,12 @@
+import YOIFooter from "@/components/footer";
+import YOINav from "@/components/navigation/navigation";
+import { ThemeProvider } from "@/components/theme-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Abril_Fatface, DM_Sans } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
 import React from "react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import YOINav from "@/components/navigation/navigation";
-import YOIFooter from "@/components/footer";
+import "./globals.css";
+import { CSPostHogProvider } from "./providers";
 
 const dmsans = DM_Sans({
   subsets: ["latin"],
@@ -78,19 +79,21 @@ export default function RootLayout({
         />
         <meta name="theme-color" content={themeColor} />
       </head>
-      <body className={`${dmsans.variable} ${abril_fatface.variable}`}>
-        <SpeedInsights />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <YOINav />
-          {children}
-          <YOIFooter />
-        </ThemeProvider>
-      </body>
+      <CSPostHogProvider>
+        <body className={`${dmsans.variable} ${abril_fatface.variable}`}>
+          <SpeedInsights />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <YOINav />
+            {children}
+            <YOIFooter />
+          </ThemeProvider>
+        </body>
+      </CSPostHogProvider>
     </html>
   );
 }
