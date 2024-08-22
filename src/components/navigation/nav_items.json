@@ -6,12 +6,12 @@
       {
         "title": "Our Mission",
         "href": "/about/mission",
-        "description": "Learn more about our mission and vision"
+        "description": "Learn more about our mission and vision."
       },
       {
         "title": "Our Team",
         "href": "/about/team",
-        "description": "Meet the team behind the Youth Oceanic Initiative"
+        "description": "Meet the team behind the Youth Oceanic Initiative."
       }
     ]
   },
@@ -22,17 +22,22 @@
       {
         "title": "Join Us",
         "href": "/join/yoi",
-        "description": "Help us make a difference in the world"
+        "description": "Join our team and help make a difference in the world."
       },
       {
         "title": "Find a Chapter",
         "href": "/join/chapters",
-        "description": "Find a local YOI chapter near you"
+        "description": "Find a local YOI chapter near you."
+      },
+      {
+        "title": "Start a Chapter",
+        "href": "/join/chapters/new",
+        "description": "Apply to start a YOI chapter in your area."
       },
       {
         "title": "Participate in an Event",
         "href": "/join/events",
-        "description": "Join us at an upcoming event or look at past events"
+        "description": "Join us at an upcoming event or look at past events."
       }
     ]
   },
