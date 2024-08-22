@@ -22,7 +22,9 @@ const TextSection = React.forwardRef<
   const gridConfig = imageLeft
     ? "lg:grid-cols-[550px_1fr]"
     : "lg:grid-cols-[1fr_550px]";
-    const textAlign = imageLeft ? "text-right items-end" : "text-left items-start";
+  const textAlign = imageLeft
+    ? "text-right items-end"
+    : "text-left items-start";
   const imageConfig = imageLeft ? "lg:order-first" : "lg:order-last";
 
   return (

@@ -80,8 +80,8 @@ export default function Home() {
             link={firstIssue.link}
             thumbnail={firstIssue.thumbnail}
           />
-          <div className="container grid gap-4 px-4 pt-14 pb-14 md:px-6">
-            <h2 className="text-2xl font-bold text-center sm:text-3xl">
+          <div className="container grid gap-4 px-4 pb-14 pt-14 md:px-6">
+            <h2 className="text-center text-2xl font-bold sm:text-3xl">
               Past Issue Previews
             </h2>
             <Accordion type="multiple">
