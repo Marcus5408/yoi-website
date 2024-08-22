@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Banner from "@/components/banners/banner";
 import { Button } from "@/components/ui/button";
@@ -7,6 +7,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import issues from "./issues.json";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Home() {
   const [iframeWidth, setIframeWidth] = useState("");
@@ -14,6 +21,10 @@ export default function Home() {
   useEffect(() => {
     setIframeWidth(isTabletOrMobile ? "100%" : "80%");
   }, [isTabletOrMobile]);
+
+  // Separate first issue in issues.json
+  const [firstIssue, ...restIssues] = issues;
+
   return (
     <div className="flex w-full flex-col bg-yoi-white dark:bg-yoi-black">
       <main className="z-1 flex-1">
@@ -63,7 +74,34 @@ export default function Home() {
             </div>
             */}
           </div>
-          <PDF className="h-[90svh] w-screen sm:mx-auto sm:w-[90svw]" />
+          <PDF
+            className="h-[90svh] w-screen sm:mx-auto sm:w-[90svw]"
+            title={firstIssue.title}
+            link={firstIssue.link}
+            thumbnail={firstIssue.thumbnail}
+          />
+          <div className="container grid gap-4 px-4 pt-14 pb-14 md:px-6">
+            <h2 className="text-2xl font-bold text-center sm:text-3xl">
+              Past Issue Previews
+            </h2>
+            <Accordion type="multiple">
+              {restIssues.map((issue, index) => (
+                <AccordionItem key={index} value={issue.value}>
+                  <AccordionTrigger>
+                    <h3 className="text-xl font-semibold">{issue.title}</h3>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <PDF
+                      className="h-[80svh] w-full sm:mx-auto"
+                      title={issue.title}
+                      link={issue.link}
+                      thumbnail={issue.thumbnail}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </section>
       </main>
     </div>
@@ -73,7 +111,23 @@ export default function Home() {
 function PDF({
   className = "",
   ...props
-}: React.HTMLProps<HTMLIFrameElement> & { zoom?: string; pageView?: string }) {
+}: React.HTMLProps<HTMLIFrameElement> & {
+  zoom?: string;
+  pageView?: string;
+  title: string;
+  link: string;
+  thumbnail: string;
+}) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   // if user is on mobile, open the pdf in a new tab
   if (typeof window !== "undefined" && window.innerWidth < 768) {
     return (
@@ -82,14 +136,14 @@ function PDF({
           Tap the image below to open the preview.
         </p>
         <Link
-          href="./The Maritime Logs Preview.pdf"
+          href={props.link}
           target="_blank"
           rel="noopener noreferrer"
           className={className}
         >
           <Image
-            src="/projects/the-maritime-logs.jpg"
-            alt="The Maritime Logs June Issue Preview PDF"
+            src={props.thumbnail}
+            alt={`The Maritime Logs ${props.title} Issue PDF`}
             width={1920}
             height={1080}
             layout="responsive"
@@ -100,8 +154,8 @@ function PDF({
   } else {
     return (
       <iframe
-        title="The Maritime Logs Preview PDF"
-        src="./The Maritime Logs Preview.pdf"
+        title={`The Maritime Logs ${props.title} Issue PDF`}
+        src={props.link}
         className={className}
       />
     );
