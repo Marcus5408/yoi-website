@@ -66,20 +66,22 @@ export default function Home() {
         .setLngLat([lng, lat])
         .setPopup(
           new mapboxgl.Popup({ offset: 40, className: "custom-popup" }) // add popups
-            .setHTML(
-              `<h3>${feature.properties.title}</h3>
+        .setHTML(
+          `<h3>${feature.properties.title}</h3>
           <p>${feature.properties.description}</p>
+          ${feature.properties.instagram ? `
           <a
-            href="https://instagram.com/${feature.properties.instagram}"
-            target="_blank"
-            rel="noreferrer"
-            class="flex gap-1 items-center"
+        href="https://instagram.com/${feature.properties.instagram}"
+        target="_blank"
+        rel="noreferrer"
+        class="flex gap-1 items-center"
           >
-            <img src="/instagram.svg" alt="Instagram" class="w-5 h-5" />
-            <div>@${feature.properties.instagram}</div>
+        <img src="/instagram.svg" alt="Instagram" class="w-5 h-5" />
+        <div>@${feature.properties.instagram}</div>
           </a>
+          ` : ''}
           `,
-            ),
+        ),
         )
         .addTo(map);
     });
@@ -101,8 +103,8 @@ export default function Home() {
       </Head>
       <div className="flex w-full flex-col bg-yoi-white dark:bg-yoi-black">
         <main className="z-1 flex flex-col">
-          <section className="h-screen w-screen pb-12 md:pb-24 lg:pb-32">
-            <div id="map-container" className="h-screen" />
+          <section className="h-screen w-full pb-12 md:pb-24 lg:pb-32">
+            <div id="map-container" className="h-screen w-full" />
           </section>
           <div className="z-2 bg-radial-ellipse-tl absolute from-yoi-blue-4 from-25% to-transparent pl-6 pr-6 pt-20 dark:from-yoi-blue-1 sm:pt-28">
             <h1 className="fancy text-4xl sm:text-5xl md:text-6xl lg:text-7xl/none">
