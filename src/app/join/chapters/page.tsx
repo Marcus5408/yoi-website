@@ -66,10 +66,12 @@ export default function Home() {
         .setLngLat([lng, lat])
         .setPopup(
           new mapboxgl.Popup({ offset: 40, className: "custom-popup" }) // add popups
-        .setHTML(
-          `<h3>${feature.properties.title}</h3>
+            .setHTML(
+              `<h3>${feature.properties.title}</h3>
           <p>${feature.properties.description}</p>
-          ${feature.properties.instagram ? `
+          ${
+            feature.properties.instagram
+              ? `
           <a
         href="https://instagram.com/${feature.properties.instagram}"
         target="_blank"
@@ -79,9 +81,11 @@ export default function Home() {
         <img src="/instagram.svg" alt="Instagram" class="w-5 h-5" />
         <div>@${feature.properties.instagram}</div>
           </a>
-          ` : ''}
+          `
+              : ""
+          }
           `,
-        ),
+            ),
         )
         .addTo(map);
     });
