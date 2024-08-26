@@ -5,13 +5,57 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.976477, 40.689003]
+        "coordinates": [-73.9767351, 40.6890878]
       },
       "properties": {
-        "title": "BTHS YOI",
+        "title": "Brooklyn Tech YOI",
         "description": "Brooklyn Tech's YOI Chapter. Also the birthplace of the YOI.",
         "instagram": "bths.yoi",
         "marker-color": "#23BAD2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.8049350, 40.3279011]
+      },
+      "properties": {
+        "title": "Hopewell Valley YOI",
+        "description": "Hopewell Valley's YOI Chapter."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.6847817, 34.2779215]
+      },
+      "properties": {
+        "title": "Simi Valley YOI",
+        "description": "Simi Valley's YOI Chapter."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.8064609, 33.6783988]
+      },
+      "properties": {
+        "title": "Woodbridge YOI",
+        "description": "Woodbridge's YOI Chapter."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.1887263, 32.9592647]
+      },
+      "properties": {
+        "title": "Canyon Crest YOI",
+        "description": "Canyon Crest's YOI Chapter."
       }
     }
   ]
