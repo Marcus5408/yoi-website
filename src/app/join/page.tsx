@@ -14,7 +14,7 @@ export default function Home() {
     <div className="flex w-full flex-col bg-yoi-white dark:bg-yoi-black">
       <main className="z-1 flex-1">
         <Banner
-          bg="/heroes/shaun-low-v8Un2Roo1Ak-unsplash.jpg"
+          bg="/heroes/whale.png"
           title="Join Our Mission"
           description="Our mission is to educate the public about ocean threats
             and empower today's youth through advocacy of existing and potential
