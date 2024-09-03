@@ -56,7 +56,11 @@ export default function Home() {
                   : `https://${firstEvent.link}`
               }
             >
-              Sign up!
+              {
+                firstEvent.buttonText
+                  ? firstEvent.buttonText
+                  : "Sign up!"
+              }
             </TextSectionButton>
           </TextSectionContent>
           <TextSectionImage
