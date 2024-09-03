@@ -32,6 +32,8 @@ const BannerMobile: React.FC<BannerMobileProps> = ({
               height={400}
               src={bg ?? ""}
               width={800}
+              quality={90}
+              priority={true}
             />
           </div>
           <div className="space-y-2">

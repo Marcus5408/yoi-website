@@ -50,9 +50,11 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({
           <Image
             alt="Hero"
             className={"z-1 w-full overflow-hidden object-cover " + div_size}
-            height="1920"
+            height={1920}
             src={bg ?? ""}
-            width="1080"
+            width={1080}
+            quality={90}
+            priority={true}
           />
           <div className="absolute inset-0 flex w-3/4 flex-col justify-center space-y-4 bg-gradient-to-r from-yoi-blue-4 from-40% to-transparent pl-[5%] pr-8 dark:from-yoi-blue-1 2xl:w-1/2">
             <div
