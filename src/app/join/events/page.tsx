@@ -52,8 +52,8 @@ export default function Home() {
             <TextSectionButton
               href={
                 firstEvent.link.startsWith("http://")
-                  ? firstEvent.link
-                  : `https://${firstEvent.link}`
+                ? `https://${firstEvent.link.slice(7)}`
+                : firstEvent.link
               }
             >
               {
