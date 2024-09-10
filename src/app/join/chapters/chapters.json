@@ -22,7 +22,7 @@
       },
       "properties": {
         "title": "Hopewell Valley YOI",
-        "description": "Hopewell Valley's YOI Chapter."
+        "description": "Hopewell Valley's YOI Chapter at Hopewell Valley Central High School."
       }
     },
     {
@@ -33,7 +33,7 @@
       },
       "properties": {
         "title": "Simi Valley YOI",
-        "description": "Simi Valley's YOI Chapter."
+        "description": "Simi Valley's YOI Chapter at SImi Valley High School."
       }
     },
     {
@@ -44,7 +44,7 @@
       },
       "properties": {
         "title": "Woodbridge YOI",
-        "description": "Woodbridge's YOI Chapter."
+        "description": "Woodbridge's YOI Chapter at Woodbridge High School."
       }
     },
     {
@@ -55,7 +55,40 @@
       },
       "properties": {
         "title": "Canyon Crest YOI",
-        "description": "Canyon Crest's YOI Chapter."
+        "description": "Canyon Crest's YOI Chapter at Canyon Crest Academy."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9334062, 40.7943018]
+      },
+      "properties": {
+        "title": "MCSM YOI",
+        "description": "MCSM's YOI Chapter at the Manhattan Center for Science and Mathematics."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.7406394, 40.8000573]
+      },
+      "properties": {
+        "title": "Great Neck North YOI",
+        "description": "Great Neck North's YOI Chapter at John L. Miller North High School."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.1041168, 32.1965800]
+      },
+      "properties": {
+        "title": "Znaya YOI",
+        "description": "Znaya's YOI Chapter at the Znaya Secondary School for Girls."
       }
     }
   ]
