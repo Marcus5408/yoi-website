@@ -52,15 +52,11 @@ export default function Home() {
             <TextSectionButton
               href={
                 firstEvent.link.startsWith("http://")
-                ? `https://${firstEvent.link.slice(7)}`
-                : firstEvent.link
+                  ? `https://${firstEvent.link.slice(7)}`
+                  : firstEvent.link
               }
             >
-              {
-                firstEvent.buttonText
-                  ? firstEvent.buttonText
-                  : "Sign up!"
-              }
+              {firstEvent.buttonText ? firstEvent.buttonText : "Sign up!"}
             </TextSectionButton>
           </TextSectionContent>
           <TextSectionImage
