@@ -18,28 +18,6 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-74.804935, 40.3279011]
-      },
-      "properties": {
-        "title": "Hopewell Valley YOI",
-        "description": "Hopewell Valley's YOI Chapter at Hopewell Valley Central High School."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.6847817, 34.2779215]
-      },
-      "properties": {
-        "title": "Simi Valley YOI",
-        "description": "Simi Valley's YOI Chapter at SImi Valley High School."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
         "coordinates": [-117.8064609, 33.6783988]
       },
       "properties": {
