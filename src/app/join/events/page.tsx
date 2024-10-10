@@ -24,10 +24,36 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import pastEvents from "./past_events.json";
+import { cn } from "@/lib/utils";
 
-export default function Home() {
-  // get first event from past events, and remove it from the list
+type Event = {
+  featured?: boolean;
+  title: string;
+  date: string;
+  location: string;
+  description: string;
+  image: string;
+  link: string;
+  buttonText?: string;
+};
+
+export default function EventsPage() {
   const [firstEvent, ...restEvents] = pastEvents;
+  // if every value in firstEvent is an empty string, there is no active event
+  let activeEvent = true;
+  let multipleFeatured = false;
+  if (Object.values(firstEvent).every((value) => value === "")) {
+    activeEvent = false;
+  }
+  // make sure restEvents are valid Event objects
+  restEvents.forEach((event) => {
+    event.date = event.date ?? "Invalid Date";
+    event.location = event.location ?? "Unknown Location";
+    event.description = event.description ?? "No Description Available";
+    event.image = event.image ?? "/images/placeholder.png";
+    event.link = event.link ?? "https://www.yoi.dev";
+    event.buttonText = event.buttonText ?? "Sign Up!";
+  });
 
   return (
     <div className="flex w-full flex-col bg-yoi-white dark:bg-yoi-black">
@@ -37,74 +63,104 @@ export default function Home() {
           size="medium"
           title="YOI Events"
           description="We hold a variety of events throughout the year.
-            Check out what events we're currently running!"
+            Check out what events we're currently running or have run in the past!"
         />
-        <h1 className="pt-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          Current Events
-        </h1>
-        <TextSection>
-          <TextSectionContent>
-            <TextSectionToast>{`Happening ${formatDate(firstEvent.date, false)}, ${firstEvent.location === "Online" ? "Online" : `at the ${firstEvent.location}`}`}</TextSectionToast>
-            <TextSectionTitle>{firstEvent.title}</TextSectionTitle>
-            <TextSectionDescription>
-              {firstEvent.description}
-            </TextSectionDescription>
-            <TextSectionButton
-              href={
-                firstEvent.link.startsWith("http://")
-                  ? `https://${firstEvent.link.slice(7)}`
-                  : firstEvent.link
-              }
-            >
-              {firstEvent.buttonText ? firstEvent.buttonText : "Sign up!"}
-            </TextSectionButton>
-          </TextSectionContent>
-          <TextSectionImage
-            src={firstEvent.image}
-            alt={firstEvent.title}
-            width={1280}
-            height={720}
-            className="rounded-lg"
-          ></TextSectionImage>
-        </TextSection>
-        <section className="flex w-full flex-col items-center px-12">
+        {activeEvent ? (
+          <>
+            <h1 className="pt-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Current Events
+            </h1>
+            {headlineEvent(firstEvent)}
+          </>
+        ) : null}
+        <section
+          className={cn("flex w-full flex-col items-center px-12", {
+            "pt-12": !activeEvent,
+          })}
+        >
           <h1 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Past Events
           </h1>
-          <Carousel className="h-auto w-[75vw] py-6 sm:mx-24">
-            <CarouselContent>
-              {restEvents.map((event, index) => (
-                <CarouselItem key={index} className="basis-full lg:basis-1/2">
-                  <Card>
-                    <Image
-                      src={event.image}
-                      alt={event.title}
-                      width={1280}
-                      height={720}
-                      className="h-48 w-full overflow-hidden rounded-t-lg object-cover"
-                    />
-                    <CardHeader>
-                      <CardTitle>{event.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="font-medium">
-                        {`This event happened on ${formatDate(event.date)}, ${event.location === "Online" ? "Online" : `at the ${event.location}`}.`}
-                      </CardDescription>
-                      <br />
-                      Event Description:
-                      <br />
-                      <CardDescription>{event.description}</CardDescription>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          {pastEventsGallery(restEvents)}
         </section>
       </main>
     </div>
+  );
+}
+
+function pastEventsGallery(restEvents: Event[]) {
+  return (
+    <Carousel className="h-auto w-[75vw] py-6 sm:mx-24">
+      <CarouselContent>
+        {restEvents.map((event, index) => (
+          <CarouselItem key={index} className="basis-full lg:basis-1/2">
+            <Card>
+              <Image
+                src={event.image}
+                alt={event.title}
+                width={1280}
+                height={720}
+                className="h-48 w-full overflow-hidden rounded-t-lg object-cover"
+              />
+              <CardHeader>
+                <CardTitle>{event.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="font-medium">
+                  {`This event happened on ${formatDate(event.date)}, ${
+                    event.location === "Online"
+                      ? "Online"
+                      : `at the ${event.location}`
+                  }.`}
+                </CardDescription>
+                <br />
+                Event Description:
+                <br />
+                <CardDescription>{event.description}</CardDescription>
+              </CardContent>
+            </Card>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+  );
+}
+
+function headlineEvent(firstEvent: Event) {
+  return (
+    <TextSection>
+      <TextSectionContent>
+        <TextSectionToast>
+          {`Happening ${formatDate(firstEvent.date, false)}, ${
+            firstEvent.location === "Online"
+              ? "Online"
+              : `at the ${firstEvent.location}`
+          }`}
+        </TextSectionToast>
+        <TextSectionTitle>{firstEvent.title}</TextSectionTitle>
+        <TextSectionDescription>
+          {firstEvent.description}
+        </TextSectionDescription>
+        <TextSectionButton
+          href={
+            firstEvent.link.startsWith("http://")
+              ? `https://${firstEvent.link.slice(7)}`
+              : firstEvent.link
+          }
+        >
+          {firstEvent.buttonText ? firstEvent.buttonText : "Sign up!"}
+        </TextSectionButton>
+      </TextSectionContent>
+      <TextSectionImage
+        src={firstEvent.image}
+        alt={firstEvent.title}
+        width={1280}
+        height={720}
+        className="rounded-lg"
+      ></TextSectionImage>
+    </TextSection>
   );
 }
 
