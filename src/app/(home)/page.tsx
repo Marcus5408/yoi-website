@@ -10,22 +10,10 @@ import {
   TextSectionTitle,
   TextSectionToast,
 } from "@/components/text-section";
-import { Button } from "@/components/ui/button";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import TeamSection from "./teamSection.tsx";
 
-const Component = () => {
+export default function HomePage() {
   const [iframeWidth, setIframeWidth] = useState<string>("0");
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
   useEffect(() => {}, [isTabletOrMobile]);
@@ -67,79 +55,216 @@ const Component = () => {
           </TextSectionContent>
         </TextSection>
         <TeamSection />
-        <section className="w-full border-t py-12 md:py-24 lg:py-32">
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-            <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                Stay Connected
-              </h2>
-              <p className="mx-auto max-w-[75%] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Sign up for our monthly newsletter, <em>The Maritime Logs</em>,
-                to stay up-to-date on our latest initiatives and events.
-              </p>
-            </div>
-            <iframe
-              title="Newsletter Signup"
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
-              width={iframeWidth}
-              height="640"
-              className="mx-auto"
-            >
-              Loading…
-            </iframe>
-            {/*
-            <div className="mx-auto w-full max-w-sm space-y-2">
-              <form className="flex space-x-2">
-                <Input
-                  className="max-w-lg flex-1"
-                  placeholder="Enter your email"
-                  type="email"
-                />
-                <Button type="submit">Sign Up</Button>
-              </form>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
-                Sign up to get our monthly newsletter in your inbox.&nbsp;
-                <Link className="underline underline-offset-2" href="#">
-                  Terms & Conditions
-                </Link>
-              </p>
-            </div> */}
-          </div>
-        </section>
+        {MainNewsletterSection(iframeWidth)}
       </main>
-      <Drawer>
-        <DrawerTrigger asChild>
-          <Button
-            className="fixed bottom-4 right-4 z-50 sm:hidden"
-            variant="outline"
+      {DrawerNewsletterSection(iframeWidth)}
+    </div>
+  );
+}
+
+import PersonMiniCard from "@/components/person-mini";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion.tsx";
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
+import data from "../about/yoi-execs.json";
+
+type ExecsJSON = {
+  department: string;
+  people: {
+    name: string;
+    role: string;
+    pronouns: string;
+    image: string;
+    description: string;
+  }[];
+}[];
+// assert JSON data as ExecsJSON
+data as ExecsJSON;
+
+export function TeamSection() {
+  return (
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+        <div className="space-y-3">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            Our Team
+          </h2>
+          <p className="mx-auto max-w-[75%] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            Our team is composed of a diverse group of students all passionate
+            about the ocean.
+          </p>
+        </div>
+        <Accordion
+          type="multiple"
+          className=""
+          defaultValue={data.map((department) => department.department)}
+        >
+          {data.map((department, index) => (
+            <AccordionItem value={department.department} key={index}>
+              <AccordionTrigger className="text-2xl">
+                <div className="pl-4">{department.department}</div>
+              </AccordionTrigger>
+              <AccordionContent className="max-w-[99vw] justify-center lg:w-[75vw]">
+                {DepartmentCarousel(department)}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+        <Button className="mx-auto w-[20em]">
+          <Link href="/about/team">Meet Our Full Team</Link>
+        </Button>
+      </div>
+    </section>
+  );
+}
+
+function DepartmentCarousel(department: ExecsJSON[0]) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [count, setCount] = useState(0);
+  const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+  return (
+    <Carousel
+      setApi={setApi}
+      plugins={[
+        Autoplay({
+          delay: department.people.length * 800,
+        }),
+      ]}
+    >
+      <CarouselContent>
+        {department.people.map((person, index) => (
+          <CarouselItem
+            key={index}
+            className="my-1 flex grow space-y-2 md:basis-1/2 2xl:basis-1/3"
           >
-            <div className="flex content-center items-center gap-2 align-middle">
-              Sign up for our newsletter!
-              <MailIcon className="h-4 w-4" />
-              <span className="sr-only">Open newsletter signup</span>
-            </div>
-          </Button>
-        </DrawerTrigger>
-        <DrawerContent className="sm:hidden">
-          <DrawerHeader>
-            <DrawerTitle>
-              Sign up for <em>The Maritime Logs</em>
-            </DrawerTitle>
-            <DrawerDescription className="mx-auto w-[85%]">
-              Stay up-to-date with our latest news and events with our monthly
-              newsletter.
-            </DrawerDescription>
-          </DrawerHeader>
-          <iframe
-            title="Newsletter Signup"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
-            width={iframeWidth}
-            height="340"
-            className="mx-auto"
-          >
-            Loading…
-          </iframe>
-          {/*
+            <PersonMiniCard
+              key={index}
+              name={person.name}
+              pronouns={person.pronouns}
+              role={person.role}
+              picture={person.image}
+            />
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
+  );
+}
+
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+
+export function MainNewsletterSection(iframeWidth: string) {
+  return (
+    <section className="w-full border-t py-12 md:py-24 lg:py-32">
+      <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+        <div className="space-y-3">
+          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+            Stay Connected
+          </h2>
+          <p className="mx-auto max-w-[75%] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            Sign up for our monthly newsletter, <em>The Maritime Logs</em>, to
+            stay up-to-date on our latest initiatives and events.
+          </p>
+        </div>
+        <iframe
+          title="Newsletter Signup"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
+          width={iframeWidth}
+          height="640"
+          className="mx-auto"
+        >
+          Loading…
+        </iframe>
+        {/*
+          <div className="mx-auto w-full max-w-sm space-y-2">
+            <form className="flex space-x-2">
+              <Input
+                className="max-w-lg flex-1"
+                placeholder="Enter your email"
+                type="email"
+              />
+              <Button type="submit">Sign Up</Button>
+            </form>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              Sign up to get our monthly newsletter in your inbox.&nbsp;
+              <Link className="underline underline-offset-2" href="#">
+                Terms & Conditions
+              </Link>
+            </p>
+          </div> */}
+      </div>
+    </section>
+  );
+}
+
+export function DrawerNewsletterSection(iframeWidth: string) {
+  return (
+    <Drawer>
+      <DrawerTrigger asChild>
+        <Button
+          className="fixed bottom-4 right-4 z-50 sm:hidden"
+          variant="outline"
+        >
+          <div className="flex content-center items-center gap-2 align-middle">
+            Sign up for our newsletter!
+            <MailIcon className="h-4 w-4" />
+            <span className="sr-only">Open newsletter signup</span>
+          </div>
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent className="sm:hidden">
+        <DrawerHeader>
+          <DrawerTitle>
+            Sign up for <em>The Maritime Logs</em>
+          </DrawerTitle>
+          <DrawerDescription className="mx-auto w-[85%]">
+            Stay up-to-date with our latest news and events with our monthly
+            newsletter.
+          </DrawerDescription>
+        </DrawerHeader>
+        <iframe
+          title="Newsletter Signup"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
+          width={iframeWidth}
+          height="340"
+          className="mx-auto"
+        >
+          Loading…
+        </iframe>
+        {/*
           <div className="px-4">
             <form className="space-y-4">
               <div className="space-y-2">
@@ -156,18 +281,15 @@ const Component = () => {
             </form>
           </div>
           */}
-          <DrawerFooter>
-            <DrawerClose asChild>
-              <Button variant="outline">Close</Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </div>
+        <DrawerFooter>
+          <DrawerClose asChild>
+            <Button variant="outline">Close</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
-};
-
-export default Component;
+}
 
 function MailIcon(props: any) {
   return (
