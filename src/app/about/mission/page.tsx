@@ -20,38 +20,40 @@ export default function Home() {
             Our Principles
           </h1>
           <div className="px-auto flex flex-col gap-20 pt-12 sm:flex-row sm:px-60">
-            <div className="flex flex-col items-center text-center sm:w-[30%]">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-yoi-blue-4">
-                <SchoolIcon className="size-14 fill-yoi-white" />
-              </div>
-              <h2 className="pt-2 text-2xl font-bold sm:text-3xl">Learn</h2>
-              <p className="pt-5 text-lg">
-                We believe that education is the key to creating a better future
-                for our oceans.
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center sm:w-[30%]">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-yoi-blue-4">
-                <ForumIcon className="size-14 fill-yoi-white" />
-              </div>
-              <h2 className="pt-2 text-2xl font-bold sm:text-3xl">Discuss</h2>
-              <p className="pt-5 text-lg">
-                We encourage open dialogue about ocean issues and potential
-                solutions.
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center sm:w-[30%]">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-yoi-blue-4">
-                <CampaignIcon className="size-14 fill-yoi-white" />
-              </div>
-              <h2 className="pt-2 text-2xl font-bold sm:text-3xl">Advocate</h2>
-              <p className="pt-5 text-lg">
-                We advocate for change and empower youth to take action.
-              </p>
-            </div>
+            <MissionStatement IconComponent={SchoolIcon} title="Educate">
+              We provide resources and opportunities for young individuals to
+              learn about the ocean.
+            </MissionStatement>
+            <MissionStatement IconComponent={ForumIcon} title="Discuss">
+              We encourage open dialogue about ocean issues and potential
+              solutions.
+            </MissionStatement>
+            <MissionStatement IconComponent={CampaignIcon} title="Advocate">
+              We advocate for change and empower youth to take action.
+            </MissionStatement>
           </div>
         </section>
       </main>
+    </div>
+  );
+}
+
+function MissionStatement({
+  IconComponent,
+  title,
+  children,
+}: {
+  IconComponent: React.ComponentType<any>;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex flex-col items-center text-center sm:w-[30%]">
+      <div className="flex h-24 w-24 items-center justify-center rounded-full bg-yoi-blue-4">
+        <IconComponent className="size-14 fill-yoi-white" />
+      </div>
+      <h2 className="pt-2 text-2xl font-bold sm:text-3xl">{title}</h2>
+      <p className="pt-5 text-lg">{children}</p>
     </div>
   );
 }
