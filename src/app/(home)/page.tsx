@@ -93,7 +93,7 @@ type ExecsJSON = {
 // assert JSON data as ExecsJSON
 data as ExecsJSON;
 
-export function TeamSection() {
+function TeamSection() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
@@ -186,7 +186,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-export function MainNewsletterSection(iframeWidth: string) {
+function MainNewsletterSection(iframeWidth: string) {
   return (
     <section className="w-full border-t py-12 md:py-24 lg:py-32">
       <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
@@ -230,7 +230,7 @@ export function MainNewsletterSection(iframeWidth: string) {
   );
 }
 
-export function DrawerNewsletterSection(iframeWidth: string) {
+function DrawerNewsletterSection(iframeWidth: string) {
   return (
     <Drawer>
       <DrawerTrigger asChild>
