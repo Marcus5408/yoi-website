@@ -1,5 +1,3 @@
-"use client";
-
 import Banner from "@/components/banners/banner";
 import OpportunityCard, { OpportunityInfo } from "@/components/opportunity";
 import {

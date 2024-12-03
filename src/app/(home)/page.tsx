@@ -1,5 +1,3 @@
-"use client";
-
 import Banner from "@/components/banners/banner.tsx";
 import {
   TextSection,
@@ -10,17 +8,8 @@ import {
   TextSectionTitle,
   TextSectionToast,
 } from "@/components/text-section";
-import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
 
 export default function HomePage() {
-  const [iframeWidth, setIframeWidth] = useState<string>("0");
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  useEffect(() => {}, [isTabletOrMobile]);
-  useEffect(() => {
-    setIframeWidth(isTabletOrMobile ? "100%" : "80%");
-  }, [isTabletOrMobile]);
-
   return (
     <div className="flex w-full flex-col">
       <main className="flex-1 flex-col">
@@ -55,9 +44,9 @@ export default function HomePage() {
           </TextSectionContent>
         </TextSection>
         <TeamSection />
-        {MainNewsletterSection(iframeWidth)}
+        <MainNewsletterSection/>
       </main>
-      {DrawerNewsletterSection(iframeWidth)}
+      <DrawerNewsletterSection/>
     </div>
   );
 }
@@ -117,7 +106,7 @@ function TeamSection() {
                 <div className="pl-4">{department.department}</div>
               </AccordionTrigger>
               <AccordionContent className="max-w-[99vw] justify-center lg:w-[75vw]">
-                {DepartmentCarousel(department)}
+                {DepartmentShowcase(department)}
               </AccordionContent>
             </AccordionItem>
           ))}
@@ -130,48 +119,22 @@ function TeamSection() {
   );
 }
 
-function DepartmentCarousel(department: ExecsJSON[0]) {
-  const [api, setApi] = useState<CarouselApi>();
-  const [count, setCount] = useState(0);
-  const [current, setCurrent] = useState(0);
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
+function DepartmentShowcase(department: ExecsJSON[0]) {
   return (
-    <Carousel
-      setApi={setApi}
-      plugins={[
-        Autoplay({
-          delay: department.people.length * 800,
-        }),
-      ]}
-    >
-      <CarouselContent>
-        {department.people.map((person, index) => (
-          <CarouselItem
-            key={index}
-            className="my-1 flex grow space-y-2 md:basis-1/2 2xl:basis-1/3"
-          >
-            <PersonMiniCard
-              key={index}
-              name={person.name}
-              pronouns={person.pronouns}
-              role={person.role}
-              picture={person.image}
-            />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+    <div className="flex justify-center">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
+      {department.people.map((person, index) => (
+        <div key={index} className="flex">
+        <PersonMiniCard
+          name={person.name}
+          pronouns={person.pronouns}
+          role={person.role}
+          picture={person.image}
+        />
+        </div>
+      ))}
+      </div>
+    </div>
   );
 }
 
@@ -186,7 +149,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-function MainNewsletterSection(iframeWidth: string) {
+function MainNewsletterSection() {
   return (
     <section className="w-full border-t py-12 md:py-24 lg:py-32">
       <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
@@ -202,9 +165,9 @@ function MainNewsletterSection(iframeWidth: string) {
         <iframe
           title="Newsletter Signup"
           src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
-          width={iframeWidth}
+          width="100%"
           height="640"
-          className="mx-auto"
+          className="mx-auto width-full sm:width-9/12"
         >
           Loading…
         </iframe>
@@ -230,7 +193,7 @@ function MainNewsletterSection(iframeWidth: string) {
   );
 }
 
-function DrawerNewsletterSection(iframeWidth: string) {
+function DrawerNewsletterSection() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -258,9 +221,9 @@ function DrawerNewsletterSection(iframeWidth: string) {
         <iframe
           title="Newsletter Signup"
           src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
-          width={iframeWidth}
+          width="100%"
           height="340"
-          className="mx-auto"
+          className="mx-auto width-full sm:width-9/12"
         >
           Loading…
         </iframe>

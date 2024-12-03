@@ -1,4 +1,3 @@
-"use client";
 
 import Banner from "@/components/banners/banner";
 import TextSection from "@/components/text-section";

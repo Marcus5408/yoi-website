@@ -1,12 +1,9 @@
 "use client";
 
 import Banner from "@/components/banners/banner";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
 import issues from "./issues.json";
 import {
   Accordion,
@@ -16,12 +13,6 @@ import {
 } from "@/components/ui/accordion";
 
 export default function Home() {
-  const [iframeWidth, setIframeWidth] = useState("");
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  useEffect(() => {
-    setIframeWidth(isTabletOrMobile ? "100%" : "80%");
-  }, [isTabletOrMobile]);
-
   // Separate first issue in issues.json
   const [firstIssue, ...restIssues] = issues;
 
@@ -49,9 +40,9 @@ export default function Home() {
             <iframe
               title="Newsletter Signup"
               src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
-              width={iframeWidth}
+              width="100%"
               height="340"
-              className="mx-auto"
+              className="mx-auto width-full sm:width-9/12"
             >
               Loading…
             </iframe>
