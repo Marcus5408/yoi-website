@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
+import { cn } from "@/lib/utils";
 
 type BannerMobileProps = {
   bg?: string;
@@ -12,6 +13,7 @@ type BannerMobileProps = {
     text: string;
     link: string;
   } | null;
+  className?: string;
 };
 
 const BannerMobile: React.FC<BannerMobileProps> = ({
@@ -19,9 +21,15 @@ const BannerMobile: React.FC<BannerMobileProps> = ({
   title,
   description,
   button,
+  className,
 }) => {
   return (
-    <section className="relative left-0 top-0 m-0 max-h-max p-0 align-top">
+    <section
+      className={cn(
+        "relative left-0 top-0 m-0 max-h-max p-0 align-top",
+        className,
+      )}
+    >
       <div className="bg-yoi-blue-4 dark:bg-yoi-blue-1">
         <div className="justify-top container flex h-max w-screen flex-1 flex-col items-center space-y-4 pb-10 pt-8 text-center">
           <div className="relative w-screen">

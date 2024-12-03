@@ -1,9 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type BannerDesktopProps = {
   bg?: string;
@@ -14,6 +13,7 @@ type BannerDesktopProps = {
     text: string;
     link: string;
   } | null;
+  className?: string;
 };
 
 const BannerDesktop: React.FC<BannerDesktopProps> = ({
@@ -22,6 +22,7 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({
   title,
   description,
   button,
+  className,
 }) => {
   let section_size = "min-h-96";
   let div_size = "h-[95svh]";
@@ -44,7 +45,7 @@ const BannerDesktop: React.FC<BannerDesktopProps> = ({
       break;
   }
   return (
-    <section className={"relative left-0 top-0 m-0 w-full p-0 " + section_size}>
+    <section className={cn("left-0 top-0 m-0 w-full p-0", section_size, className)}>
       <div className={div_size}>
         <div className="w-full">
           <Image
