@@ -33,7 +33,7 @@ const PersonMiniCard: React.FC<PersonMiniProps> = ({
   return (
     <Card
       className={
-        "flex h-[11rem] grow border border-gray-200 transition-all hover:scale-105 dark:border-gray-800" +
+        "flex h-[11rem] grow border border-gray-200 transition-all hover:scale-105 dark:border-gray-800 pb-2" +
         className
       }
     >
@@ -41,14 +41,14 @@ const PersonMiniCard: React.FC<PersonMiniProps> = ({
         <AvatarImage alt={name} src={picture ?? "/images/placeholder.png"} />
         <AvatarFallback>{initials}</AvatarFallback>
       </Avatar>
-      <div className="h-full justify-between text-left align-middle">
-        <CardHeader className="flex flex-col pb-0">
+      <div className="flex h-full flex-col justify-between text-left align-middle">
+        <CardHeader className="flex flex-col">
           <CardTitle>{checkedName}</CardTitle>
           <CardDescription>({pronouns})</CardDescription>
         </CardHeader>
-        <CardContent className="justify-self-end">
+        <CardContent>
           <CardTitle className="text-gray-500 dark:text-gray-400">
-            {role}
+        {role}
           </CardTitle>
         </CardContent>
       </div>
