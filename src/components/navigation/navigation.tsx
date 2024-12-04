@@ -4,7 +4,6 @@ import Navbar from "./navbar";
 import Sidebar from "./sidebar";
 
 function YOINav() {
-
   return (
     <div className="absolute z-10 w-full">
       <Navbar className="hidden lg:flex" />

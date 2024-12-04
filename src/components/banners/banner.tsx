@@ -41,7 +41,7 @@ const Banner: React.FC<BannerProps> = ({
         title={title}
         description={description}
         button={button}
-        className="hidden md:block md:relative"
+        className="hidden md:relative md:block"
       />
     </div>
   );

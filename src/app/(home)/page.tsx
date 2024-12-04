@@ -44,9 +44,9 @@ export default function HomePage() {
           </TextSectionContent>
         </TextSection>
         <TeamSection />
-        <MainNewsletterSection/>
+        <MainNewsletterSection />
       </main>
-      <DrawerNewsletterSection/>
+      <DrawerNewsletterSection />
     </div>
   );
 }
@@ -123,16 +123,16 @@ function DepartmentShowcase(department: ExecsJSON[0]) {
   return (
     <div className="flex justify-center">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
-      {department.people.map((person, index) => (
-        <div key={index} className="flex">
-        <PersonMiniCard
-          name={person.name}
-          pronouns={person.pronouns}
-          role={person.role}
-          picture={person.image}
-        />
-        </div>
-      ))}
+        {department.people.map((person, index) => (
+          <div key={index} className="flex">
+            <PersonMiniCard
+              name={person.name}
+              pronouns={person.pronouns}
+              role={person.role}
+              picture={person.image}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -167,7 +167,7 @@ function MainNewsletterSection() {
           src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
           width="100%"
           height="640"
-          className="mx-auto width-full sm:width-9/12"
+          className="width-full sm:width-9/12 mx-auto"
         >
           Loading…
         </iframe>
@@ -223,7 +223,7 @@ function DrawerNewsletterSection() {
           src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
           width="100%"
           height="340"
-          className="mx-auto width-full sm:width-9/12"
+          className="width-full sm:width-9/12 mx-auto"
         >
           Loading…
         </iframe>

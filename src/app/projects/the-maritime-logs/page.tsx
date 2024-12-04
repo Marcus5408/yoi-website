@@ -42,7 +42,7 @@ export default function Home() {
               src="https://docs.google.com/forms/d/e/1FAIpQLSeIC4kudhR1aTVW7c05KNqz4GNrKgTIuOnEDcYz2ILAFt9r5A/viewform?embedded=true"
               width="100%"
               height="340"
-              className="mx-auto width-full sm:width-9/12"
+              className="width-full sm:width-9/12 mx-auto"
             >
               Loading…
             </iframe>

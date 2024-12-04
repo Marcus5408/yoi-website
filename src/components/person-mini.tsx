@@ -33,7 +33,7 @@ const PersonMiniCard: React.FC<PersonMiniProps> = ({
   return (
     <Card
       className={
-        "flex h-[11rem] grow border border-gray-200 transition-all hover:scale-105 dark:border-gray-800 pb-2" +
+        "flex h-[11rem] grow border border-gray-200 pb-2 transition-all hover:scale-105 dark:border-gray-800" +
         className
       }
     >
@@ -48,7 +48,7 @@ const PersonMiniCard: React.FC<PersonMiniProps> = ({
         </CardHeader>
         <CardContent>
           <CardTitle className="text-gray-500 dark:text-gray-400">
-        {role}
+            {role}
           </CardTitle>
         </CardContent>
       </div>
