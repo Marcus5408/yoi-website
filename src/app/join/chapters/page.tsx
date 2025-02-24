@@ -84,6 +84,21 @@ export default function Home() {
           `
               : ""
           }
+          ${
+            feature.properties.email
+              ? `
+          <a
+        href="mailto:${feature.properties.email}"
+        target="_blank"
+        rel="noreferrer"
+        class="flex gap-1 items-center pt-2"
+          >
+        <img src="/mail.svg" alt="Email" class="w-5 h-5" />
+        <div>${feature.properties.email}</div>
+          </a>
+          `
+              : ""
+          }
           `,
             ),
         )
