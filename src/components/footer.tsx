@@ -27,7 +27,7 @@ export default function YOIFooter() {
         </Link>
         <Link
           className="text-xs underline-offset-4 hover:underline"
-          href="mailto:webmaster@theyoi.org&subject=YOI%20Website%20Issue"
+          href="mailto:webmaster@theyoi.org?subject=YOI%20Website%20Issue"
         >
           Website Problems?
         </Link>
