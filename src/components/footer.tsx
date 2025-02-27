@@ -21,13 +21,13 @@ export default function YOIFooter() {
         </Link>
         <Link
           className="text-xs underline-offset-4 hover:underline"
-          href="mailto:youthoceanicinitiative@gmail.com"
+          href="mailto:hello@theyoi.org"
         >
           Email
         </Link>
         <Link
           className="text-xs underline-offset-4 hover:underline"
-          href="mailto:youthoceanicinitiative+webmaster@gmail.com?cc=issac@matchaflavored.site&subject=YOI%20Website%20Issue"
+          href="mailto:webmaster@theyoi.org&subject=YOI%20Website%20Issue"
         >
           Website Problems?
         </Link>
