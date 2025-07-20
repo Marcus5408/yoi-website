@@ -1,16 +1,14 @@
+**/payload-types.ts
+.tmp
 **/.git
+**/.hg
+**/.pnp.*
+**/.svn
+**/.yarn/**
+**/build
+**/dist/**
 **/node_modules
-
-src/components/ui
-
-# config files
-tailwind.config.ts
+**/temp
+**/docs/**
 tsconfig.json
-next.config.mjs
-next-env.d.ts
-postcss.config.ts
-qodana.yaml
 
-# build files
-components.json
-package.json
